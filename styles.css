@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-ayur-primary: #0a251b;
-  --color-ayur-deep: #0f382a;
-  --color-ayur-forest: #164e3a;
-  --color-ayur-leaf: #246a50;
-  --color-ayur-emerald: #10b981;
-  --color-ayur-accent: #34d399;
-  --color-ayur-gold: #c59b27;
-  --color-ayur-gold-light: #fef7e0;
-  --color-ayur-gold-glow: rgba(197, 155, 39, 0.35);
-  --color-ayur-cream: #faf9f5;
-  --color-ayur-warmbg: #f5efe4;
-  --color-ayur-text: #18221e;
-  --color-ayur-muted: #576560;
+  /* Exact Specified Brand Palette */
+  --color-primary-forest: #174C3C;
+  --color-secondary-sage: #A8BFA5;
+  --color-bg-ivory: #FAF8F1;
+  --color-warm-beige: #EDE5D5;
+  --color-muted-gold: #B89A5A;
+  --color-text-charcoal: #26332D;
+
+  /* Harmonized Accents */
+  --color-forest-dark: #0f3529;
+  --color-forest-light: #20624e;
+  --color-sage-light: #c5d6c2;
+  --color-sage-soft: #eef3ed;
+  --color-gold-glow: rgba(184, 154, 90, 0.25);
+  --color-gold-dark: #967c42;
+  --color-border-subtle: rgba(23, 76, 60, 0.12);
+  --color-border-beige: #e0d5c1;
 }
 
 html {
@@ -23,10 +27,23 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--color-ayur-cream);
-  color: var(--color-ayur-text);
+  background-color: var(--color-bg-ivory);
+  color: var(--color-text-charcoal);
   overflow-x: hidden;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
+}
+
+/* Script-Specific Typography */
+html[lang="gu"] body,
+.lang-gu {
+  font-family: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.7;
+}
+
+html[lang="hi"] body,
+.lang-hi {
+  font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.7;
 }
 
 .font-serif-ayur {
@@ -37,99 +54,92 @@ body {
   font-family: 'Cinzel', serif;
 }
 
-.font-vedic {
-  font-family: 'Rozha One', serif;
-}
-
 /* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4efe6;
+  background: var(--color-warm-beige);
 }
 ::-webkit-scrollbar-thumb {
-  background: #164e3a;
+  background: var(--color-primary-forest);
   border-radius: 9999px;
-  border: 2px solid #f4efe6;
+  border: 2px solid var(--color-warm-beige);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0a251b;
+  background: var(--color-forest-dark);
 }
 
-/* Ambient Herbal Mesh & Aura Background */
+/* Ambient Natural Botanical Background */
 .bg-luxury-mesh {
-  background-color: #faf9f5;
+  background-color: var(--color-bg-ivory);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(22, 78, 58, 0.05) 0px, transparent 45%),
-    radial-gradient(at 100% 0%, rgba(197, 155, 39, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(245, 239, 228, 0.4) 0px, transparent 60%),
-    radial-gradient(at 100% 100%, rgba(15, 56, 42, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(197, 155, 39, 0.04) 0px, transparent 40%);
+    radial-gradient(at 0% 0%, rgba(23, 76, 60, 0.05) 0px, transparent 48%),
+    radial-gradient(at 100% 0%, rgba(184, 154, 90, 0.09) 0px, transparent 52%),
+    radial-gradient(at 50% 50%, rgba(237, 229, 213, 0.45) 0px, transparent 65%),
+    radial-gradient(at 100% 100%, rgba(168, 191, 165, 0.12) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(184, 154, 90, 0.06) 0px, transparent 45%);
 }
 
-/* Glassmorphism Classes */
+/* Glassmorphism & Header */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(250, 248, 241, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(15, 56, 42, 0.08);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .glass-card-luxury {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(15, 56, 42, 0.07);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .glass-card-dark {
-  background: linear-gradient(145deg, #0a251b 0%, #0f382a 60%, #164e3a 100%);
-  border: 1px solid rgba(197, 155, 39, 0.3);
+  background: linear-gradient(145deg, #103429 0%, #174C3C 60%, #1f5f4b 100%);
+  border: 1px solid rgba(184, 154, 90, 0.35);
 }
 
-/* Shadows */
+/* Subtle Premium Shadows */
 .shadow-luxury-sm {
-  box-shadow: 0 2px 10px -2px rgba(10, 37, 27, 0.05), 0 1px 4px -1px rgba(10, 37, 27, 0.03);
+  box-shadow: 0 2px 10px -2px rgba(23, 76, 60, 0.05), 0 1px 4px -1px rgba(23, 76, 60, 0.03);
 }
 
 .shadow-luxury-md {
-  box-shadow: 0 14px 30px -8px rgba(10, 37, 27, 0.08), 0 4px 12px -2px rgba(10, 37, 27, 0.04);
+  box-shadow: 0 14px 30px -8px rgba(23, 76, 60, 0.09), 0 4px 12px -2px rgba(23, 76, 60, 0.04);
 }
 
 .shadow-luxury-lg {
-  box-shadow: 0 24px 50px -12px rgba(10, 37, 27, 0.12), 0 8px 20px -4px rgba(10, 37, 27, 0.06);
+  box-shadow: 0 24px 45px -12px rgba(23, 76, 60, 0.14), 0 8px 18px -4px rgba(23, 76, 60, 0.06);
 }
 
-.shadow-gold-subtle {
-  box-shadow: 0 12px 28px -5px rgba(197, 155, 39, 0.32);
+.shadow-gold-soft {
+  box-shadow: 0 10px 25px -5px rgba(184, 154, 90, 0.28);
 }
 
-/* Smooth Card Hover Interactions */
+/* Hover Transitions */
 .card-hover-lift {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .card-hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -10px rgba(10, 37, 27, 0.12), 0 6px 16px -2px rgba(10, 37, 27, 0.05);
-  border-color: rgba(22, 78, 58, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(23, 76, 60, 0.12);
+  border-color: rgba(23, 76, 60, 0.25);
 }
 
-/* Pulsing CTA Effect */
-@keyframes luxuryPulse {
+/* Golden Pulse for CTAs */
+@keyframes pulse-gold {
   0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4px 15px 0 rgba(22, 78, 58, 0.35);
+    box-shadow: 0 0 0 0 rgba(184, 154, 90, 0.45);
   }
   50% {
-    transform: scale(1.02);
-    box-shadow: 0 8px 26px 4px rgba(22, 78, 58, 0.45);
+    box-shadow: 0 0 0 10px rgba(184, 154, 90, 0);
   }
 }
 
 .pulse-luxury {
-  animation: luxuryPulse 3s infinite ease-in-out;
+  animation: pulse-gold 2.8s infinite;
 }
 
 /* Floating WhatsApp Button */
@@ -137,41 +147,65 @@ body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 99;
-  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
+  box-shadow: 0 12px 28px -4px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s ease;
 }
-
 .whatsapp-float-luxury:hover {
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 16px 36px -4px rgba(37, 211, 102, 0.55);
 }
 
-/* Dynamic Animation Fades */
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Toast Notification */
+#globalToast {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  z-index: 60;
+  background: #174C3C;
+  color: #FAF8F1;
+  padding: 12px 20px;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px -4px rgba(23, 76, 60, 0.35);
+  border: 1px solid rgba(184, 154, 90, 0.4);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Language Switcher Segmented Control */
+.lang-switch-btn {
+  transition: all 0.2s ease;
+}
+.lang-switch-btn.active {
+  background-color: var(--color-primary-forest);
+  color: #FAF8F1;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(23, 76, 60, 0.2);
+}
+
+/* Category Filter Active Pill */
+.cat-pill-active {
+  background-color: var(--color-primary-forest) !important;
+  color: #FAF8F1 !important;
+  border-color: var(--color-primary-forest) !important;
+}
+
+/* Botanical Accent Watermark */
+.botanical-watermark {
+  background-image: radial-gradient(#174C3C 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  opacity: 0.08;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeIn {
-  animation: fadeInSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Gold Gradient Borders */
-.border-gold-accent {
-  border-image: linear-gradient(135deg, #c59b27, #fef7e0, #c59b27) 1;
-}
-
-/* Active Category Pill */
-.cat-pill-active {
-  background: linear-gradient(135deg, #0a251b 0%, #164e3a 100%) !important;
-  color: #ffffff !important;
-  border-color: #0a251b !important;
-  box-shadow: 0 4px 12px rgba(10, 37, 27, 0.25);
+  animation: fadeIn 0.25s ease-out forwards;
 }

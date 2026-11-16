@@ -20,9 +20,11 @@ if __name__ == "__main__":
     os.chdir(DIRECTORY)
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         print("=" * 60)
-        print("🌿 Dhanvantari Ayurveda Clinic Website Server")
+        print("🌿 Dr. Apkesha Patel | Ayurvedic Healthcare Brand Website")
         print(f"👉 Local URL: http://localhost:{PORT}")
-        print("Doctor: Dr. Apkesha Patel (AYUSH Medical Officer, Govt. of Gujarat - PHC)")
+        print("Doctor: Dr. Apkesha Patel (BAMS, Ex-AYUSH Medical Officer, Govt. PHC, Gujarat)")
+        print("Address: Lunawada, Mahisagar, Gujarat 389230")
+        print("Phone: +91 83476 75394 | Email: apexapatel316@gmail.com")
         print("Press Ctrl+C to stop the server")
         print("=" * 60)
         try:

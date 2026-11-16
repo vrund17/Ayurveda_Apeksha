@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhanvantari Ayurveda Clinic | Dr. Apkesha Patel (AYUSH Medical Officer, Govt. of Gujarat)</title>
-  <meta name="description" content="Consult Dr. Apkesha Patel, Ayurvedic Physician & Serving AYUSH Medical Officer (Govt. of Gujarat) with 4-5 years clinical experience in Primary Health Center (PHC). In-clinic evening OPD in Gujarat and worldwide online video consultations.">
-  
+  <title>Dr. Apkesha Patel | Ayurvedic Physician & Ex-AYUSH Medical Officer (Govt. PHC, Gujarat)</title>
+  <meta name="description" content="Personalised Ayurvedic healthcare by Dr. Apkesha Patel (BAMS), experienced physician with 4–5 years clinical service as an AYUSH Medical Officer at a Government Primary Health Centre in Gujarat. Online video consultations worldwide & in-person consultations in Lunawada, Mahisagar, Gujarat.">
+  <meta name="keywords" content="Ayurvedic doctor Gujarat, Dr Apkesha Patel, BAMS doctor Lunawada, AYUSH medical officer Gujarat, online Ayurvedic consultation, Nadi Pariksha, Ayurveda Mahisagar, Ayurvedic medicine India">
+  <meta name="author" content="Dr. Apkesha Patel">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Apkesha Patel | Experienced Ayurvedic Physician (BAMS)">
+  <meta property="og:description" content="Authentic Ayurvedic healthcare consultations by Dr. Apkesha Patel. Ex-AYUSH Medical Officer, Govt. PHC, Gujarat. In-person clinic in Lunawada & online video consultations.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Structured Data: JSON-LD for Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Apkesha Patel",
+    "image": "https://images.unsplash.com/photo-1594824813572-c2e7b8f9e685?auto=format&fit=crop&w=800&q=80",
+    "description": "Experienced Ayurvedic Physician (BAMS) with 4–5 years professional healthcare experience, previously serving as an AYUSH Medical Officer at a Government Primary Health Centre in Gujarat.",
+    "medicalSpecialty": "Ayurvedic Medicine",
+    "telephone": "+918347675394",
+    "email": "apexapatel316@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lunawada",
+      "addressLocality": "Lunawada",
+      "addressRegion": "Gujarat",
+      "postalCode": "389230",
+      "addressCountry": "IN"
+    },
+    "availableLanguage": ["English", "Gujarati", "Hindi"],
+    "priceRange": "₹₹"
+  }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -13,24 +45,34 @@
       theme: {
         extend: {
           colors: {
-            ayur: {
-              primary: '#0a251b',
-              deep: '#0f382a',
-              forest: '#164e3a',
-              leaf: '#246a50',
-              emerald: '#10b981',
-              accent: '#34d399',
-              gold: '#c59b27',
-              goldlight: '#fef7e0',
-              cream: '#faf9f5',
-              warmbg: '#f5efe4',
-            }
+            forest: {
+              DEFAULT: '#174C3C',
+              dark: '#0f3529',
+              light: '#20624e'
+            },
+            sage: {
+              DEFAULT: '#A8BFA5',
+              light: '#c5d6c2',
+              soft: '#eef3ed'
+            },
+            ivory: '#FAF8F1',
+            beige: {
+              DEFAULT: '#EDE5D5',
+              dark: '#e0d5c1'
+            },
+            gold: {
+              DEFAULT: '#B89A5A',
+              light: '#fbf5e6',
+              dark: '#967c42'
+            },
+            charcoal: '#26332D'
           },
           fontFamily: {
             serif: ['Cormorant Garamond', 'Georgia', 'serif'],
             cinzel: ['Cinzel', 'serif'],
             sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            vedic: ['Rozha One', 'serif']
+            gujarati: ['Noto Sans Gujarati', 'sans-serif'],
+            hindi: ['Noto Sans Devanagari', 'sans-serif']
           }
         }
       }
@@ -40,101 +82,114 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Custom Luxury Stylesheet -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-luxury-mesh text-stone-900 antialiased selection:bg-emerald-900 selection:text-white">
+<body class="bg-luxury-mesh text-charcoal antialiased selection:bg-forest selection:text-ivory">
 
-  <!-- ================= TOP NOTIFICATION & CREDIBILITY BAR ================= -->
-  <div class="bg-gradient-to-r from-emerald-950 via-[#0a251b] to-emerald-950 text-emerald-100 text-xs py-2 px-4 border-b border-emerald-900/60">
+  <!-- ================= TOP CREDIBILITY & CONTACT BAR ================= -->
+  <div class="bg-[#103429] text-[#e2ede8] text-xs py-2 px-4 border-b border-[#174C3C]/40">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
-      <div class="flex items-center gap-2.5">
+      
+      <!-- Credential Pill -->
+      <div class="flex items-center gap-2 text-center sm:text-left">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] border border-emerald-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>Active Govt. Service</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Verified BAMS</span>
         </span>
-        <span class="font-medium text-[11px] sm:text-xs">
-          Serving AYUSH Medical Officer • Govt. Primary Health Center (PHC), Gujarat • 15,000+ Treated
+        <span data-i18n="topNotice" class="font-medium text-[11px] sm:text-xs text-stone-200">
+          Ex-AYUSH Medical Officer • Govt. Primary Health Centre (PHC), Gujarat • 4–5 Years Healthcare Experience
         </span>
       </div>
-      <div class="flex items-center gap-4 text-stone-300 text-[11px] sm:text-xs">
-        <a href="tel:+918347675394" class="doc-phone-link hover:text-white flex items-center gap-1.5 transition-colors">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span class="doc-phone font-bold">+91 83476 75394</span>
+
+      <!-- Contact & Language Switcher Strip -->
+      <div class="flex items-center gap-3.5 text-stone-300 text-[11px] sm:text-xs flex-wrap justify-center">
+        <!-- Direct Call -->
+        <a href="tel:+918347675394" class="doc-phone-link hover:text-white flex items-center gap-1.5 transition-colors font-semibold">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold"></i>
+          <span class="doc-phone">+91 83476 75394</span>
         </a>
-        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:text-white flex items-center gap-1.5 transition-colors hidden md:flex">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span class="doc-email font-medium">apexapatel316@gmail.com</span>
+
+        <!-- Direct Email -->
+        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:text-white hidden md:flex items-center gap-1.5 transition-colors">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-gold"></i>
+          <span class="doc-email">apexapatel316@gmail.com</span>
         </a>
-        <!-- Bilingual Switcher -->
-        <button id="langToggleBtn" onclick="toggleLanguage()" class="hover:text-amber-300 px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 text-amber-300 border border-amber-300/30 text-[11px] font-bold transition-all" title="Switch Language">
-          <span>ગુજરાતી</span>
-        </button>
+
+        <!-- Trilingual Switcher (English | ગુજરાતી | हिन्दी) -->
+        <div class="inline-flex items-center rounded-full bg-white/10 p-0.5 border border-white/15 text-[11px]">
+          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2 py-0.5 rounded-full transition-all text-xs font-semibold" title="English">
+            EN
+          </button>
+          <button onclick="setLanguage('gu')" data-lang="gu" class="lang-btn px-2 py-0.5 rounded-full transition-all text-xs font-semibold" title="ગુજરાતી">
+            ગુજરાતી
+          </button>
+          <button onclick="setLanguage('hi')" data-lang="hi" class="lang-btn px-2 py-0.5 rounded-full transition-all text-xs font-semibold" title="हिन्दी">
+            हिन्दी
+          </button>
+        </div>
+
+        <!-- My Requests Counter (50+) -->
         <button onclick="openMyBookingsModal()" class="hover:text-amber-300 flex items-center gap-1 transition-colors text-[11px]">
-          <i data-lucide="calendar" class="w-3 h-3"></i>
-          <span>My Bookings (<span id="myBookingsCount" class="font-bold text-amber-300">50+</span>)</span>
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300"></i>
+          <span data-i18n="myBookingsLabel">My Requests</span>
+          <span class="font-bold text-amber-300 my-bookings-count">(50+)</span>
         </button>
       </div>
+
     </div>
   </div>
 
   <!-- ================= STICKY MAIN HEADER ================= -->
-  <header class="sticky top-0 z-40 glass-nav transition-all shadow-luxury-sm">
+  <header class="sticky top-0 z-40 glass-nav shadow-luxury-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Logo & Doctor Title -->
+      <!-- Brand Logo & Doctor Details -->
       <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-950 via-[#164e3a] to-emerald-900 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform duration-300 border border-amber-400/30">
-          <i data-lucide="leaf" class="w-6 h-6"></i>
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold/40">
+          <i data-lucide="leaf" class="w-6 h-6 text-gold"></i>
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <span class="font-serif text-2xl font-bold tracking-tight text-stone-900 doc-name">Dr. Apkesha Patel</span>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">B.A.M.S.</span>
+            <span class="font-serif text-2xl font-bold tracking-tight text-charcoal doc-name">Dr. Apkesha Patel</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-soft text-forest border border-sage">BAMS</span>
           </div>
           <p class="text-xs text-stone-500 font-medium flex items-center gap-1.5 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            AYUSH Medical Officer (Govt. Primary Health Center, Gujarat)
+            <span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
+            <span>Ex-AYUSH Medical Officer (Govt. PHC, Gujarat)</span>
           </p>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-stone-700">
-        <a href="#about" class="hover:text-emerald-800 transition-colors">About Doctor</a>
-        <a href="#triage" class="hover:text-emerald-800 transition-colors flex items-center gap-1">
-          <span>Symptom Checker</span>
-          <span class="text-[9px] bg-emerald-100 text-emerald-900 px-1.5 py-0.2 rounded-full font-bold">New</span>
-        </a>
-        <a href="#treatments" class="hover:text-emerald-800 transition-colors">Treatments</a>
-        <a href="#prakriti-quiz" class="hover:text-emerald-800 transition-colors flex items-center gap-1.5">
-          <span>Dosha Quiz</span>
-          <span class="text-[9px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full font-bold border border-amber-300">Free</span>
-        </a>
-        <a href="#dinacharya" class="hover:text-emerald-800 transition-colors">Daily Routine</a>
-        <a href="#stories" class="hover:text-emerald-800 transition-colors">Success Stories</a>
-        <a href="#faqs" class="hover:text-emerald-800 transition-colors">FAQs</a>
-        <a href="#contact" class="hover:text-emerald-800 transition-colors">Contact</a>
+      <nav class="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-semibold text-charcoal">
+        <a href="#about" data-i18n="navAbout" class="hover:text-forest transition-colors">Meet Doctor</a>
+        <a href="#services" data-i18n="navServices" class="hover:text-forest transition-colors">Consultation Services</a>
+        <a href="#why-consult" data-i18n="navWhy" class="hover:text-forest transition-colors">Why Consult</a>
+        <a href="#consultation-modes" data-i18n="navModes" class="hover:text-forest transition-colors">Online & In-Person</a>
+        <a href="#how-it-works" data-i18n="navHow" class="hover:text-forest transition-colors">How It Works</a>
+        <a href="#faqs" data-i18n="navFaq" class="hover:text-forest transition-colors">FAQ</a>
+        <a href="#contact" data-i18n="navContact" class="hover:text-forest transition-colors">Contact</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
-        <a id="navWhatsApp" href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="p-2.5 px-3.5 rounded-xl border border-stone-200 text-emerald-800 hover:bg-emerald-50 hover:border-emerald-300 transition-all flex items-center gap-2 text-xs font-bold shadow-2xs" title="Direct WhatsApp Consultation">
-          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
-          <span>WhatsApp</span>
+        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-2.5 px-4 rounded-xl border border-stone-300 text-forest hover:bg-forest/5 hover:border-forest transition-all flex items-center gap-2 text-xs font-bold shadow-2xs" title="Direct WhatsApp Enquiry">
+          <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
+          <span data-i18n="btnWhatsApp">WhatsApp</span>
         </a>
-        <a href="#book-appointment" class="py-2.5 px-5 rounded-xl bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
-          <i data-lucide="calendar" class="w-4 h-4 text-amber-300"></i>
-          <span>Book Consultation</span>
+        <a href="#book-appointment" class="py-2.5 px-5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4 text-gold"></i>
+          <span data-i18n="btnBookNow">Book Consultation</span>
         </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 lg:hidden">
-        <a href="https://wa.me/918347675394" target="_blank" class="p-2 rounded-lg text-emerald-700 bg-emerald-50 border border-emerald-200">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <a href="https://wa.me/918347675394" target="_blank" class="p-2 rounded-lg text-forest bg-sage-soft border border-sage">
+          <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
         </a>
-        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-stone-700 hover:bg-stone-100" aria-label="Toggle Menu">
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-charcoal hover:bg-stone-100" aria-label="Toggle Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
@@ -142,181 +197,182 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-white border-b border-stone-200 px-5 py-4 space-y-3 animate-fadeIn">
-      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">About Doctor</a>
-      <a href="#triage" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Ayurvedic Symptom Checker</a>
-      <a href="#treatments" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Treatments & Specializations</a>
-      <a href="#prakriti-quiz" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Discover Your Dosha (Quiz)</a>
-      <a href="#dinacharya" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Daily Ayurvedic Routine</a>
-      <a href="#stories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Patient Recovery Stories</a>
-      <a href="#faqs" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">FAQs</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-stone-800 py-1.5">Clinic & Teleconsultation</a>
-      <div class="pt-3 border-t border-stone-100 flex flex-col gap-2">
-        <button onclick="toggleLanguage(); toggleMobileMenu();" class="text-xs text-left font-bold text-amber-800 flex items-center gap-1.5 py-1">
-          <i data-lucide="languages" class="w-3.5 h-3.5"></i> Switch Language (English / ગુજરાતી)
-        </button>
-        <a href="tel:+918347675394" class="doc-phone-link flex items-center gap-2 text-xs font-bold text-emerald-800 py-1">
-          <i data-lucide="phone" class="w-4 h-4"></i> Call: +91 83476 75394
+    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-ivory border-b border-stone-200 px-5 py-4 space-y-3 animate-fadeIn">
+      <a href="#about" onclick="toggleMobileMenu()" data-i18n="navAbout" class="block text-sm font-semibold text-charcoal py-1.5">Meet Doctor</a>
+      <a href="#services" onclick="toggleMobileMenu()" data-i18n="navServices" class="block text-sm font-semibold text-charcoal py-1.5">Consultation Services</a>
+      <a href="#why-consult" onclick="toggleMobileMenu()" data-i18n="navWhy" class="block text-sm font-semibold text-charcoal py-1.5">Why Consult</a>
+      <a href="#consultation-modes" onclick="toggleMobileMenu()" data-i18n="navModes" class="block text-sm font-semibold text-charcoal py-1.5">Online & In-Person</a>
+      <a href="#how-it-works" onclick="toggleMobileMenu()" data-i18n="navHow" class="block text-sm font-semibold text-charcoal py-1.5">How It Works</a>
+      <a href="#prakriti-quiz" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-charcoal py-1.5">Dosha Assessment Quiz</a>
+      <a href="#faqs" onclick="toggleMobileMenu()" data-i18n="navFaq" class="block text-sm font-semibold text-charcoal py-1.5">FAQ</a>
+      <a href="#contact" onclick="toggleMobileMenu()" data-i18n="navContact" class="block text-sm font-semibold text-charcoal py-1.5">Contact & Location</a>
+      
+      <div class="pt-3 border-t border-stone-200 flex flex-col gap-2.5">
+        <!-- Language Switcher in Mobile Drawer -->
+        <div class="flex items-center gap-2 py-1">
+          <span class="text-xs font-semibold text-stone-500">Language:</span>
+          <button onclick="setLanguage('en'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">English</button>
+          <button onclick="setLanguage('gu'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">ગુજરાતી</button>
+          <button onclick="setLanguage('hi'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">हिन्दी</button>
+        </div>
+
+        <a href="tel:+918347675394" class="doc-phone-link flex items-center gap-2 text-xs font-bold text-forest py-1">
+          <i data-lucide="phone" class="w-4 h-4 text-gold"></i> Call: +91 83476 75394
         </a>
-        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link flex items-center gap-2 text-xs font-semibold text-stone-600 py-1">
-          <i data-lucide="mail" class="w-4 h-4"></i> apexapatel316@gmail.com
+        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link flex items-center gap-2 text-xs font-medium text-stone-600 py-1">
+          <i data-lucide="mail" class="w-4 h-4 text-forest"></i> apexapatel316@gmail.com
         </a>
-        <button onclick="openDoctorSettingsModal(); toggleMobileMenu();" class="text-xs text-left text-stone-600 flex items-center gap-1.5 py-1">
-          <i data-lucide="settings" class="w-3.5 h-3.5"></i> Customize Doctor Information
-        </button>
-        <button onclick="openMyBookingsModal(); toggleMobileMenu();" class="text-xs text-left text-stone-600 flex items-center gap-1.5 py-1">
-          <i data-lucide="calendar" class="w-3.5 h-3.5"></i> My Bookings (50+)
+        <button onclick="openMyBookingsModal(); toggleMobileMenu();" class="text-xs text-left text-stone-700 flex items-center gap-1.5 py-1 font-semibold">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-forest"></i> My Requests (<span class="my-bookings-count font-bold text-forest">50+</span>)
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-28 overflow-hidden bg-luxury-mesh border-b border-stone-200">
+  <!-- ================= SECTION A: PREMIUM HERO (SPLIT SCREEN) ================= -->
+  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-28 overflow-hidden bg-luxury-mesh border-b border-beige">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Column: Copy & Trust Highlights -->
+        <!-- Left Side: Headline, Description & CTAs -->
         <div class="lg:col-span-7 space-y-6">
           
-          <!-- Government Credential Pill -->
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/90 border border-emerald-300 text-emerald-950 text-xs sm:text-sm font-bold shadow-2xs">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-700 animate-pulse"></span>
-            <span id="transHeroTag">Serving AYUSH Medical Officer • Govt. Primary Health Center (PHC), Gujarat</span>
+          <!-- Experience & Credential Tag -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-soft border border-sage text-forest text-xs sm:text-sm font-bold shadow-2xs">
+            <span class="w-2.5 h-2.5 rounded-full bg-forest animate-pulse"></span>
+            <span data-i18n="heroBadge">4–5 Years of Professional Healthcare Experience</span>
           </div>
 
-          <!-- Headline -->
-          <h1 id="transHeroHeading" class="font-serif text-3xl sm:text-5xl lg:text-[54px] font-bold text-stone-900 leading-[1.16] tracking-tight">
-            Authentic Ayurvedic Healing with <span class="text-emerald-900 italic underline decoration-amber-400 decoration-wavy decoration-1">Active Public Health Mastery</span>
+          <!-- Main Headline (Exact Requirement) -->
+          <h1 data-i18n="heroHeading" class="font-serif text-3xl sm:text-5xl lg:text-[52px] font-bold text-charcoal leading-[1.18] tracking-tight">
+            Rediscover Holistic Well-being Through Ayurveda
           </h1>
 
-          <!-- Subheadline -->
-          <p id="transHeroSub" class="text-stone-600 text-base sm:text-lg leading-relaxed">
-            Personalized, root-cause healing for chronic digestive issues, joint pain, skin disorders, and women’s hormonal health. Backed by 4 to 5 years of active, frontline clinical experience serving as an AYUSH Medical Officer at a Government Primary Health Center in Gujarat.
+          <!-- Supporting Description (Exact Requirement) -->
+          <p data-i18n="heroDesc" class="text-stone-700 text-base sm:text-lg leading-relaxed">
+            Personalised Ayurvedic healthcare guidance from an experienced Ayurvedic physician, combining traditional knowledge with a patient-focused approach.
           </p>
 
-          <!-- Core Call-to-Actions -->
+          <!-- Government PHC Service Highlight -->
+          <div class="p-3.5 rounded-2xl bg-white/90 border border-beige flex items-start gap-3 shadow-2xs">
+            <i data-lucide="shield-check" class="w-5 h-5 text-forest flex-shrink-0 mt-0.5"></i>
+            <p data-i18n="heroGovtTag" class="text-xs sm:text-sm text-stone-700 font-medium">
+              Previously served as an AYUSH Medical Officer at a Government Primary Health Centre in Gujarat.
+            </p>
+          </div>
+
+          <!-- Primary and Secondary CTAs -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
-            <a href="#book-appointment" class="py-3.5 px-6 rounded-xl bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-center text-sm shadow-md hover:shadow-xl transition-all pulse-luxury flex items-center justify-center gap-2">
-              <i data-lucide="calendar-check" class="w-4 h-4 text-amber-300"></i>
-              <span>Book Consultation (₹<span class="doc-inclinic-fee-raw">500</span>)</span>
+            <a href="#book-appointment" class="py-3.5 px-7 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-center text-sm shadow-md hover:shadow-xl transition-all pulse-luxury flex items-center justify-center gap-2">
+              <i data-lucide="calendar-check" class="w-4 h-4 text-gold"></i>
+              <span data-i18n="heroBtnBook">Book a Consultation</span>
             </a>
-            <a href="#triage" class="py-3.5 px-5 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-stone-800 font-bold text-center text-sm shadow-2xs transition-all flex items-center justify-center gap-2">
-              <i data-lucide="stethoscope" class="w-4 h-4 text-emerald-700"></i>
-              <span>Check Symptoms</span>
+            <a href="#about" class="py-3.5 px-6 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-charcoal font-bold text-center text-sm shadow-2xs transition-all flex items-center justify-center gap-2">
+              <i data-lucide="user" class="w-4 h-4 text-forest"></i>
+              <span data-i18n="heroBtnMeet">Meet Your Doctor</span>
             </a>
-            <a id="heroWhatsApp" href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="py-3.5 px-4 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-300 hover:bg-emerald-100 font-bold text-center text-sm transition-all flex items-center justify-center gap-2">
-              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
-              <span>WhatsApp Chat</span>
+            <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-3.5 px-4 rounded-xl bg-sage-soft text-forest border border-sage hover:bg-sage/40 font-bold text-center text-sm transition-all flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
+              <span data-i18n="btnWhatsApp">WhatsApp</span>
             </a>
           </div>
 
-          <!-- Trust Bar Indicators -->
+          <!-- Grounded Trust Bar -->
           <div class="pt-6 border-t border-stone-200 grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div class="space-y-0.5">
-              <div class="font-serif text-2xl font-bold text-emerald-950">4-5 Yrs</div>
-              <p class="text-xs text-stone-500 font-semibold">Active Govt. PHC Practice</p>
+              <div class="font-serif text-2xl font-bold text-forest" data-i18n="heroStat1Val">4–5 Yrs</div>
+              <p class="text-xs text-stone-500 font-semibold" data-i18n="heroStat1Lbl">Healthcare Experience</p>
             </div>
             <div class="space-y-0.5">
-              <div class="font-serif text-2xl font-bold text-emerald-950">15,000+</div>
-              <p class="text-xs text-stone-500 font-semibold">Patients Diagnosed & Treated</p>
+              <div class="font-serif text-2xl font-bold text-forest" data-i18n="heroStat2Val">Govt. PHC</div>
+              <p class="text-xs text-stone-500 font-semibold" data-i18n="heroStat2Lbl">Ex-AYUSH Medical Officer</p>
             </div>
             <div class="space-y-0.5">
-              <div class="font-serif text-2xl font-bold text-emerald-950">100%</div>
-              <p class="text-xs text-stone-500 font-semibold">Classical Shastriya Herbs</p>
+              <div class="font-serif text-2xl font-bold text-forest" data-i18n="heroStat3Val">BAMS</div>
+              <p class="text-xs text-stone-500 font-semibold" data-i18n="heroStat3Lbl">Ayurvedic Medicine & Surgery</p>
             </div>
             <div class="space-y-0.5">
-              <div class="font-serif text-2xl font-bold text-emerald-950">Pan-India</div>
-              <p class="text-xs text-stone-500 font-semibold">& Global Video OPD</p>
+              <div class="font-serif text-2xl font-bold text-forest" data-i18n="heroStat4Val">Global & Local</div>
+              <p class="text-xs text-stone-500 font-semibold" data-i18n="heroStat4Lbl">Online & Lunawada Clinic</p>
             </div>
           </div>
 
         </div>
 
-        <!-- Right Column: Doctor Hero Profile Card -->
+        <!-- Right Side: Professional Doctor Portrait Card & Visual Details -->
         <div class="lg:col-span-5">
           <div class="relative max-w-md mx-auto">
             
-            <div class="absolute -inset-2 bg-gradient-to-r from-emerald-600/20 to-amber-500/20 rounded-3xl blur-2xl"></div>
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-forest/20 to-gold/20 rounded-3xl blur-2xl"></div>
             
-            <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-luxury-lg border border-stone-200/90 space-y-6">
+            <!-- Doctor Card Frame -->
+            <div class="relative bg-white rounded-3xl p-6 sm:p-7 shadow-luxury-lg border border-beige space-y-6">
               
-              <!-- Doctor Avatar & Verified Badge -->
-              <div class="flex items-center gap-4">
-                <div class="relative">
-                  <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-950 via-[#164e3a] to-emerald-900 text-white flex items-center justify-center text-3xl font-serif font-bold shadow-md border-2 border-amber-300">
-                    <span class="doc-initials">AP</span>
-                  </div>
-                  <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs shadow-sm" title="Active Government Medical Officer">
-                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              <!-- Professional Doctor Placeholder with Elegant Botanical Styling -->
+              <div class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] aspect-[4/4.5] flex flex-col items-center justify-center text-center p-6 text-white border-2 border-gold/40 shadow-inner group">
+                
+                <!-- Botanical Leaf Watermark -->
+                <div class="absolute -right-6 -bottom-6 opacity-15">
+                  <i data-lucide="leaf" class="w-48 h-48 text-gold"></i>
+                </div>
+
+                <!-- Avatar Emblem Placeholder -->
+                <div class="relative w-28 h-28 rounded-full bg-ivory text-forest flex items-center justify-center font-serif text-4xl font-bold shadow-xl border-4 border-gold mb-3">
+                  <span>AP</span>
+                  <div class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-forest text-white flex items-center justify-center text-xs shadow-md border-2 border-white" title="Verified Ayurvedic Practitioner">
+                    <i data-lucide="check" class="w-4 h-4 text-gold"></i>
                   </div>
                 </div>
 
-                <div class="space-y-1">
-                  <h3 class="text-xl font-bold text-stone-900 doc-name">Dr. Apkesha Patel</h3>
-                  <p class="text-xs font-semibold text-emerald-800 doc-degree">B.A.M.S., C.R.A.V. (Panchakarma)</p>
-                  <p class="text-[11px] text-stone-500 doc-regno font-medium">Reg: GAC-A/24891 (Gujarat Board)</p>
+                <h3 class="font-serif text-2xl font-bold tracking-tight text-white doc-name">Dr. Apkesha Patel</h3>
+                <p class="text-xs font-semibold text-amber-200 mt-0.5 doc-degree">BAMS – Bachelor of Ayurvedic Medicine and Surgery</p>
+                <p class="text-[11px] text-stone-300 mt-1 max-w-xs leading-snug">
+                  Ex-AYUSH Medical Officer, Govt. Primary Health Centre (PHC), Gujarat
+                </p>
+
+                <div class="mt-4 pt-3 border-t border-white/20 w-full flex items-center justify-center gap-2 text-[10px] text-amber-100 font-medium">
+                  <i data-lucide="camera" class="w-3.5 h-3.5 text-gold"></i>
+                  <span>Official Physician Profile Placeholder</span>
                 </div>
               </div>
 
-              <!-- Key Credentials List -->
-              <div class="space-y-2.5 text-xs text-stone-700 bg-stone-50/90 p-4 rounded-2xl border border-stone-200">
+              <!-- Practice Highlights -->
+              <div class="space-y-2.5 text-xs text-stone-700 bg-ivory p-4 rounded-2xl border border-beige">
                 <div class="flex items-start gap-2.5">
-                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
                   <div>
-                    <strong class="text-stone-900 font-bold">Serving AYUSH Medical Officer</strong>
-                    <p class="text-stone-500">Government Primary Health Center (PHC), Gujarat</p>
+                    <strong class="text-charcoal font-bold">Online Consultations:</strong>
+                    <span class="text-stone-600"> Pan-India & Global video calls via Google Meet / WhatsApp</span>
                   </div>
                 </div>
                 <div class="flex items-start gap-2.5">
-                  <i data-lucide="activity" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
+                  <i data-lucide="map-pin" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
                   <div>
-                    <strong class="text-stone-900 font-bold">Authentic Nadi Pariksha</strong>
-                    <p class="text-stone-500">Deep pulse assessment for Tridosha & organ vitality</p>
+                    <strong class="text-charcoal font-bold">In-Person Clinic:</strong>
+                    <span class="text-stone-600 doc-address"> Lunawada, Mahisagar, Gujarat 389230</span>
                   </div>
                 </div>
                 <div class="flex items-start gap-2.5">
-                  <i data-lucide="feather" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
+                  <i data-lucide="globe" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
                   <div>
-                    <strong class="text-stone-900 font-bold">Root Cause Treatment</strong>
-                    <p class="text-stone-500">No symptomatic suppression; customized diet chart</p>
+                    <strong class="text-charcoal font-bold">Languages Spoken:</strong>
+                    <span class="text-stone-600"> Gujarati (ગુજરાતી), Hindi (हिन्दी), English</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Consultation Modes Available -->
-              <div class="grid grid-cols-2 gap-3 text-center">
-                <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
-                  <span class="text-[10px] uppercase font-bold text-emerald-800 tracking-wider block">Evening OPD</span>
-                  <div class="text-base font-bold text-stone-900 mt-0.5 doc-inclinic-fee">₹500</div>
-                  <span class="text-[10px] text-stone-500 font-medium">Gandhinagar, Gujarat</span>
-                </div>
-                <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200">
-                  <span class="text-[10px] uppercase font-bold text-amber-800 tracking-wider block">Video Consult</span>
-                  <div class="text-base font-bold text-stone-900 mt-0.5 doc-online-fee">₹600</div>
-                  <span class="text-[10px] text-stone-500 font-medium">Pan-India & Global</span>
-                </div>
-              </div>
-
-              <!-- Direct Contact Strip -->
-              <div class="pt-1 flex items-center justify-between text-xs text-stone-600 bg-stone-50 p-2.5 rounded-xl border border-stone-200">
-                <span class="flex items-center gap-1.5 font-bold text-emerald-900">
-                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-700"></i>
-                  <span>Direct Hotline:</span>
+              <!-- Direct Hotline Strip -->
+              <div class="flex items-center justify-between text-xs text-stone-600 bg-white p-3 rounded-xl border border-stone-200">
+                <span class="flex items-center gap-1.5 font-bold text-forest">
+                  <i data-lucide="phone-call" class="w-4 h-4 text-forest"></i>
+                  <span>Direct Contact:</span>
                 </span>
-                <a href="tel:+918347675394" class="doc-phone-link font-bold text-emerald-800 hover:underline">
+                <a href="tel:+918347675394" class="doc-phone-link font-bold text-forest hover:underline doc-phone">
                   +91 83476 75394
                 </a>
               </div>
 
-              <!-- Shloka Motto -->
-              <div class="text-center pt-2 border-t border-stone-100">
-                <p class="font-serif italic text-xs text-amber-900 font-medium">
-                  “પ્રયયોજનં ચાસ્ય સ્વસ્થસ્ય સ્વાસ્થ્યરક્ષણં આતુરસ્ય વિકારપ્રશમનં ચ॥”
-                </p>
-                <p class="text-[10px] text-stone-400 mt-0.5">Protecting the health of the healthy & curing ailments of the diseased</p>
-              </div>
-
             </div>
           </div>
         </div>
@@ -325,136 +381,105 @@
     </div>
   </section>
 
-  <!-- ================= FEATURE 1: INTERACTIVE AYURVEDIC SYMPTOM CHECKER ================= -->
-  <section id="triage" class="py-16 sm:py-24 bg-white border-b border-stone-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      
-      <div class="text-center space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3.5 py-1 rounded-full border border-emerald-200">
-          Interactive Diagnostic Triage
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Ayurvedic Symptom & Dosha Imbalance Checker
-        </h2>
-        <p class="text-stone-600 text-sm max-w-2xl mx-auto">
-          Select any symptoms you are experiencing. Our clinical algorithm calculates your probable aggravated Dosha (*Vikriti*) and recommends Dr. Apkesha's classical therapeutic protocol.
-        </p>
-      </div>
-
-      <div class="bg-[#faf9f5] rounded-3xl p-6 sm:p-9 border border-stone-300 shadow-luxury-md space-y-6">
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-3">
-            Click to select your active symptoms:
-          </label>
-          <div id="symptomChipsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <!-- Injected by app.js -->
-          </div>
-        </div>
-
-        <div id="symptomTriageResult">
-          <!-- Dynamic Triage Result Injected Here -->
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= ABOUT DOCTOR SECTION ================= -->
-  <section id="about" class="py-16 sm:py-24 bg-[#faf9f5] border-b border-stone-200">
+  <!-- ================= SECTION B: DOCTOR INTRODUCTION ================= -->
+  <section id="about" class="py-16 sm:py-24 bg-white border-b border-beige">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Image / Aesthetic Column -->
+        <!-- Left Column: Doctor Profile Card -->
         <div class="lg:col-span-5 space-y-4">
-          <div class="relative bg-gradient-to-br from-emerald-950 via-[#133e2f] to-stone-900 rounded-3xl p-8 sm:p-9 text-white shadow-luxury-lg overflow-hidden border border-emerald-800/30">
-            <div class="absolute -right-8 -bottom-8 opacity-10">
-              <i data-lucide="leaf" class="w-64 h-64"></i>
-            </div>
-            <div class="relative z-10 space-y-6">
-              <span class="inline-block px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs font-semibold">
-                Clinical Philosophy
-              </span>
-              <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">
-                “True health is not merely the absence of disease, but a balanced Agni, harmonious Tridoshas, and a peaceful mind.”
-              </h3>
-              <div class="space-y-1 pt-4 border-t border-white/20">
-                <p class="font-bold text-base doc-name">Dr. Apkesha Patel</p>
-                <p class="text-xs text-emerald-200">B.A.M.S. • AYUSH Medical Officer (Govt. of Gujarat - PHC)</p>
-                <p class="text-xs text-amber-300 font-medium">Gujarat Board Reg: GAC-A/24891</p>
-              </div>
+          <div class="relative bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] rounded-3xl p-8 text-white shadow-luxury-md border border-gold/30">
+            <span class="inline-block px-3 py-1 rounded-full bg-gold/20 text-amber-200 border border-gold/30 text-xs font-semibold mb-4" data-i18n="introBadge">
+              Meet Your Doctor
+            </span>
+
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">
+              “True healing begins by identifying the root cause, respecting the body's natural intelligence, and restoring harmonious equilibrium.”
+            </h3>
+
+            <div class="space-y-1.5 pt-6 border-t border-white/20 mt-6">
+              <p class="font-serif text-xl font-bold doc-name">Dr. Apkesha Patel</p>
+              <p class="text-xs text-amber-200 font-semibold doc-degree">BAMS – Bachelor of Ayurvedic Medicine and Surgery</p>
+              <p class="text-xs text-stone-300">4–5 Years Healthcare Experience • Ex-AYUSH Medical Officer (Govt. PHC)</p>
+              <p class="text-[11px] text-stone-400 doc-regno font-mono pt-1">Gujarat Ayurvedic Board Reg: Available on Request</p>
             </div>
           </div>
 
-          <!-- Highlight Box -->
-          <div class="p-5 rounded-2xl bg-white border border-stone-200 space-y-2 shadow-2xs">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
-              <i data-lucide="award" class="w-4 h-4 text-amber-600"></i>
-              Why Her Active PHC Service Sets Her Apart
+          <!-- Ground-Level PHC Service Box -->
+          <div class="p-5 rounded-2xl bg-ivory border border-beige space-y-2 shadow-2xs">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-forest flex items-center gap-1.5">
+              <i data-lucide="award" class="w-4 h-4 text-gold"></i>
+              <span>Government Primary Health Centre Clinical Foundation</span>
             </h4>
             <p class="text-xs text-stone-600 leading-relaxed">
-              Dr. Apkesha is currently on active duty at a Government Primary Health Center (PHC) in Gujarat. Day after day, she examines a high volume of diverse patient presentations, sharpening her diagnostic skills across acute infections, complex metabolic disorders, chronic joint degenerations, and female reproductive issues.
+              Dr. Apkesha’s clinical practice was forged in the demanding, high-volume environment of a Government Primary Health Centre (PHC) in Gujarat. Diagnosing diverse patient cases across rural and semi-urban communities cultivated her keen diagnostic intuition and practical, sustainable treatment methods.
             </p>
           </div>
         </div>
 
-        <!-- Right: Story & Specializations -->
+        <!-- Right Column: Biography & Philosophy -->
         <div class="lg:col-span-7 space-y-6">
           <div class="space-y-2">
-            <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-              About Your Doctor
+            <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3 py-1 rounded-full border border-sage" data-i18n="introBadge">
+              Meet Your Doctor
             </span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-              Grassroots Clinical Experience Meets Classical Ayurvedic Science
+            <h2 data-i18n="introHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+              Empathetic, Root-Cause Healthcare Grounded in Classical Ayurveda
             </h2>
           </div>
 
           <div class="text-stone-700 text-sm sm:text-base leading-relaxed space-y-4">
-            <p class="doc-bio">
-              Dr. Apkesha Patel is a dedicated Ayurvedic Physician currently serving as an AYUSH Medical Officer under the Health and Family Welfare Department, Government of Gujarat. Having actively served for over 4 to 5 years at the government Primary Health Center (PHC) and diagnosed and treated more than 15,000 patients, she brings profound clinical diagnostic acumen, authentic Nadi Pariksha mastery, and evidence-backed classical Ayurvedic protocols to chronic ailments. Her practice bridges active frontline public health service with personalized holistic consultations, specializing in root-cause elimination (Hetu Viparita Chikitsa), individual Pathya-Apathya dietary therapy, and side-effect-free herbal remedies.
+            <p data-i18n="introBio1">
+              Dr. Apkesha Patel is an experienced Ayurvedic physician dedicated to providing patient-centered, root-cause healing. Having served as an AYUSH Medical Officer at a Government Primary Health Centre in Gujarat, she brings hands-on clinical acumen from treating a wide demographic of patients with diverse acute and chronic ailments.
             </p>
-            <p>
-              Her daily mornings are committed to serving community healthcare needs at the government PHC, while her evenings and dedicated teleconsultation hours provide patients with focused, in-depth Ayurvedic consultations.
+            <p data-i18n="introBio2">
+              Her healthcare philosophy treats the patient, not just the symptom. She formulates individualised therapeutic strategies incorporating classical Shastriya formulations, daily routine realignment (Dinacharya), and personalised dietary modifications (Pathya-Apathya).
             </p>
           </div>
 
-          <!-- 4 Pillars Grid -->
+          <!-- Four Core Clinical Pillars -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-4 rounded-2xl border border-stone-200 bg-white shadow-2xs space-y-1.5 card-hover-lift">
-              <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+            <div class="p-4 rounded-2xl border border-beige bg-ivory space-y-1.5 shadow-2xs card-hover-lift">
+              <div class="flex items-center gap-2 text-forest font-bold text-sm">
                 <i data-lucide="activity" class="w-4 h-4"></i>
-                <span>Nadi Pariksha Mastery</span>
+                <span>Classical Nadi Pariksha</span>
               </div>
-              <p class="text-xs text-stone-600 leading-relaxed">Accurate pulse diagnosis revealing imbalances before they manifest as chronic disease.</p>
+              <p class="text-xs text-stone-600 leading-relaxed">Traditional Ayurvedic pulse examination evaluating Tridoshic balance, organ vitality, and digestive fire.</p>
             </div>
 
-            <div class="p-4 rounded-2xl border border-stone-200 bg-white shadow-2xs space-y-1.5 card-hover-lift">
-              <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+            <div class="p-4 rounded-2xl border border-beige bg-ivory space-y-1.5 shadow-2xs card-hover-lift">
+              <div class="flex items-center gap-2 text-forest font-bold text-sm">
                 <i data-lucide="utensils" class="w-4 h-4"></i>
-                <span>Pathya-Apathya Diet Charts</span>
+                <span>Pathya-Apathya Nutrition</span>
               </div>
-              <p class="text-xs text-stone-600 leading-relaxed">Personalized dietary and lifestyle rules tailored to your unique Prakriti and metabolic capacity.</p>
+              <p class="text-xs text-stone-600 leading-relaxed">Practical dietary guidelines tailored to your specific constitutional Prakriti and family kitchen routines.</p>
             </div>
 
-            <div class="p-4 rounded-2xl border border-stone-200 bg-white shadow-2xs space-y-1.5 card-hover-lift">
-              <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+            <div class="p-4 rounded-2xl border border-beige bg-ivory space-y-1.5 shadow-2xs card-hover-lift">
+              <div class="flex items-center gap-2 text-forest font-bold text-sm">
                 <i data-lucide="shield" class="w-4 h-4"></i>
-                <span>GMP-Certified Herbal Formulations</span>
+                <span>Standardized Herbal Formulations</span>
               </div>
-              <p class="text-xs text-stone-600 leading-relaxed">Strict classical Shastriya medicines, free from heavy-metal adulteration or toxic chemicals.</p>
+              <p class="text-xs text-stone-600 leading-relaxed">Classical Shastriya herbs formulated according to strict Ayurvedic pharmacopoeial standards.</p>
             </div>
 
-            <div class="p-4 rounded-2xl border border-stone-200 bg-white shadow-2xs space-y-1.5 card-hover-lift">
-              <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
-                <i data-lucide="phone-call" class="w-4 h-4"></i>
-                <span>Direct Follow-Up Care</span>
+            <div class="p-4 rounded-2xl border border-beige bg-ivory space-y-1.5 shadow-2xs card-hover-lift">
+              <div class="flex items-center gap-2 text-forest font-bold text-sm">
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>Trilingual Accessibility</span>
               </div>
-              <p class="text-xs text-stone-600 leading-relaxed">Direct WhatsApp access on +91 83476 75394 for progress reviews and dosage guidance.</p>
+              <p class="text-xs text-stone-600 leading-relaxed">Comfortable consultations in Gujarati (ગુજરાતી), Hindi (हिन्दी), and English.</p>
             </div>
           </div>
 
-          <div class="pt-2">
-            <a href="#book-appointment" class="inline-flex items-center gap-2 font-bold text-emerald-800 hover:text-emerald-950 text-sm">
-              <span>Schedule a 1-on-1 Consultation with Dr. Apkesha</span>
+          <!-- CTA: Read My Story -->
+          <div class="pt-2 flex items-center gap-4">
+            <button onclick="openDoctorStoryModal()" class="py-3 px-6 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+              <span data-i18n="introBtnStory">Read My Story</span>
+              <i data-lucide="book-open" class="w-4 h-4 text-gold"></i>
+            </button>
+            <a href="#book-appointment" class="text-xs sm:text-sm font-bold text-forest hover:underline flex items-center gap-1.5">
+              <span data-i18n="btnBookNow">Book Consultation</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
@@ -465,231 +490,114 @@
     </div>
   </section>
 
-  <!-- ================= TREATMENTS & SPECIALIZATIONS WITH LIVE SEARCH ================= -->
-  <section id="treatments" class="py-16 sm:py-24 bg-white border-b border-stone-200">
+  <!-- ================= SECTION C: CONSULTATION SERVICES (6 VERIFIED CATEGORIES) ================= -->
+  <section id="services" class="py-16 sm:py-24 bg-luxury-mesh border-b border-beige">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Specialized Clinical Care
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="servicesBadge">
+          Consultation Services
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Chronic Conditions Treated with Classical Ayurvedic Protocols
+        <h2 data-i18n="servicesHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Personalised Ayurvedic Consultations
         </h2>
-        <p class="text-stone-600 text-sm sm:text-base">
-          Root-cause healing protocols developed and refined over 4 to 5 years of active government clinical practice. Search any condition or use the category filters below.
+        <p data-i18n="servicesSub" class="text-stone-600 text-sm sm:text-base">
+          Ethical, individualised healthcare guidance tailored to your unique Prakriti (constitution) and health history.
         </p>
       </div>
 
-      <!-- Real-Time Search Bar -->
-      <div class="max-w-xl mx-auto relative">
-        <i data-lucide="search" class="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
-        <input type="text" id="treatmentSearchInput" placeholder="Search by ailment, symptom or herb (e.g. Acidity, PCOD, Knee pain, Psoriasis)..." class="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-stone-300 bg-[#faf9f5] text-stone-900 text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none shadow-sm transition-all">
-      </div>
-
-      <!-- Treatment Filter Tabs -->
-      <div class="flex items-center justify-center gap-2 flex-wrap">
-        <button data-category="all" class="treatment-tab-btn cat-pill-active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-emerald-900 shadow-2xs">
-          All Conditions
-        </button>
-        <button data-category="digestive" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Digestive & Gut
-        </button>
-        <button data-category="joint" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Joints & Spine Pain
-        </button>
-        <button data-category="skin" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Skin & Hair
-        </button>
-        <button data-category="women" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Women's Hormonal Care
-        </button>
-        <button data-category="metabolic" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Diabetes & Lifestyle
-        </button>
-        <button data-category="respiratory" class="treatment-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border border-stone-200 bg-white text-stone-700 hover:border-emerald-700">
-          Respiratory & Allergies
-        </button>
-      </div>
-
-      <!-- Dynamic Treatments Grid (Rendered by app.js) -->
-      <div id="treatmentsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Treatments populated by app.js -->
-      </div>
-
-      <!-- Medicine Delivery Timeline Estimator Tool -->
-      <div class="bg-[#f5efe4] rounded-3xl p-6 sm:p-8 border border-stone-300 shadow-luxury-sm">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div class="md:col-span-7 space-y-1.5">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-950">Pharmacy Dispatch Tracker</span>
-            </div>
-            <h4 class="font-serif text-xl sm:text-2xl font-bold text-stone-900">Check Medicine Courier Timeline to Your City</h4>
-            <p class="text-xs text-stone-600">Authentic GMP-tested Shastriya formulations prepared at our clinic and delivered to your doorstep.</p>
-          </div>
-          <div class="md:col-span-5 space-y-2">
-            <div class="flex gap-2">
-              <input type="text" id="deliveryPincodeInput" placeholder="Enter Pincode or City..." class="flex-1 px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-              <button onclick="estimateDeliveryTimeline()" class="px-4 py-2.5 rounded-xl bg-emerald-900 text-white font-bold text-xs hover:bg-emerald-950 transition-colors">
-                Check
-              </button>
-            </div>
-            <div id="deliveryEstimateResult"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= PRAKRITI (DOSHA) ASSESSMENT QUIZ ================= -->
-  <section id="prakriti-quiz" class="py-16 sm:py-24 bg-[#faf9f5] border-b border-stone-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      
-      <div class="text-center space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Self-Discovery Tool
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Discover Your Ayurvedic Prakriti (Dosha Constitution)
-        </h2>
-        <p class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto">
-          In Ayurveda, every human being is born with a unique proportion of the three biological energies: <strong class="text-blue-700">Vata</strong> (Air & Ether), <strong class="text-amber-700">Pitta</strong> (Fire & Water), and <strong class="text-emerald-800">Kapha</strong> (Earth & Water). Answer 6 clinical questions to determine your dominant constitution and ideal lifestyle.
-        </p>
-      </div>
-
-      <!-- Quiz Card Container (Rendered by app.js) -->
-      <div id="prakritiQuizCard" class="bg-white rounded-3xl p-6 sm:p-9 border border-stone-300 shadow-luxury-md">
+      <!-- Services Grid (Rendered by app.js based on selected language) -->
+      <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Injected dynamically by app.js -->
       </div>
 
     </div>
   </section>
 
-  <!-- ================= FEATURE 3: DAILY DINACHARYA (AYURVEDIC ROUTINE) GENERATOR ================= -->
-  <section id="dinacharya" class="py-16 sm:py-24 bg-white border-b border-stone-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      
-      <div class="text-center space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Circadian Rhythm & Vitality
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Personalized Dinacharya (Ayurvedic Daily Routine)
-        </h2>
-        <p class="text-stone-600 text-sm max-w-2xl mx-auto">
-          Synchronize your internal clock with nature. Choose your natural wake-up time to generate your personalized Ayurvedic daily schedule according to *Ashtanga Hridaya*.
-        </p>
-      </div>
-
-      <!-- Wake up selector -->
-      <div class="flex items-center justify-center gap-3 bg-[#faf9f5] p-3.5 rounded-2xl border border-stone-200 max-w-md mx-auto">
-        <label for="wakeTimeSelect" class="text-xs font-bold text-stone-700 flex items-center gap-1.5">
-          <i data-lucide="sun" class="w-4 h-4 text-amber-600"></i> My Wake-Up Time:
-        </label>
-        <select id="wakeTimeSelect" class="px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs font-bold text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-700">
-          <option value="5">5:00 AM (Brahma Muhurta)</option>
-          <option value="6" selected>6:00 AM (Recommended)</option>
-          <option value="7">7:00 AM (Sunrise)</option>
-          <option value="8">8:00 AM</option>
-        </select>
-      </div>
-
-      <!-- Dinacharya Timeline (Rendered by app.js) -->
-      <div id="dinacharyaContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-        <!-- Rendered by app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= WHY AYURVEDA & CLINICAL PHILOSOPHY ================= -->
-  <section id="why-ayurveda" class="py-16 sm:py-24 bg-[#faf9f5] border-b border-stone-200">
+  <!-- ================= SECTION D: WHY CONSULT WITH THIS DOCTOR? ================= -->
+  <section id="why-consult" class="py-16 sm:py-24 bg-white border-b border-beige">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          The Ayurvedic Difference
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="whyBadge">
+          Why Choose Dr. Apkesha
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Root Cause Elimination vs. Symptom Masking
+        <h2 data-i18n="whyHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Genuine Clinical Strengths You Can Rely On
         </h2>
-        <p class="text-stone-600 text-sm sm:text-base">
-          Why thousands of patients in Gujarat choose classical Ayurveda after years of temporary relief with antacids, painkillers, or hormonal pills.
+        <p data-i18n="whySub" class="text-stone-600 text-sm sm:text-base">
+          Our practice is built on transparency, rigorous medical ethics, and authentic Ayurvedic science.
         </p>
       </div>
 
-      <!-- Comparison Table / Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 6 Genuine Professional Strengths Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Conventional Symptomatic Approach -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-luxury-sm space-y-5">
-          <div class="flex items-center gap-3.5 pb-4 border-b border-stone-100">
-            <div class="w-10 h-10 rounded-2xl bg-red-100 text-red-700 flex items-center justify-center font-bold">
-              <i data-lucide="x" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-stone-900">Temporary Symptom Masking</h3>
-              <p class="text-xs text-stone-500">Generic pharmaceutical approach</p>
-            </div>
+        <!-- Strength 1 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="clock" class="w-6 h-6"></i>
           </div>
-
-          <ul class="space-y-3 text-xs sm:text-sm text-stone-600">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="x-circle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-              <span>Treats only the outward manifestation (e.g., antacid for acid reflux, painkiller for arthritis).</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="x-circle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-              <span>High dependency; symptoms immediately rebound once the daily tablet is discontinued.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="x-circle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-              <span>Potential risk of side effects on liver, kidneys, and gut microbiome with chronic usage.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="x-circle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-              <span>One-size-fits-all dosage without considering individual digestion (Agni) or body build.</span>
-            </li>
-          </ul>
+          <h3 data-i18n="why1Title" class="font-serif text-xl font-bold text-charcoal">4–5 Years Healthcare Experience</h3>
+          <p data-i18n="why1Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Solid clinical tenure treating thousands of patients across primary and specialized healthcare setups.
+          </p>
         </div>
 
-        <!-- Classical Ayurvedic Approach -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-emerald-900 shadow-luxury-md space-y-5 relative">
-          <span class="absolute -top-3 right-6 bg-emerald-900 text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
-            Dr. Apkesha's Protocol
-          </span>
-
-          <div class="flex items-center gap-3.5 pb-4 border-b border-stone-100">
-            <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
-              <i data-lucide="check" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-stone-900">Hetu Viparita Chikitsa (Root-Cause Cure)</h3>
-              <p class="text-xs text-stone-500">Evidence-informed classical Ayurveda</p>
-            </div>
+        <!-- Strength 2 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="building-2" class="w-6 h-6"></i>
           </div>
+          <h3 data-i18n="why2Title" class="font-serif text-xl font-bold text-charcoal">Government PHC Background</h3>
+          <p data-i18n="why2Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Grassroots public healthcare service as an AYUSH Medical Officer in Gujarat, providing deep diagnostic acumen.
+          </p>
+        </div>
 
-          <ul class="space-y-3 text-xs sm:text-sm text-stone-700">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"></i>
-              <span>Identifies why the imbalance occurred in the first place (Ama buildup, weak digestive fire, Tridosha disturbance).</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"></i>
-              <span>Long-term, sustainable relief aimed at weaning off medicines as natural vitality returns.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"></i>
-              <span>100% natural herbal decoctions, Ghritas, and Rasayanas that protect and revitalize internal organs.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"></i>
-              <span>Deeply individualized: customized Pathya-Apathya food combinations for your exact Prakriti.</span>
-            </li>
-          </ul>
+        <!-- Strength 3 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="why3Title" class="font-serif text-xl font-bold text-charcoal">Recognised BAMS Qualification</h3>
+          <p data-i18n="why3Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Degree in Bachelor of Ayurvedic Medicine & Surgery with comprehensive training in classical herbal pharmacology.
+          </p>
+        </div>
+
+        <!-- Strength 4 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="user-check" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="why4Title" class="font-serif text-xl font-bold text-charcoal">Individualised Consultations</h3>
+          <p data-i18n="why4Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            No generic pre-packaged kits. Every patient receives a customised lifestyle, dietary, and herbal prescription.
+          </p>
+        </div>
+
+        <!-- Strength 5 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="why5Title" class="font-serif text-xl font-bold text-charcoal">Patient-Focused Approach</h3>
+          <p data-i18n="why5Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Empathetic listening, clear explanations of root causes, and compassionate ongoing clinical guidance.
+          </p>
+        </div>
+
+        <!-- Strength 6 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3.5 card-hover-lift">
+          <div class="w-12 h-12 rounded-2xl bg-forest/10 text-forest flex items-center justify-center font-bold">
+            <i data-lucide="languages" class="w-6 h-6"></i>
+          </div>
+          <h3 data-i18n="why6Title" class="font-serif text-xl font-bold text-charcoal">Trilingual Clear Communication</h3>
+          <p data-i18n="why6Desc" class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Comfortably consult in Gujarati, Hindi, or English so you and your family feel completely understood.
+          </p>
         </div>
 
       </div>
@@ -697,66 +605,345 @@
     </div>
   </section>
 
-  <!-- ================= APPOINTMENT BOOKING SECTION ================= -->
-  <section id="book-appointment" class="py-16 sm:py-24 bg-white border-b border-stone-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+  <!-- ================= SECTION E: ONLINE AND OFFLINE CONSULTATIONS ================= -->
+  <section id="consultation-modes" class="py-16 sm:py-24 bg-luxury-mesh border-b border-beige">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <!-- Section Header -->
-      <div class="text-center space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Direct Patient Intake
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="modesBadge">
+          Consultation Modes
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Book Your Consultation with Dr. Apkesha Patel
+        <h2 data-i18n="modesHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Convenient Online & In-Person Consultations
         </h2>
-        <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto">
-          Consult during Evening In-Clinic OPD in Gandhinagar, Gujarat or via a high-definition video call from the comfort of your home.
+        <p data-i18n="modesSub" class="text-stone-600 text-sm sm:text-base">
+          Choose the consultation setting that best suits your lifestyle and location.
         </p>
       </div>
 
-      <!-- Booking Card -->
-      <div class="bg-[#faf9f5] rounded-3xl p-6 sm:p-10 border border-stone-300 shadow-luxury-md">
+      <!-- Two Prominent Consultation Options Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Option 1: Online Consultation -->
+        <div class="bg-white rounded-3xl p-7 sm:p-9 border-2 border-forest/20 shadow-luxury-md flex flex-col justify-between space-y-6 relative card-hover-lift">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                <i data-lucide="video" class="w-6 h-6"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-bold doc-online-fee">
+                ₹600
+              </span>
+            </div>
+
+            <div>
+              <h3 data-i18n="onlineTitle" class="font-serif text-2xl font-bold text-charcoal">Online Consultation</h3>
+              <p data-i18n="onlineSub" class="text-xs sm:text-sm text-stone-600 mt-1">Convenient remote healthcare from anywhere in the world</p>
+            </div>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-700">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span data-i18n="onlineStep1">Submit appointment request with your preferred time slot</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span data-i18n="onlineStep2">Receive confirmation via WhatsApp or phone call</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span data-i18n="onlineStep3">Join a high-definition 1-on-1 video or voice consultation</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span data-i18n="onlineStep4">Receive digital prescription & dietary guidance via WhatsApp/Email</span>
+              </li>
+            </ul>
+
+            <div class="p-3.5 rounded-xl bg-ivory border border-beige text-xs text-stone-600">
+              <strong class="text-charcoal block font-semibold">Online Video Hours:</strong>
+              <span class="doc-tele-timings">Daily: 2:00 PM – 4:30 PM & 8:30 PM – 9:30 PM (Pan-India & Worldwide)</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row gap-3">
+            <a href="#book-appointment" onclick="document.querySelector('input[value=\'online\']').checked = true; updateTimeSlotsUI(); updateBookingFeeLabel();" class="flex-1 py-3 px-4 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-sm text-center shadow-md transition-all">
+              <span data-i18n="onlineBtn">Request Online Consultation</span>
+            </a>
+            <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-3 px-4 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-forest font-bold text-xs sm:text-sm text-center flex items-center justify-center gap-1.5 shadow-2xs">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
+              <span data-i18n="btnWhatsApp">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Option 2: Offline / In-Person Consultation -->
+        <div class="bg-white rounded-3xl p-7 sm:p-9 border-2 border-forest shadow-luxury-md flex flex-col justify-between space-y-6 relative card-hover-lift">
+          <span class="absolute -top-3 right-6 bg-forest text-ivory text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs">
+            Lunawada, Gujarat
+          </span>
+
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-forest flex items-center justify-center font-bold">
+                <i data-lucide="building-2" class="w-6 h-6"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-sage-soft text-forest border border-sage text-xs font-bold doc-inclinic-fee">
+                ₹500
+              </span>
+            </div>
+
+            <div>
+              <h3 data-i18n="offlineTitle" class="font-serif text-2xl font-bold text-charcoal">In-Person Consultation</h3>
+              <p data-i18n="offlineSub" class="text-xs sm:text-sm text-stone-600 mt-1">Direct clinical pulse diagnosis in Lunawada, Gujarat</p>
+            </div>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-stone-700">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span><strong class="text-charcoal font-semibold">Location:</strong> <span class="doc-address" data-i18n="offlineLoc">Lunawada, Mahisagar, Gujarat 389230</span></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="clock" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span><strong class="text-charcoal font-semibold">Timings:</strong> <span class="doc-opd-timings" data-i18n="offlineTiming">Evening Hours & Sundays (By Prior Appointment)</span></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="activity" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span data-i18n="offlineNote">Complete physical examination & personalized pulse examination (Nadi Pariksha)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="phone-call" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+                <span><strong class="text-charcoal font-semibold">Reception:</strong> <a href="tel:+918347675394" class="doc-phone-link font-bold text-forest hover:underline doc-phone">+91 83476 75394</a></span>
+              </li>
+            </ul>
+
+            <div class="p-3.5 rounded-xl bg-ivory border border-beige text-xs text-stone-600">
+              <strong class="text-charcoal block font-semibold">Clinic Protocol:</strong>
+              <span>To ensure personalized attention and zero waiting time, clinic visits are arranged by prior scheduled appointment.</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row gap-3">
+            <a href="#book-appointment" onclick="document.querySelector('input[value=\'clinic\']').checked = true; updateTimeSlotsUI(); updateBookingFeeLabel();" class="flex-1 py-3 px-4 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-sm text-center shadow-md transition-all">
+              <span data-i18n="offlineBtn">Request In-Person Consultation</span>
+            </a>
+            <a href="https://maps.google.com/?q=Lunawada+Mahisagar+Gujarat+389230" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-charcoal font-bold text-xs sm:text-sm text-center flex items-center justify-center gap-1.5 shadow-2xs">
+              <i data-lucide="navigation" class="w-4 h-4 text-forest"></i>
+              <span>Directions</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION F: HOW IT WORKS (4 STEPS) ================= -->
+  <section id="how-it-works" class="py-16 sm:py-24 bg-white border-b border-beige">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="howBadge">
+          Process
+        </span>
+        <h2 data-i18n="howHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          How Your Consultation Works
+        </h2>
+        <p data-i18n="howSub" class="text-stone-600 text-sm sm:text-base">
+          A simple four-step pathway to authentic Ayurvedic guidance.
+        </p>
+      </div>
+
+      <!-- 4 Steps Flow Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3 relative card-hover-lift">
+          <div class="w-10 h-10 rounded-2xl bg-forest text-ivory flex items-center justify-center font-bold text-sm">
+            1
+          </div>
+          <h3 data-i18n="how1Title" class="font-serif text-lg font-bold text-charcoal">1. Choose Consultation Type</h3>
+          <p data-i18n="how1Desc" class="text-xs text-stone-600 leading-relaxed">
+            Select Online Video Consultation or In-Person visit at Lunawada, Gujarat.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3 relative card-hover-lift">
+          <div class="w-10 h-10 rounded-2xl bg-forest text-ivory flex items-center justify-center font-bold text-sm">
+            2
+          </div>
+          <h3 data-i18n="how2Title" class="font-serif text-lg font-bold text-charcoal">2. Request an Appointment</h3>
+          <p data-i18n="how2Desc" class="text-xs text-stone-600 leading-relaxed">
+            Fill in your details, preferred date, time slot, and health concern in our booking form.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3 relative card-hover-lift">
+          <div class="w-10 h-10 rounded-2xl bg-forest text-ivory flex items-center justify-center font-bold text-sm">
+            3
+          </div>
+          <h3 data-i18n="how3Title" class="font-serif text-lg font-bold text-charcoal">3. Appointment Confirmation</h3>
+          <p data-i18n="how3Desc" class="text-xs text-stone-600 leading-relaxed">
+            Dr. Apkesha's desk reviews the schedule and confirms your exact slot via WhatsApp/call.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-ivory rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-3 relative card-hover-lift">
+          <div class="w-10 h-10 rounded-2xl bg-forest text-ivory flex items-center justify-center font-bold text-sm">
+            4
+          </div>
+          <h3 data-i18n="how4Title" class="font-serif text-lg font-bold text-charcoal">4. Attend Consultation</h3>
+          <p data-i18n="how4Desc" class="text-xs text-stone-600 leading-relaxed">
+            Discuss your health in detail and receive an evidence-informed Ayurvedic protocol.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION G: PATIENT TESTIMONIALS / FEEDBACK INVITATION ================= -->
+  <section id="patient-feedback" class="py-16 sm:py-24 bg-luxury-mesh border-b border-beige">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="feedbackBadge">
+          Patient Care
+        </span>
+        <h2 data-i18n="feedbackHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Patient Feedback & Experience
+        </h2>
+        <p data-i18n="feedbackDesc" class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          We value honest patient relationships. Having treated thousands of patients during government PHC service and private practice, Dr. Apkesha is committed to ethical medical guidance without unverified miracle claims.
+        </p>
+      </div>
+
+      <!-- Grounded Patient Experience Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-4 flex flex-col justify-between card-hover-lift">
+          <p data-i18n="feedbackCard1" class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
+            “Compassionate listening and very practical dietary advice that actually fit into our family's daily cooking routine.”
+          </p>
+          <div class="pt-3 border-t border-stone-100 text-xs">
+            <span data-i18n="feedbackCard1Author" class="text-stone-500 font-medium block">Patient feedback from Mahisagar district</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-4 flex flex-col justify-between card-hover-lift">
+          <p data-i18n="feedbackCard2" class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
+            “Clear explanations of why my digestion was sluggish. The herbal formulations provided steady, side-effect-free relief.”
+          </p>
+          <div class="pt-3 border-t border-stone-100 text-xs">
+            <span data-i18n="feedbackCard2Author" class="text-stone-500 font-medium block">Online consultation patient from Gujarat</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-beige shadow-luxury-sm space-y-4 flex flex-col justify-between card-hover-lift">
+          <p data-i18n="feedbackCard3" class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
+            “Honest and transparent consultation. Dr. Apkesha takes time to understand the root cause rather than rushing.”
+          </p>
+          <div class="pt-3 border-t border-stone-100 text-xs">
+            <span data-i18n="feedbackCard3Author" class="text-stone-500 font-medium block">In-person consultation patient</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Transparent Feedback Invitation -->
+      <div class="text-center pt-2">
+        <p class="text-xs text-stone-500">
+          <span data-i18n="feedbackInvite">Are you a patient of Dr. Apkesha Patel? We welcome your authentic feedback.</span>
+          <a href="https://wa.me/918347675394" target="_blank" class="text-forest hover:underline font-bold ml-1">Send a note on WhatsApp</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION H: FREQUENTLY ASKED QUESTIONS (FAQ) ================= -->
+  <section id="faqs" class="py-16 sm:py-24 bg-white border-b border-beige">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="text-center space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="faqBadge">
+          Frequently Asked Questions
+        </span>
+        <h2 data-i18n="faqHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Clear Answers to Common Questions
+        </h2>
+        <p data-i18n="faqSub" class="text-stone-600 text-sm sm:text-base">
+          Everything you need to know about booking, consultations, and our medical practice.
+        </p>
+      </div>
+
+      <!-- FAQ Accordion Container (Rendered by app.js based on active language) -->
+      <div id="faqsAccordion" class="space-y-4">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: APPOINTMENT REQUEST SYSTEM ================= -->
+  <section id="book-appointment" class="py-16 sm:py-24 bg-luxury-mesh border-b border-beige">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="formBadge">
+          Appointment Request System
+        </span>
+        <h2 data-i18n="formHeading" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Request a Consultation with Dr. Apkesha Patel
+        </h2>
+        <p data-i18n="formSub" class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+          Submit your details below. Note: This submits an appointment request; your slot will be personally confirmed by Dr. Apkesha via WhatsApp or phone call.
+        </p>
+      </div>
+
+      <!-- Booking Card Form -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-beige shadow-luxury-md">
         <form id="appointmentForm" class="space-y-8">
           
-          <!-- Mode Selector (In-Clinic vs Online Video) -->
+          <!-- Step 1: Mode Selector (Online vs In-Person) -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-3">
-              Step 1: Choose Consultation Mode
+            <label class="block text-xs font-bold uppercase tracking-wider text-charcoal mb-3" data-i18n="formModeTitle">
+              Step 1: Choose Consultation Type *
             </label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
-              <!-- In-Clinic -->
+              <!-- Online Video / Audio -->
               <label class="relative cursor-pointer">
-                <input type="radio" name="consultationMode" value="clinic" class="sr-only peer" checked>
-                <div class="p-5 rounded-2xl border-2 border-stone-200 bg-white peer-checked:border-emerald-800 peer-checked:bg-emerald-50/50 peer-checked:shadow-md transition-all flex items-start gap-4">
-                  <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <i data-lucide="building-2" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <div class="flex items-center gap-2">
-                      <strong class="text-stone-900 text-sm font-bold">In-Clinic Evening OPD</strong>
-                      <span class="text-[10px] font-bold px-2 py-0.5 bg-emerald-800 text-white rounded-full doc-inclinic-fee">₹500</span>
-                    </div>
-                    <p class="text-xs text-stone-600 mt-1">Direct Nadi Pariksha & physical pulse diagnosis at Gandhinagar clinic.</p>
-                    <span class="text-[11px] text-emerald-800 font-semibold mt-1 block">Timings: Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00 PM</span>
-                  </div>
-                </div>
-              </label>
-
-              <!-- Online Video -->
-              <label class="relative cursor-pointer">
-                <input type="radio" name="consultationMode" value="online" class="sr-only peer">
-                <div class="p-5 rounded-2xl border-2 border-stone-200 bg-white peer-checked:border-emerald-800 peer-checked:bg-emerald-50/50 peer-checked:shadow-md transition-all flex items-start gap-4">
+                <input type="radio" name="consultationMode" value="online" class="sr-only peer" checked>
+                <div class="p-5 rounded-2xl border-2 border-stone-200 bg-ivory/50 peer-checked:border-forest peer-checked:bg-sage-soft/60 peer-checked:shadow-sm transition-all flex items-start gap-4">
                   <div class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <i data-lucide="video" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <div class="flex items-center gap-2">
-                      <strong class="text-stone-900 text-sm font-bold">Online Video Consultation</strong>
-                      <span class="text-[10px] font-bold px-2 py-0.5 bg-amber-700 text-white rounded-full doc-online-fee">₹600</span>
-                    </div>
-                    <p class="text-xs text-stone-600 mt-1">Google Meet / WhatsApp Video Call for patients across India & worldwide.</p>
-                    <span class="text-[11px] text-amber-900 font-semibold mt-1 block">Timings: Daily: 2:00 PM – 4:30 PM & 8:30 PM – 9:30 PM</span>
+                    <strong class="text-charcoal text-sm font-bold block" data-i18n="formModeOnline">Online Video / Audio Consultation</strong>
+                    <span class="text-xs font-semibold text-forest mt-0.5 block" data-i18n="formModeOnlineFee">₹600 • Video/Audio Link Provided</span>
+                    <span class="text-[11px] text-stone-500 mt-1 block">Google Meet or WhatsApp video call</span>
+                  </div>
+                </div>
+              </label>
+
+              <!-- In-Person Lunawada Clinic -->
+              <label class="relative cursor-pointer">
+                <input type="radio" name="consultationMode" value="clinic" class="sr-only peer">
+                <div class="p-5 rounded-2xl border-2 border-stone-200 bg-ivory/50 peer-checked:border-forest peer-checked:bg-sage-soft/60 peer-checked:shadow-sm transition-all flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <strong class="text-charcoal text-sm font-bold block" data-i18n="formModeOffline">In-Person Consultation (Lunawada)</strong>
+                    <span class="text-xs font-semibold text-forest mt-0.5 block" data-i18n="formModeOfflineFee">₹500 • Lunawada, Mahisagar Clinic</span>
+                    <span class="text-[11px] text-stone-500 mt-1 block">Complete physical pulse examination (Nadi Pariksha)</span>
                   </div>
                 </div>
               </label>
@@ -764,113 +951,116 @@
             </div>
           </div>
 
-          <!-- Date & Time Slot -->
+          <!-- Step 2 & 3: Date & Concern -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- Date Picker -->
+            <!-- Preferred Date -->
             <div>
-              <label for="appointmentDate" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
-                Step 2: Preferred Appointment Date *
+              <label for="appointmentDate" class="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2" data-i18n="formStep2">
+                Step 2: Preferred Date *
               </label>
-              <input type="date" id="appointmentDate" name="appointmentDate" required class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-              <p class="text-[11px] text-stone-500 mt-1">Morning slots on weekdays are dedicated to Govt. PHC public healthcare duty.</p>
+              <input type="date" id="appointmentDate" name="appointmentDate" required class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-ivory text-charcoal text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+              <p class="text-[11px] text-stone-500 mt-1">Please select today or a future date for your preferred consultation.</p>
             </div>
 
-            <!-- Health Concern Dropdown -->
+            <!-- Health Concern Category -->
             <div>
-              <label for="healthConcern" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              <label for="healthConcern" class="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2" data-i18n="formStep3">
                 Step 3: Primary Health Concern *
               </label>
-              <select id="healthConcern" name="healthConcern" required class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-                <option value="digestive">Digestive & Gut Health (Acidity, IBS, Constipation, GERD)</option>
-                <option value="joint">Joint Pain & Spine (Arthritis, Sciatica, Spondylosis)</option>
-                <option value="skin">Skin & Hair Care (Psoriasis, Eczema, Acne, Hair Fall)</option>
-                <option value="women">Women's Health (PCOD/PCOS, Hormones, Periods)</option>
-                <option value="metabolic">Diabetes & Metabolic Syndrome (Type 2, Lipids)</option>
-                <option value="respiratory">Respiratory & Allergies (Asthma, Sinusitis)</option>
-                <option value="stress">Stress, Insomnia & Mental Exhaustion</option>
-                <option value="panchakarma">Panchakarma Detox & Rejuvenation</option>
-                <option value="general">General Ayurvedic Health Consultation</option>
-                <option value="other">Other Chronic Condition</option>
+              <select id="healthConcern" name="healthConcern" required class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-ivory text-charcoal text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+                <option value="general">General Ayurvedic Health & Preventative Wellness</option>
+                <option value="lifestyle">Lifestyle & Daily Routine Guidance (Dinacharya)</option>
+                <option value="digestive">Digestive Health (Acidity, Bloating, IBS, Constipation)</option>
+                <option value="joint">Joint Pain & Musculoskeletal Health (Arthritis, Back Pain)</option>
+                <option value="women">Women's Health & Hormonal Balance (PCOD/Periods)</option>
+                <option value="stress">Stress, Burnout & Sleep Management</option>
+                <option value="other">Other Health Concern</option>
               </select>
             </div>
 
           </div>
 
-          <!-- Time Slots (Dynamically populated based on mode) -->
+          <!-- Step 4: Time Slots -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
-              Step 4: Select Preferred Time Slot *
+            <label class="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2" data-i18n="formStep4">
+              Step 4: Preferred Time Slot *
             </label>
-            <div id="timeSlotsContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <!-- Rendered by app.js -->
+            <div id="timeSlotsContainer" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <!-- Dynamically populated by app.js -->
             </div>
           </div>
 
-          <!-- Patient Personal Details -->
+          <!-- Step 5: Patient Details -->
           <div class="space-y-4 pt-4 border-t border-stone-200">
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700">
-              Step 5: Patient Details
+            <label class="block text-xs font-bold uppercase tracking-wider text-charcoal" data-i18n="formStep5">
+              Step 5: Patient Information
             </label>
             
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="patientName" class="block text-xs text-stone-600 mb-1">Full Name *</label>
-                <input type="text" id="patientName" name="patientName" placeholder="e.g. Ramesh Patel" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                <label for="patientName" class="block text-xs text-stone-700 font-semibold mb-1" data-i18n="lblName">
+                  Patient Full Name *
+                </label>
+                <input type="text" id="patientName" name="patientName" placeholder="e.g. Ramesh Patel" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-ivory text-sm focus:ring-2 focus:ring-forest focus:outline-none">
               </div>
 
               <div>
-                <label for="patientPhone" class="block text-xs text-stone-600 mb-1">WhatsApp / Phone Number *</label>
-                <input type="tel" id="patientPhone" name="patientPhone" placeholder="e.g. 9876543210" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-              </div>
-
-              <div>
-                <label for="patientEmail" class="block text-xs text-stone-600 mb-1">Email Address</label>
-                <input type="email" id="patientEmail" name="patientEmail" placeholder="e.g. ramesh@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                <label for="patientPhone" class="block text-xs text-stone-700 font-semibold mb-1" data-i18n="lblPhone">
+                  Mobile Number (WhatsApp Preferred) *
+                </label>
+                <input type="tel" id="patientPhone" name="patientPhone" placeholder="10-digit mobile number" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-ivory text-sm focus:ring-2 focus:ring-forest focus:outline-none">
               </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="patientAge" class="block text-xs text-stone-600 mb-1">Age *</label>
-                <input type="number" id="patientAge" name="patientAge" min="1" max="110" placeholder="e.g. 38" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-              </div>
-
-              <div>
-                <label for="patientGender" class="block text-xs text-stone-600 mb-1">Gender *</label>
-                <select id="patientGender" name="patientGender" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
-                  <option value="Female">Female</option>
-                  <option value="Male">Male</option>
-                  <option value="Other">Other</option>
+                <label for="patientLang" class="block text-xs text-stone-700 font-semibold mb-1" data-i18n="lblLang">
+                  Preferred Consultation Language *
+                </label>
+                <select id="patientLang" name="patientLang" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-ivory text-sm focus:ring-2 focus:ring-forest focus:outline-none">
+                  <option value="English">English</option>
+                  <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                  <option value="Hindi">Hindi (हिन्दी)</option>
                 </select>
               </div>
 
               <div>
-                <label for="patientCity" class="block text-xs text-stone-600 mb-1">City / Town *</label>
-                <input type="text" id="patientCity" name="patientCity" placeholder="e.g. Ahmedabad, Gujarat" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none">
+                <label for="patientEmail" class="block text-xs text-stone-700 font-semibold mb-1" data-i18n="lblEmail">
+                  Email Address (Optional)
+                </label>
+                <input type="email" id="patientEmail" name="patientEmail" placeholder="e.g. ramesh@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-ivory text-sm focus:ring-2 focus:ring-forest focus:outline-none">
               </div>
             </div>
 
             <div>
-              <label for="patientNotes" class="block text-xs text-stone-600 mb-1">
-                Brief Description of Symptoms / Previous Treatments (Optional)
+              <label for="patientNotes" class="block text-xs text-stone-700 font-semibold mb-1" data-i18n="lblReason">
+                Brief Reason for Consultation (Optional)
               </label>
-              <textarea id="patientNotes" name="patientNotes" rows="3" placeholder="Describe how long you've had this condition, any current medications (allopathic/ayurvedic), or past reports..." class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm focus:ring-2 focus:ring-emerald-700 focus:outline-none"></textarea>
+              <textarea id="patientNotes" name="patientNotes" rows="3" placeholder="Describe symptoms or how long you have experienced this issue..." class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-ivory text-sm focus:ring-2 focus:ring-forest focus:outline-none"></textarea>
             </div>
           </div>
 
-          <!-- Summary & Submit Button -->
+          <!-- Privacy Notice -->
+          <div class="p-3.5 rounded-xl bg-ivory border border-beige text-[11px] text-stone-600 flex items-start gap-2.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-forest flex-shrink-0 mt-0.5"></i>
+            <span data-i18n="formNotice">
+              Medical Privacy Notice: Information submitted here is strictly confidential and used exclusively for your consultation schedule.
+            </span>
+          </div>
+
+          <!-- Submission & Fee Summary -->
           <div class="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="text-xs text-stone-600">
-              <span class="block text-stone-400 font-semibold uppercase text-[10px]">Selected Mode & Fee:</span>
-              <strong id="bookingModeLabel" class="text-stone-900 font-bold text-sm">In-Clinic Evening OPD (Gandhinagar)</strong> — 
-              <span id="bookingModeFee" class="text-emerald-900 font-bold text-base">₹500</span>
-              <span class="text-stone-500 block text-[11px] mt-0.5">Payable at clinic or online via UPI/GPay at time of visit.</span>
+            <div class="text-xs text-stone-600 text-center sm:text-left">
+              <span class="block text-stone-400 font-semibold uppercase text-[10px]">Selected Type & Fee:</span>
+              <strong id="bookingModeLabel" class="text-charcoal font-bold text-sm">Online Video / Audio Consultation</strong> — 
+              <span id="bookingModeFee" class="text-forest font-bold text-base">₹600</span>
+              <span class="text-stone-500 block text-[11px] mt-0.5">Confirmed slot details will be communicated directly via WhatsApp/Call.</span>
             </div>
 
-            <button type="submit" class="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-sm shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2">
-              <i data-lucide="calendar-check-2" class="w-4 h-4 text-amber-300"></i>
-              <span>Confirm & Request Appointment</span>
+            <button type="submit" class="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-sm shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2">
+              <i data-lucide="calendar-check" class="w-4 h-4 text-gold"></i>
+              <span data-i18n="btnSubmitRequest">Submit Appointment Request</span>
             </button>
           </div>
 
@@ -880,264 +1070,208 @@
     </div>
   </section>
 
-  <!-- ================= PATIENT TESTIMONIALS & CASE STUDIES ================= -->
-  <section id="stories" class="py-16 sm:py-24 bg-[#faf9f5] border-b border-stone-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- ================= CLINICAL PREPARATION TOOLS (DOSHA QUIZ, SYMPTOMS, & ROUTINE) ================= -->
+  <section id="prakriti-quiz" class="py-16 sm:py-24 bg-white border-b border-beige">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Real Patient Recoveries
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Stories of Healing from Patients Across Gujarat
-        </h2>
-        <p class="text-stone-600 text-sm sm:text-base">
-          Read genuine outcomes from patients who overcame years of suffering through authentic Ayurvedic Chikitsa and guided lifestyle correction with Dr. Apkesha Patel.
-        </p>
-      </div>
-
-      <!-- Testimonials Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Story 1 -->
-        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200 shadow-luxury-sm flex flex-col justify-between space-y-4 card-hover-lift">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-bold px-3 py-0.5 rounded-full bg-emerald-100 text-emerald-900">PCOD & Irregular Cycles</span>
-              <div class="flex text-amber-500 text-xs">
-                ★★★★★
-              </div>
-            </div>
-            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
-              “I was diagnosed with PCOD in 2021 and was put on hormonal birth control pills which made me gain 8 kg and experience severe mood swings. Dr. Apkesha's combination of Kanchanar Guggulu, specific decoctions, and her seed-cycling diet chart regularized my periods within 4 months! I have been off all medications for 9 months now with normal ultrasound.”
-            </p>
-          </div>
-          <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-            <div>
-              <strong class="text-stone-900 block font-semibold">Bhavna Trivedi, 27</strong>
-              <span class="text-stone-500">Ahmedabad, Gujarat</span>
-            </div>
-            <span class="text-[10px] text-stone-400 font-medium">Treatment: 4 Months</span>
-          </div>
-        </div>
-
-        <!-- Story 2 -->
-        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200 shadow-luxury-sm flex flex-col justify-between space-y-4 card-hover-lift">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-bold px-3 py-0.5 rounded-full bg-amber-100 text-amber-900">Knee Osteoarthritis</span>
-              <div class="flex text-amber-500 text-xs">
-                ★★★★★
-              </div>
-            </div>
-            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
-              “Orthopedic doctors suggested knee replacement surgery for both my knees. I could barely climb the stairs in my house. Dr. Apkesha treated me with Janu Basti and classical herbal rasayanas. Within 6 weeks, the constant swelling subsided and my pain reduced by 85%. I can now walk 3 kilometers every morning with zero pain.”
-            </p>
-          </div>
-          <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-            <div>
-              <strong class="text-stone-900 block font-semibold">Hansaben Patel, 54</strong>
-              <span class="text-stone-500">Gandhinagar, Gujarat</span>
-            </div>
-            <span class="text-[10px] text-stone-400 font-medium">Treatment: 3 Months</span>
-          </div>
-        </div>
-
-        <!-- Story 3 -->
-        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200 shadow-luxury-sm flex flex-col justify-between space-y-4 card-hover-lift">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-bold px-3 py-0.5 rounded-full bg-blue-100 text-blue-900">Severe GERD & IBS</span>
-              <div class="flex text-amber-500 text-xs">
-                ★★★★★
-              </div>
-            </div>
-            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
-              “I was taking daily antacids (Pantoprazole) for 3 straight years. Without the pill, I had burning in my chest and erratic loose motions. Dr. Apkesha explained the concept of Mandagni and changed my meal sequence. Today I eat normal home food, haven't touched an antacid in 6 months, and have incredible energy throughout the day.”
-            </p>
-          </div>
-          <div class="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-            <div>
-              <strong class="text-stone-900 block font-semibold">Krunal Shah, 35</strong>
-              <span class="text-stone-500">Surat, Gujarat</span>
-            </div>
-            <span class="text-[10px] text-stone-400 font-medium">Treatment: 8 Weeks</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= FREQUENTLY ASKED QUESTIONS (FAQ) ================= -->
-  <section id="faqs" class="py-16 sm:py-24 bg-white border-b border-stone-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      
+      <!-- Section Header -->
       <div class="text-center space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Clarifying Your Doubts
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage">
+          Patient Clinical Preparation Tools
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Frequently Asked Questions About Ayurvedic Treatment
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Explore Your Constitution & Ayurvedic Rhythm
         </h2>
-        <p class="text-stone-600 text-sm sm:text-base">
-          Transparent answers about medicine safety, consultation process, and online video sessions.
+        <p class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+          Interactive diagnostic aids designed to help you understand your baseline Dosha constitution, check acute symptoms, and align your daily routine.
         </p>
       </div>
 
-      <!-- FAQ Accordion -->
+      <!-- Tool 1: Prakriti Dosha Quiz Card -->
       <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-5 h-5 text-forest"></i>
+          <h3 class="font-serif text-xl font-bold text-charcoal">1. Discover Your Ayurvedic Prakriti (Quiz)</h3>
+        </div>
+        <div id="prakritiQuizCard" class="bg-ivory rounded-3xl p-6 sm:p-9 border border-beige shadow-luxury-sm">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+
+      <!-- Tool 2: Symptom & Dosha Imbalance Checker -->
+      <div class="space-y-4 pt-6 border-t border-stone-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i data-lucide="stethoscope" class="w-5 h-5 text-forest"></i>
+            <h3 class="font-serif text-xl font-bold text-charcoal">2. Symptom & Dosha Imbalance Checker</h3>
+          </div>
+          <span class="text-[11px] font-bold text-forest bg-sage-soft px-2.5 py-0.5 rounded-full border border-sage">Triage Aid</span>
+        </div>
         
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-[#faf9f5]">
-          <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-100 transition-colors">
-            <span class="text-sm sm:text-base">Are Ayurvedic medicines safe for long-term use? Do they contain heavy metals?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 transition-transform duration-200"></i>
-          </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/60 pt-4 hidden">
-            All formulations prescribed by Dr. Apkesha are sourced strictly from GMP-certified (Good Manufacturing Practice) classical Ayurvedic manufacturers compliant with Pharmacopoeia Laboratory for Indian Medicine (PLIM) and AYUSH Ministry standards. They undergo heavy-metal testing, microbiological screening, and pesticide residue testing. Because of her active government healthcare service at the Primary Health Center, she adheres strictly to ethical, evidence-based Shastriya guidelines.
+        <div class="bg-ivory rounded-3xl p-6 sm:p-8 border border-beige shadow-luxury-sm space-y-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-charcoal mb-3">
+              Click to select symptoms you are currently experiencing:
+            </label>
+            <div id="symptomChipsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <div id="symptomTriageResult">
+            <!-- Triage outcome injected dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool 3: Personalized Ayurvedic Dinacharya (Daily Routine) -->
+      <div class="space-y-4 pt-6 border-t border-stone-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <i data-lucide="sun" class="w-5 h-5 text-amber-600"></i>
+            <h3 class="font-serif text-xl font-bold text-charcoal">3. Personalized Dinacharya (Daily Routine Schedule)</h3>
+          </div>
+          
+          <div class="flex items-center gap-2">
+            <label for="wakeTimeSelect" class="text-xs font-semibold text-stone-600">Wake-up Time:</label>
+            <select id="wakeTimeSelect" onchange="renderDinacharyaSchedule(this.value)" class="px-3 py-1.5 rounded-xl border border-stone-300 bg-white text-xs font-bold text-forest focus:outline-none focus:ring-2 focus:ring-forest">
+              <option value="5">5:00 AM (Brahma Muhurta)</option>
+              <option value="6" selected>6:00 AM (Standard)</option>
+              <option value="7">7:00 AM (Sunrise)</option>
+              <option value="8">8:00 AM</option>
+            </select>
           </div>
         </div>
 
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-[#faf9f5]">
-          <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-100 transition-colors">
-            <span class="text-sm sm:text-base">Can I take Ayurvedic medicine alongside my current BP, Thyroid, or Diabetes tablets?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 transition-transform duration-200"></i>
-          </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/60 pt-4 hidden">
-            Yes, absolutely. You must NEVER stop your existing allopathic medications abruptly. Ayurvedic treatment is integrated synergistically with a 1-hour time gap between doses. As your body's vital parameters, sugar levels, or blood pressure normalize under Ayurvedic treatment, your dosages are gradually and safely tapered down under clinical supervision.
-          </div>
+        <div id="dinacharyaContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <!-- Rendered by app.js -->
         </div>
-
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-[#faf9f5]">
-          <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-100 transition-colors">
-            <span class="text-sm sm:text-base">How does an Online Video Consultation work? Can diagnosis be done remotely?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 transition-transform duration-200"></i>
-          </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/60 pt-4 hidden">
-            Ayurveda has an eight-fold diagnostic methodology known as <em>Ashtavidha Pariksha</em>. In an online video consultation, Dr. Apkesha evaluates your tongue (Jihva), facial skin, eyes (Netra), speech/voice (Shabda), physical build (Aakriti), alongside a detailed questionnaire of your digestion, bowel movement, sleep, and appetite. You can also share your blood tests, MRI scans, or ultrasound reports directly over WhatsApp beforehand.
-          </div>
-        </div>
-
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-[#faf9f5]">
-          <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-100 transition-colors">
-            <span class="text-sm sm:text-base">How will I receive the prescribed Ayurvedic medicines?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 transition-transform duration-200"></i>
-          </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/60 pt-4 hidden">
-            If you visit the in-clinic evening OPD in Gandhinagar, medicines are dispensed directly from our pharmacy. For online video consultation patients across Gujarat and India, authentic medicines are safely packed and couriered to your doorstep via express courier (arriving in 2-3 days in Gujarat and 3-5 days across India). You also receive a signed digital prescription PDF.
-          </div>
-        </div>
-
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-[#faf9f5]">
-          <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-100 transition-colors">
-            <span class="text-sm sm:text-base">How long does an Ayurvedic treatment course typically last?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 transition-transform duration-200"></i>
-          </button>
-          <div class="px-5 pb-5 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-200/60 pt-4 hidden">
-            While acute conditions (like indigestion, seasonal cough, or acute acidity) show relief within 3 to 7 days, chronic ailments (like Psoriasis, Rheumatoid Arthritis, PCOD, or chronic IBS) typically require 2 to 4 months of systematic treatment to purify deep tissue dhatus and prevent relapse. Dr. Apkesha outlines the expected timeline during your first consultation.
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- ================= CLINIC LOCATION & CONTACT ================= -->
-  <section id="contact" class="py-16 sm:py-24 bg-[#faf9f5] border-b border-stone-200">
+  <!-- ================= SECTION I: FINAL CTA ================= -->
+  <section class="py-16 sm:py-24 bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] text-ivory border-b border-forest-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      
+      <div class="space-y-3">
+        <span class="text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full bg-gold/20 text-amber-200 border border-gold/30">
+          Personal Ayurvedic Healthcare
+        </span>
+        <h2 data-i18n="ctaHeading" class="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          Take the First Step Towards Better Health
+        </h2>
+        <p data-i18n="ctaSub" class="text-stone-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          Begin your journey to balanced vitality with experienced Ayurvedic healthcare guidance.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#book-appointment" class="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-ivory hover:bg-beige text-forest font-bold text-sm shadow-xl transition-all flex items-center justify-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4 text-forest"></i>
+          <span data-i18n="ctaBtnBook">Book a Consultation</span>
+        </a>
+        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link w-full sm:w-auto py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span data-i18n="ctaBtnWhatsApp">Contact on WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Shloka Motto -->
+      <div class="pt-6 border-t border-white/20 text-center">
+        <p class="font-serif italic text-sm text-amber-200">
+          “પ્રયયોજનં ચાસ્ય સ્વસ્થસ્ય સ્વાસ્થ્યરક્ષણં આતુરસ્ય વિકારપ્રશમનં ચ॥”
+        </p>
+        <p class="text-[11px] text-stone-300 mt-0.5">
+          To protect the health of the healthy and alleviate disease in the ailing — Classical Ayurvedic Mission
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & LOCATION SECTION ================= -->
+  <section id="contact" class="py-16 sm:py-24 bg-white border-b border-beige">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-          Reach Out to Dr. Apkesha
+        <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage" data-i18n="navContact">
+          Contact
         </span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
-          Clinic Location & Consultation Hours
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+          Clinic Location & Practice Details
         </h2>
         <p class="text-stone-600 text-sm sm:text-base">
-          Visit in-person during evening OPD in Gandhinagar, Gujarat or connect via WhatsApp for quick queries.
+          Reach out for consultation appointments, scheduling queries, or directions.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- Clinic Details Card -->
-        <div class="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-9 border border-stone-200 shadow-luxury-md space-y-6">
-          <div class="space-y-1 pb-4 border-b border-stone-100">
-            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider block">Private Clinical OPD</span>
-            <h3 class="text-xl font-bold text-stone-900 doc-clinic">Dhanvantari Ayurveda & Panchakarma Clinic</h3>
-            <p class="text-xs text-stone-500">Comprehensive Ayurvedic OPD & Panchakarma Center</p>
+        <div class="lg:col-span-6 bg-ivory rounded-3xl p-6 sm:p-9 border border-beige shadow-luxury-sm space-y-6">
+          <div class="space-y-1 pb-4 border-b border-stone-200">
+            <h3 class="font-serif text-2xl font-bold text-charcoal doc-name">Dr. Apkesha Patel</h3>
+            <p class="text-xs font-semibold text-forest doc-degree">BAMS – Bachelor of Ayurvedic Medicine and Surgery</p>
+            <p class="text-xs text-stone-500">Ex-AYUSH Medical Officer, Govt. Primary Health Centre, Gujarat</p>
           </div>
 
           <div class="space-y-4 text-xs sm:text-sm text-stone-700">
             
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
               </div>
               <div>
-                <strong class="text-stone-900 block font-semibold">Address</strong>
-                <p class="text-stone-600 doc-address">Shop 104-106, 1st Floor, Aarambh Medical Enclave, Opp. Civil Hospital Rd, Sector 7</p>
-                <p class="text-stone-600 font-semibold doc-city">Gandhinagar, Gujarat - 382007</p>
+                <strong class="text-charcoal block font-semibold">In-Person Clinic Address</strong>
+                <p class="text-stone-600 doc-address">Lunawada, Mahisagar, Gujarat 389230</p>
+                <p class="text-stone-400 text-[11px] mt-0.5">In-person consultations conducted by prior appointment.</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="clock" class="w-4 h-4"></i>
               </div>
               <div>
-                <strong class="text-stone-900 block font-semibold">Private Evening In-Clinic OPD Hours</strong>
-                <p class="text-stone-600 doc-opd-timings font-medium">Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00 PM (Morning PHC Govt. Duties)</p>
-                <p class="text-stone-400 text-[11px] mt-0.5">*Mornings are dedicated to Government Primary Health Center (PHC) public duty</p>
+                <strong class="text-charcoal block font-semibold">Consultation Hours</strong>
+                <p class="text-stone-600 doc-opd-timings font-medium">Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00 PM (By Prior Appointment)</p>
+                <p class="text-stone-600 doc-tele-timings font-medium mt-1">Online Video: Daily 2:00 PM – 4:30 PM & 8:30 PM – 9:30 PM</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i data-lucide="video" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <strong class="text-stone-900 block font-semibold">Pan-India Teleconsultation Hours</strong>
-                <p class="text-stone-600 doc-tele-timings font-medium">Daily: 2:00 PM – 4:30 PM & 8:30 PM – 9:30 PM (Pan-India & Global Video Call)</p>
-                <p class="text-stone-400 text-[11px] mt-0.5">Video link shared 15 mins prior to confirmed slot</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="phone" class="w-4 h-4"></i>
               </div>
               <div>
-                <strong class="text-stone-900 block font-semibold">Direct Phone / Call</strong>
-                <p class="text-stone-600 mt-0.5">
-                  <a href="tel:+918347675394" class="doc-phone-link hover:underline font-bold text-emerald-800 text-sm doc-phone">+91 83476 75394</a>
+                <strong class="text-charcoal block font-semibold">Direct Phone / Call</strong>
+                <p class="mt-0.5">
+                  <a href="tel:+918347675394" class="doc-phone-link hover:underline font-bold text-forest text-sm doc-phone">+91 83476 75394</a>
                 </p>
-                <p class="text-stone-500 text-[11px]">Appointment booking & medicine delivery queries</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
               </div>
               <div>
-                <strong class="text-stone-900 block font-semibold">WhatsApp (Same Number)</strong>
-                <p class="text-stone-600 mt-0.5">
-                  <a href="https://wa.me/918347675394" target="_blank" class="hover:underline font-bold text-emerald-700 text-sm">+91 83476 75394</a>
+                <strong class="text-charcoal block font-semibold">WhatsApp (Same Number)</strong>
+                <p class="mt-0.5">
+                  <a href="https://wa.me/918347675394" target="_blank" class="hover:underline font-bold text-[#174C3C] text-sm">+91 83476 75394</a>
                 </p>
-                <p class="text-stone-500 text-[11px]">Click to message directly on WhatsApp</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="mail" class="w-4 h-4"></i>
               </div>
               <div>
-                <strong class="text-stone-900 block font-semibold">Email</strong>
-                <p class="text-stone-600 mt-0.5">
+                <strong class="text-charcoal block font-semibold">Email</strong>
+                <p class="mt-0.5">
                   <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:underline font-bold text-stone-800 doc-email">apexapatel316@gmail.com</a>
                 </p>
               </div>
@@ -1145,56 +1279,57 @@
 
           </div>
 
-          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row gap-3">
-            <a href="#book-appointment" class="flex-1 py-3 px-4 rounded-xl bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-center text-xs sm:text-sm shadow-md transition-all">
-              Book Appointment Now
+          <div class="pt-4 border-t border-stone-200 flex flex-col sm:flex-row gap-3">
+            <a href="#book-appointment" class="flex-1 py-3 px-4 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-center text-xs sm:text-sm shadow-md transition-all">
+              Request Appointment
             </a>
-            <a id="contactWhatsAppBtn" href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 font-bold text-center text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-2xs">
-              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+            <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-3 px-4 rounded-xl border border-stone-300 bg-white text-forest hover:bg-stone-50 font-bold text-center text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-2xs">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
               <span>WhatsApp Us</span>
             </a>
           </div>
-
         </div>
 
-        <!-- Right Side: Clinic Route & Visual Map Card -->
+        <!-- Right Side: Location Card & Directions -->
         <div class="lg:col-span-6 space-y-4">
-          <div class="bg-white rounded-3xl p-6 sm:p-9 border border-stone-200 shadow-luxury-md space-y-4">
+          <div class="bg-ivory rounded-3xl p-6 sm:p-9 border border-beige shadow-luxury-sm space-y-5">
             <div class="flex items-center justify-between">
-              <h4 class="font-bold text-stone-900 text-base flex items-center gap-2">
-                <i data-lucide="navigation" class="w-4 h-4 text-emerald-700"></i>
-                <span>How to Reach Our Clinic</span>
+              <h4 class="font-bold text-charcoal text-base flex items-center gap-2">
+                <i data-lucide="navigation" class="w-4 h-4 text-forest"></i>
+                <span>Clinic Directions</span>
               </h4>
-              <span class="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Sector 7, Gandhinagar</span>
+              <span class="text-[11px] font-bold text-forest bg-sage-soft px-3 py-1 rounded-full border border-sage">Lunawada, Mahisagar</span>
             </div>
 
             <p class="text-xs text-stone-600 leading-relaxed">
-              Centrally situated in Sector 7, Gandhinagar, just 5 minutes from Civil Hospital Gandhinagar and easily accessible from Ahmedabad via SG Highway or Gandhinagar-Koba circle.
+              Located in Lunawada, the district headquarters of Mahisagar district in Gujarat. Easily reachable by bus and road from Godhra, Vadodara, Modasa, and Ahmedabad.
             </p>
 
-            <div class="w-full h-64 bg-stone-100 rounded-2xl border border-stone-200 overflow-hidden relative flex flex-col items-center justify-center text-center p-6 shadow-inner">
-              <div class="w-14 h-14 rounded-2xl bg-emerald-900 text-white flex items-center justify-center shadow-lg mb-2 border border-amber-300/30">
-                <i data-lucide="map-pin" class="w-7 h-7 text-amber-300"></i>
+            <!-- Map Placeholder Box -->
+            <div class="w-full h-56 bg-white rounded-2xl border border-beige overflow-hidden relative flex flex-col items-center justify-center text-center p-6 shadow-inner">
+              <div class="w-12 h-12 rounded-2xl bg-forest text-ivory flex items-center justify-center shadow-md mb-2 border border-gold/40">
+                <i data-lucide="map-pin" class="w-6 h-6 text-gold"></i>
               </div>
-              <h5 class="font-bold text-stone-900 text-sm sm:text-base doc-clinic">Dhanvantari Ayurveda Clinic</h5>
-              <p class="text-xs text-stone-500 max-w-sm mt-1 doc-address">Sector 7, Opp. Civil Hospital Road, Gandhinagar, Gujarat</p>
+              <h5 class="font-bold text-charcoal text-sm sm:text-base">Dr. Apkesha Patel Clinic</h5>
+              <p class="text-xs text-stone-500 max-w-sm mt-1 doc-address">Lunawada, Mahisagar, Gujarat 389230</p>
+              
               <div class="mt-4 flex gap-2">
-                <a href="https://maps.google.com/?q=Sector+7+Gandhinagar+Gujarat" target="_blank" rel="noopener noreferrer" class="py-2.5 px-4 rounded-xl bg-white border border-stone-300 text-stone-800 hover:bg-stone-50 text-xs font-bold shadow-2xs flex items-center gap-1.5 transition-all">
-                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Open in Google Maps
+                <a href="https://maps.google.com/?q=Lunawada+Mahisagar+Gujarat+389230" target="_blank" rel="noopener noreferrer" class="py-2 px-3.5 rounded-xl bg-ivory border border-stone-300 text-charcoal hover:bg-stone-50 text-xs font-bold shadow-2xs flex items-center gap-1.5 transition-all">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Open in Maps
                 </a>
-                <a href="tel:+918347675394" class="doc-phone-link py-2.5 px-4 rounded-xl bg-emerald-900 text-white hover:bg-emerald-950 text-xs font-bold shadow-2xs flex items-center gap-1.5 transition-all">
+                <a href="tel:+918347675394" class="doc-phone-link py-2 px-3.5 rounded-xl bg-forest text-ivory hover:bg-forest-dark text-xs font-bold shadow-2xs flex items-center gap-1.5 transition-all">
                   <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> Call Reception
                 </a>
               </div>
             </div>
 
-            <div class="p-4 bg-amber-50/80 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-1">
+            <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-1">
               <div class="flex items-center gap-1.5 font-bold">
-                <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-700"></i>
-                <span>Important Medical Advisory</span>
+                <i data-lucide="alert-circle" class="w-4 h-4 text-amber-700"></i>
+                <span>Medical Notice</span>
               </div>
-              <p class="text-[11px] text-amber-800/90 leading-relaxed">
-                Ayurveda is specialized in chronic disease reversal, preventive health, and metabolic recovery. In case of acute medical emergencies (chest pain, severe breathlessness, stroke, trauma), please proceed immediately to the nearest emergency hospital ICU.
+              <p class="text-[11px] text-amber-800 leading-relaxed">
+                Ayurvedic consultations are focused on chronic ailments, lifestyle guidance, and preventative wellness. For acute medical emergencies, please visit the nearest hospital emergency department or dial 108.
               </p>
             </div>
 
@@ -1207,67 +1342,77 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-stone-950 text-stone-300 text-xs py-14 border-t border-stone-800">
+  <footer class="bg-[#103429] text-stone-300 text-xs py-14 border-t border-[#174C3C]/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         
         <div class="space-y-3 md:col-span-2">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-emerald-900 text-amber-300 flex items-center justify-center font-bold">
-              <i data-lucide="leaf" class="w-4 h-4"></i>
+            <div class="w-9 h-9 rounded-xl bg-forest text-amber-300 flex items-center justify-center font-bold border border-gold/40">
+              <i data-lucide="leaf" class="w-4 h-4 text-gold"></i>
             </div>
             <span class="text-white font-serif text-2xl font-bold doc-name">Dr. Apkesha Patel</span>
           </div>
-          <p class="text-xs text-stone-400 max-w-md leading-relaxed">
-            Ayurvedic Physician with 4 to 5 years of active public service as an AYUSH Medical Officer at a Government Primary Health Center in Gujarat. Dedicated to genuine Shastriya healing, pulse diagnosis, and chronic disease reversal.
+          <p class="text-xs text-stone-300 max-w-md leading-relaxed">
+            Ayurvedic Physician (BAMS) with 4–5 years of professional healthcare experience, including clinical public service as an AYUSH Medical Officer at a Government Primary Health Centre in Gujarat.
           </p>
-          <div class="pt-1 text-stone-400 space-y-1 text-xs">
-            <p>📞 Phone / WhatsApp: <a href="tel:+918347675394" class="text-emerald-400 hover:underline font-bold">+91 83476 75394</a></p>
-            <p>✉️ Email: <a href="mailto:apexapatel316@gmail.com" class="text-emerald-400 hover:underline">apexapatel316@gmail.com</a></p>
+          <div class="pt-1 text-stone-300 space-y-1 text-xs">
+            <p>📞 Phone / WhatsApp: <a href="tel:+918347675394" class="text-emerald-300 hover:underline font-bold">+91 83476 75394</a></p>
+            <p>✉️ Email: <a href="mailto:apexapatel316@gmail.com" class="text-emerald-300 hover:underline">apexapatel316@gmail.com</a></p>
+            <p>📍 Location: <span class="doc-address text-stone-300">Lunawada, Mahisagar, Gujarat 389230</span></p>
           </div>
-          <p class="font-serif italic text-amber-400 text-xs pt-1">
-            “સર્વે ભવન્તુ સુખિનઃ સર્વે સન્તુ નિરામયાઃ। સર્વે ભદ્રાણિ પશ્યન્તુ મા કશ્ચિદ્દુઃખભાગ્ભવેત્॥”
-          </p>
         </div>
 
         <div class="space-y-2">
-          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Quick Navigation</h5>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Navigation</h5>
           <ul class="space-y-1.5 text-stone-400">
-            <li><a href="#about" class="hover:text-emerald-400 transition-colors">About Doctor</a></li>
-            <li><a href="#triage" class="hover:text-emerald-400 transition-colors">Symptom Checker</a></li>
-            <li><a href="#treatments" class="hover:text-emerald-400 transition-colors">Treatments Offered</a></li>
-            <li><a href="#prakriti-quiz" class="hover:text-emerald-400 transition-colors">Take Dosha Quiz</a></li>
-            <li><a href="#dinacharya" class="hover:text-emerald-400 transition-colors">Daily Routine</a></li>
-            <li><a href="#book-appointment" class="hover:text-emerald-400 transition-colors">Book Consultation</a></li>
-            <li><a href="#stories" class="hover:text-emerald-400 transition-colors">Patient Stories</a></li>
-            <li><a href="#faqs" class="hover:text-emerald-400 transition-colors">FAQs</a></li>
+            <li><a href="#about" class="hover:text-emerald-300 transition-colors">Meet Doctor</a></li>
+            <li><a href="#services" class="hover:text-emerald-300 transition-colors">Consultation Services</a></li>
+            <li><a href="#why-consult" class="hover:text-emerald-300 transition-colors">Why Consult</a></li>
+            <li><a href="#consultation-modes" class="hover:text-emerald-300 transition-colors">Online & In-Person</a></li>
+            <li><a href="#how-it-works" class="hover:text-emerald-300 transition-colors">How It Works</a></li>
+            <li><a href="#book-appointment" class="hover:text-emerald-300 transition-colors">Book Consultation</a></li>
+            <li><a href="#faqs" class="hover:text-emerald-300 transition-colors">FAQ</a></li>
           </ul>
         </div>
 
         <div class="space-y-2">
-          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Medical Accreditations</h5>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Compliance & Legal</h5>
           <ul class="space-y-1.5 text-stone-400">
-            <li>• Serving AYUSH Medical Officer, Govt. of Gujarat (PHC)</li>
-            <li>• Gujarat Board of Ayurvedic & Unani Systems of Medicine</li>
-            <li>• Reg No: <span class="doc-regno font-medium text-stone-300">GAC-A/24891</span></li>
-            <li>• 100% GMP Certified Formulations</li>
+            <li>• Ex-AYUSH Medical Officer, Govt. PHC, Gujarat</li>
+            <li>• BAMS – Ayurvedic Medicine & Surgery</li>
+            <li>• Gujarat Ayurvedic Board Registered</li>
+            <li>
+              <button onclick="openMedicalDisclaimerModal()" class="text-emerald-300 hover:underline">
+                Medical Disclaimer Notice
+              </button>
+            </li>
+            <li>
+              <button onclick="openPrivacyPolicyModal()" class="text-emerald-300 hover:underline">
+                Patient Privacy Policy
+              </button>
+            </li>
           </ul>
         </div>
 
       </div>
 
-      <div class="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[11px]">
+      <div class="pt-8 border-t border-forest-dark flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-400 text-[11px]">
         <div>
-          © 2026 Dhanvantari Ayurveda Clinic. All Rights Reserved.
+          © 2026 Dr. Apkesha Patel. All Rights Reserved. Lunawada, Mahisagar, Gujarat.
         </div>
         <div class="flex items-center gap-4">
-          <button onclick="openDoctorSettingsModal()" class="hover:text-amber-400 underline">
-            Edit Doctor Details
+          <button onclick="openMedicalDisclaimerModal()" class="hover:text-amber-300 underline">
+            Medical Disclaimer
           </button>
           <span>•</span>
-          <button onclick="openMyBookingsModal()" class="hover:text-emerald-400 underline">
-            View My Bookings (50+)
+          <button onclick="openPrivacyPolicyModal()" class="hover:text-amber-300 underline">
+            Privacy Policy
+          </button>
+          <span>•</span>
+          <button onclick="openMyBookingsModal()" class="hover:text-emerald-300 underline">
+            My Requests (<span class="my-bookings-count font-bold">50+</span>)
           </button>
         </div>
       </div>
@@ -1276,49 +1421,37 @@
   </footer>
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-  <a id="floatingWhatsApp" href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="whatsapp-float-luxury bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center hover:bg-[#20ba59]" title="Chat with Dr. Apkesha on WhatsApp (+91 83476 75394)">
+  <a id="floatingWhatsApp" href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="whatsapp-float-luxury bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center hover:bg-[#20ba59]" title="Direct WhatsApp Consultation (+91 83476 75394)">
     <i data-lucide="message-circle" class="w-7 h-7"></i>
   </a>
 
   <!-- ================= TOAST NOTIFICATION ================= -->
   <div id="globalToast" class="hidden opacity-0 pointer-events-none transition-all duration-300"></div>
 
-  <!-- ================= MODAL: TREATMENT PROTOCOL DETAILS ================= -->
-  <div id="treatmentDetailModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-stone-200 max-h-[90vh] overflow-y-auto relative animate-fadeIn">
-      <button onclick="closeTreatmentModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-800 p-1.5 rounded-lg hover:bg-stone-100 transition-colors">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-      <div id="treatmentModalBody">
-        <!-- Rendered by app.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= MODAL: BOOKING CONFIRMATION SUCCESS ================= -->
+  <!-- ================= MODAL 1: APPOINTMENT CONFIRMATION (PENDING DOCTOR CONFIRMATION) ================= -->
   <div id="bookingSuccessModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative animate-fadeIn">
-      <div class="text-center pb-3">
-        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto mb-3">
-          <i data-lucide="check" class="w-7 h-7"></i>
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-beige relative animate-fadeIn">
+      <div class="text-center pb-2">
+        <div class="w-14 h-14 rounded-full bg-sage-soft text-forest flex items-center justify-center mx-auto mb-3 border border-sage">
+          <i data-lucide="calendar-check" class="w-7 h-7 text-forest"></i>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-stone-900">Appointment Request Received!</h3>
-        <p class="text-xs text-stone-500 mt-1">Your appointment has been registered with Dr. Apkesha Patel's clinic desk.</p>
+        <h3 class="font-serif text-2xl font-bold text-charcoal">Appointment Request Received</h3>
+        <p class="text-xs text-stone-500 mt-1">Submitted to Dr. Apkesha Patel's Consultation Desk</p>
       </div>
 
       <div id="bookingSuccessDetails" class="pt-2">
-        <!-- Injected by app.js -->
+        <!-- Rendered dynamically by app.js with exact confirmation vs requested notice -->
       </div>
     </div>
   </div>
 
-  <!-- ================= MODAL: MY BOOKINGS LIST ================= -->
+  <!-- ================= MODAL 2: MY BOOKINGS LIST ================= -->
   <div id="myBookingsModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative animate-fadeIn space-y-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-beige relative animate-fadeIn space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <div class="flex items-center gap-2">
-          <i data-lucide="calendar" class="w-5 h-5 text-emerald-800"></i>
-          <h3 class="font-serif text-xl font-bold text-stone-900">My Appointments</h3>
+          <i data-lucide="calendar" class="w-5 h-5 text-forest"></i>
+          <h3 class="font-serif text-xl font-bold text-charcoal">My Appointment Requests</h3>
         </div>
         <button onclick="closeMyBookingsModal()" class="text-stone-400 hover:text-stone-800 p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -1330,109 +1463,138 @@
       </div>
 
       <div class="pt-2 border-t border-stone-200 text-center">
-        <button onclick="closeMyBookingsModal()" class="w-full py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold">
+        <button onclick="closeMyBookingsModal()" class="w-full py-2.5 px-4 rounded-xl bg-ivory hover:bg-beige text-charcoal text-xs font-semibold">
           Close
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ================= MODAL: EDIT DOCTOR DETAILS (CUSTOMIZER) ================= -->
-  <div id="doctorSettingsModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative max-h-[92vh] overflow-y-auto">
-      <div class="flex items-center justify-between pb-4 border-b border-stone-200">
+  <!-- ================= MODAL 3: DOCTOR STORY (FULL BIOGRAPHY) ================= -->
+  <div id="doctorStoryModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-beige relative max-h-[90vh] overflow-y-auto animate-fadeIn space-y-5">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <div>
-          <h3 class="font-serif text-xl font-bold text-stone-900 flex items-center gap-2">
-            <i data-lucide="user-cog" class="w-5 h-5 text-emerald-800"></i>
-            <span>Customize Doctor Details</span>
-          </h3>
-          <p class="text-xs text-stone-500">Update Dr. Apkesha Patel's phone, clinic location, OPD timings, and fees.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-forest">Professional Journey</span>
+          <h3 class="font-serif text-2xl font-bold text-charcoal">The Story of Dr. Apkesha Patel</h3>
         </div>
-        <button onclick="closeDoctorSettingsModal()" class="text-stone-400 hover:text-stone-800 p-1">
+        <button onclick="closeDoctorStoryModal()" class="text-stone-400 hover:text-stone-800 p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <form id="doctorSettingsForm" class="space-y-4 pt-4 text-xs">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Doctor's Name</label>
-            <input type="text" name="docName" required class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Degree & Specialization</label>
-            <input type="text" name="docDegree" required class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
+      <div class="space-y-4 text-xs sm:text-sm text-stone-700 leading-relaxed">
+        <p>
+          Dr. Apkesha Patel is a dedicated Ayurvedic physician (BAMS) whose medical path has been shaped by an unwavering commitment to authentic holistic healthcare and grassroots community service.
+        </p>
+
+        <div class="p-4 rounded-2xl bg-ivory border border-beige space-y-1.5">
+          <strong class="text-forest font-bold block text-sm">Service at Government Primary Health Centre (PHC)</strong>
+          <p class="text-xs text-stone-600">
+            For over four to five years, Dr. Apkesha served as an AYUSH Medical Officer within Gujarat's public health infrastructure. In rural and semi-urban Primary Health Centres, an AYUSH medical officer is on the frontline of community well-being, diagnosing a wide spectrum of health complaints ranging from seasonal epidemics and maternal nutrition to chronic metabolic and joint degenerations.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Gujarat Registration Number</label>
-            <input type="text" name="docRegNo" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Clinic Name</label>
-            <input type="text" name="docClinicName" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
+        <p>
+          This extensive experience grounded her clinical approach in reality. She learned that sustainable recovery cannot come from one-size-fits-all prescriptions or complex regimens that patients cannot follow in their daily lives. Instead, authentic healing occurs when classical Ayurvedic principles—such as assessing the patient's individual constitution (Prakriti), understanding their digestive capacity (Agni), and modifying everyday food habits (Pathya-Apathya)—are tailored to the person.
+        </p>
+
+        <h4 class="font-serif text-lg font-bold text-charcoal pt-2">Clinical Philosophy & Patient Care</h4>
+        <p>
+          Today, Dr. Apkesha practices both through modern teleconsultations for patients across India and worldwide, and through in-person consultations in Lunawada, Mahisagar, Gujarat. She remains fluent in Gujarati, Hindi, and English, ensuring that patients and their families feel heard, respected, and fully supported throughout their healing journey.
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
+        <a href="#book-appointment" onclick="closeDoctorStoryModal()" class="py-2.5 px-5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs shadow-md">
+          Schedule a Consultation
+        </a>
+        <button onclick="closeDoctorStoryModal()" class="py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold">
+          Close Story
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 4: MEDICAL DISCLAIMER & COMPLIANCE ================= -->
+  <div id="medicalDisclaimerModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-beige relative max-h-[90vh] overflow-y-auto animate-fadeIn space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div class="flex items-center gap-2 text-forest">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+          <h3 class="font-serif text-xl font-bold text-charcoal" data-i18n="disclaimerTitle">Medical Disclaimer & Compliance Notice</h3>
+        </div>
+        <button onclick="closeMedicalDisclaimerModal()" class="text-stone-400 hover:text-stone-800 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs text-stone-700 leading-relaxed">
+        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 font-semibold text-xs">
+          Emergency Warning: If you are experiencing an acute medical emergency (such as severe chest pain, sudden numbness, difficulty breathing, or severe trauma), please call 108 or proceed immediately to the nearest hospital emergency room.
         </div>
 
-        <div>
-          <label class="block font-semibold text-stone-700 mb-1">Clinic Street Address</label>
-          <input type="text" name="docAddress" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-        </div>
+        <p>
+          <strong>1. Nature of Consultations:</strong> All consultations, dietary recommendations, and herbal suggestions provided by Dr. Apkesha Patel (BAMS) are based on classical Ayurvedic medicine principles (Ashtanga Hridaya, Charaka Samhita, and Sushruta Samhita) and are intended for chronic health management, nutritional balance, and holistic wellness.
+        </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">City & State</label>
-            <input type="text" name="docCity" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Contact Phone</label>
-            <input type="text" name="docPhone" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-        </div>
+        <p>
+          <strong>2. No Guaranteed Cures:</strong> Ayurveda evaluates individual metabolic responses and doshic constitution. Clinical outcomes vary from person to person. No claims of instant, magical, or guaranteed cures are made.
+        </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">WhatsApp Number (e.g. 918347675394)</label>
-            <input type="text" name="docWhatsapp" placeholder="Country code + 10 digits" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Email</label>
-            <input type="email" name="docEmail" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-        </div>
+        <p>
+          <strong>3. Existing Medications:</strong> Patients are advised never to discontinue or alter prescribed allopathic treatments (such as insulin, blood pressure medications, or thyroid hormones) without the direct consent of their treating allopathic physician. Ayurvedic management can be integrated safely with conventional care.
+        </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">In-Clinic Fee (₹)</label>
-            <input type="number" name="docInClinicFee" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-          <div>
-            <label class="block font-semibold text-stone-700 mb-1">Online Video Fee (₹)</label>
-            <input type="number" name="docOnlineFee" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs">
-          </div>
-        </div>
+        <p>
+          <strong>4. Teleconsultation Scope:</strong> Remote video and audio consultations have inherent limitations compared to in-person physical examinations. In situations where physical diagnosis is essential, Dr. Apkesha may recommend an in-person clinical visit or conventional diagnostic imaging.
+        </p>
+      </div>
 
-        <div>
-          <label class="block font-semibold text-stone-700 mb-1">About Doctor Bio</label>
-          <textarea name="docBio" rows="4" class="w-full p-2.5 rounded-lg border border-stone-300 text-xs leading-relaxed"></textarea>
-        </div>
+      <div class="pt-3 border-t border-stone-200 text-right">
+        <button onclick="closeMedicalDisclaimerModal()" class="py-2.5 px-5 rounded-xl bg-forest text-ivory text-xs font-semibold hover:bg-forest-dark" data-i18n="disclaimerClose">
+          Close Disclaimer
+        </button>
+      </div>
+    </div>
+  </div>
 
-        <div class="pt-3 border-t border-stone-200 flex items-center justify-between gap-3">
-          <button type="button" onclick="resetDoctorSettingsToDefault()" class="text-stone-500 hover:text-stone-800 underline text-xs">
-            Reset to Default
-          </button>
-          <div class="flex gap-2">
-            <button type="button" onclick="closeDoctorSettingsModal()" class="py-2 px-3.5 rounded-lg border border-stone-300 text-stone-700">
-              Cancel
-            </button>
-            <button type="submit" class="py-2 px-4 rounded-lg bg-emerald-900 text-white font-semibold hover:bg-emerald-950">
-              Save & Apply
-            </button>
-          </div>
+  <!-- ================= MODAL 5: PATIENT PRIVACY & CONFIDENTIALITY ================= -->
+  <div id="privacyPolicyModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-beige relative max-h-[90vh] overflow-y-auto animate-fadeIn space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div class="flex items-center gap-2 text-forest">
+          <i data-lucide="shield" class="w-5 h-5"></i>
+          <h3 class="font-serif text-xl font-bold text-charcoal" data-i18n="privacyTitle">Patient Privacy & Confidentiality Policy</h3>
         </div>
-      </form>
+        <button onclick="closePrivacyPolicyModal()" class="text-stone-400 hover:text-stone-800 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs text-stone-700 leading-relaxed">
+        <p>
+          <strong>1. Information Collection:</strong> When you submit an appointment request, we collect your name, contact phone number, preferred consultation date, time, and optional brief health notes.
+        </p>
+
+        <p>
+          <strong>2. Purpose of Use:</strong> Your personal and clinical details are used exclusively to schedule appointments, conduct consultations, and provide follow-up dosage and dietary guidance.
+        </p>
+
+        <p>
+          <strong>3. Strict Confidentiality:</strong> Your health records, diagnostic discussions, and personal identity are protected by doctor-patient confidentiality. We never sell, rent, or trade your contact or medical information to any third-party marketing entities.
+        </p>
+
+        <p>
+          <strong>4. Secure Messaging:</strong> Appointment notifications and communication are handled through encrypted channels (WhatsApp / Telephone). Pre-filled WhatsApp URLs generated on this website omit sensitive diagnosis details to protect your privacy.
+        </p>
+      </div>
+
+      <div class="pt-3 border-t border-stone-200 text-right">
+        <button onclick="closePrivacyPolicyModal()" class="py-2.5 px-5 rounded-xl bg-forest text-ivory text-xs font-semibold hover:bg-forest-dark" data-i18n="privacyClose">
+          Close Policy
+        </button>
+      </div>
     </div>
   </div>
 
