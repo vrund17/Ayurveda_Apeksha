@@ -1,9 +1,10 @@
 // ============================================================
 // AYURVEDA MEDICAL CLINIC - APP JAVASCRIPT
-// Dedicated to Serving AYUSH Medical Officer (Govt. of Gujarat - PHC)
+// Dedicated to Dr. Apkesha Patel
+// Serving AYUSH Medical Officer (Govt. of Gujarat - PHC)
+// Contact: +918347675394 | Email: apexapatel316@gmail.com
 // ============================================================
 
-// Default Doctor Information (Editable via Settings Modal)
 const DEFAULT_DOCTOR_DATA = {
   name: "Dr. Apkesha Patel",
   degree: "B.A.M.S., C.R.A.V. (Panchakarma)",
@@ -13,9 +14,9 @@ const DEFAULT_DOCTOR_DATA = {
   clinicName: "Dhanvantari Ayurveda & Panchakarma Clinic",
   address: "Shop 104-106, 1st Floor, Aarambh Medical Enclave, Opp. Civil Hospital Rd, Sector 7",
   city: "Gandhinagar, Gujarat - 382007",
-  phone: "+91 98765 43210",
-  whatsapp: "919876543210",
-  email: "dr.apkesha.ayurveda@gmail.com",
+  phone: "+91 83476 75394",
+  whatsapp: "918347675394",
+  email: "apexapatel316@gmail.com",
   inClinicFee: 500,
   onlineFee: 600,
   opdTimings: "Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00 PM (Morning PHC Govt. Duties)",
@@ -40,23 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTreatments('all');
 });
 
-// Load Doctor Data from LocalStorage
+// Load Doctor Data from LocalStorage with auto-migration to new contact details
 function loadDoctorData() {
   const saved = localStorage.getItem('ayur_doctor_data');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
-      // Migrate from old placeholder if needed
-      if (parsed.name && parsed.name.includes("Radhika")) {
-        parsed.name = DEFAULT_DOCTOR_DATA.name;
-        parsed.title = DEFAULT_DOCTOR_DATA.title;
-        parsed.experience = DEFAULT_DOCTOR_DATA.experience;
-        parsed.email = DEFAULT_DOCTOR_DATA.email;
-        parsed.aboutBio = DEFAULT_DOCTOR_DATA.aboutBio;
-        parsed.opdTimings = DEFAULT_DOCTOR_DATA.opdTimings;
-        localStorage.setItem('ayur_doctor_data', JSON.stringify(parsed));
-      }
+      // Migrate to new phone / email / name
+      parsed.name = DEFAULT_DOCTOR_DATA.name;
+      parsed.phone = DEFAULT_DOCTOR_DATA.phone;
+      parsed.whatsapp = DEFAULT_DOCTOR_DATA.whatsapp;
+      parsed.email = DEFAULT_DOCTOR_DATA.email;
+      parsed.title = DEFAULT_DOCTOR_DATA.title;
+      parsed.experience = DEFAULT_DOCTOR_DATA.experience;
       doctorData = { ...DEFAULT_DOCTOR_DATA, ...parsed };
+      localStorage.setItem('ayur_doctor_data', JSON.stringify(doctorData));
     } catch (e) {
       console.error("Error loading doctor data:", e);
     }
@@ -128,18 +127,26 @@ function renderDynamicDoctorData() {
     el.textContent = "AP";
   });
 
-  // Update WhatsApp links
-  const waUrl = `https://wa.me/${doctorData.whatsapp}?text=${encodeURIComponent("Namaste Dr. Apkesha Patel, I would like to enquire about Ayurvedic treatment / consultation.")}`;
+  // Update WhatsApp links with formatted URL
+  const waUrl = `https://wa.me/${doctorData.whatsapp}?text=${encodeURIComponent("Namaste Dr. Apkesha Patel, I would like to enquire about Ayurvedic consultation.")}`;
+  
   const floatWa = document.getElementById('floatingWhatsApp');
   if (floatWa) floatWa.href = waUrl;
   const navWa = document.getElementById('navWhatsApp');
   if (navWa) navWa.href = waUrl;
   const heroWa = document.getElementById('heroWhatsApp');
   if (heroWa) heroWa.href = waUrl;
+  const contactWa = document.getElementById('contactWhatsAppBtn');
+  if (contactWa) contactWa.href = waUrl;
 
   // Phone links
   document.querySelectorAll('.doc-phone-link').forEach(el => {
-    el.href = `tel:${doctorData.phone.replace(/[^0-9+]/g, '')}`;
+    el.href = `tel:+918347675394`;
+  });
+
+  // Email links
+  document.querySelectorAll('.doc-email-link').forEach(el => {
+    el.href = `mailto:${doctorData.email}`;
   });
 }
 
@@ -169,7 +176,7 @@ function updateAvailableSlots() {
   const slotsContainer = document.getElementById('timeSlotsContainer');
   if (!slotsContainer) return;
 
-  // Evening OPD slots (respecting morning PHC duty)
+  // Evening In-Clinic OPD Slots (Govt PHC morning service respected)
   const inClinicSlots = [
     "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM",
     "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM"
@@ -184,15 +191,14 @@ function updateAvailableSlots() {
   const selectedSlots = mode === 'clinic' ? inClinicSlots : onlineSlots;
 
   slotsContainer.innerHTML = selectedSlots.map((slot, index) => `
-    <label class="cursor-pointer">
+    <label class="cursor-pointer group">
       <input type="radio" name="selectedTimeSlot" value="${slot}" class="sr-only peer" ${index === 0 ? 'checked' : ''} required>
-      <div class="px-3 py-2 text-center text-xs sm:text-sm font-medium rounded-lg border border-stone-200 bg-white text-stone-700 peer-checked:bg-emerald-800 peer-checked:text-white peer-checked:border-emerald-800 peer-checked:shadow-sm transition-all hover:border-emerald-600">
+      <div class="px-3.5 py-2.5 text-center text-xs sm:text-sm font-semibold rounded-xl border border-stone-200 bg-white text-stone-700 peer-checked:bg-emerald-800 peer-checked:text-white peer-checked:border-emerald-800 peer-checked:shadow-md transition-all duration-200 group-hover:border-emerald-600">
         ${slot}
       </div>
     </label>
   `).join('');
 
-  // Update displayed consultation fee in booking summary
   const feeEl = document.getElementById('bookingModeFee');
   if (feeEl) {
     feeEl.textContent = mode === 'clinic' ? `₹${doctorData.inClinicFee}` : `₹${doctorData.onlineFee}`;
@@ -210,13 +216,13 @@ const TREATMENTS_DATA = [
   {
     id: "gut-health",
     category: "digestive",
-    title: "Digestive & Gastrointestinal Disorders",
+    title: "Digestive & Gastrointestinal Care",
     sanskritName: "Agni & Annavaha Srotas Chikitsa",
     symptoms: ["Chronic Acidity & GERD", "IBS (Irritable Bowel)", "Chronic Constipation", "Bloating & Gas", "Fatty Liver & Sluggish Metabolism"],
-    overview: "Ayurveda establishes that all diseases stem from Mandagni (impaired digestive fire) and accumulation of Ama (endotoxins). Our treatment restores digestive enzyme balance, repairs gut microbiota, and clears metabolic toxins naturally.",
+    overview: "Ayurveda establishes that all diseases stem from Mandagni (impaired digestive fire) and accumulation of Ama (endotoxins). Our treatment restores natural enzyme secretion, repairs gut microbiota, and clears metabolic toxins safely.",
     classicalRemedies: ["Avipattikar Churna", "Kutajarishta", "Triphala Kwath", "Hingwashtak Churna", "Dadimashtak Kwath"],
-    panchakarma: ["Virechana (Therapeutic Purgation)", "Basti (Medicated Enema for Vata Agni)", "Takradhara (Buttermilk drip for IBS)"],
-    dietNote: "Strict avoiding of Viruddha Ahara (incompatible foods), refrigerated foods, deep-fried snacks. Emphasizing fresh buttermilk (Takra), pomegranate, cumin-coriander warm water.",
+    panchakarma: ["Virechana (Therapeutic Purgation)", "Basti (Medicated Enema for Vata Agni)", "Takradhara (Medicated buttermilk drip for IBS)"],
+    dietNote: "Strict avoidance of Viruddha Ahara (incompatible foods), refrigerated foods, deep-fried snacks. Emphasizing fresh buttermilk (Takra), pomegranate, and cumin-coriander warm water.",
     badge: "Most Common"
   },
   {
@@ -227,8 +233,8 @@ const TREATMENTS_DATA = [
     symptoms: ["Osteoarthritis (Knee pain)", "Rheumatoid Arthritis (Amavata)", "Cervical & Lumbar Spondylosis", "Sciatica (Gridhrasi)", "Frozen Shoulder"],
     overview: "Formulated using classical Vata-shamana principles combined with deep tissue anti-inflammatory herbs. Proven clinical protocols from Dr. Apkesha's extensive Gujarat PHC practice helping patients avoid knee/spine surgeries.",
     classicalRemedies: ["Yograj Guggulu", "Shallaki Rasayana", "Dashmoola Kwath", "Maha Narayana Taila", "Rasna Saptak Kwath"],
-    panchakarma: ["Janu Basti (Knee oil pooling)", "Kati Basti (Lumbar spine treatment)", "Patra Pinda Sweda (Herbal leaf bolus massage)", "Greeva Basti"],
-    dietNote: "Eliminate fermented, stale, and sour foods. Incorporate anti-inflammatory spices like turmeric (Haridra), dry ginger (Shunti), and cow's ghee.",
+    panchakarma: ["Janu Basti (Knee oil pooling)", "Kati Basti (Lumbar spine treatment)", "Patra Pinda Sweda (Herbal leaf bolus fomentation)", "Greeva Basti"],
+    dietNote: "Eliminate fermented, stale, and sour foods. Incorporate anti-inflammatory spices like turmeric (Haridra), dry ginger (Shunti), and pure cow's ghee.",
     badge: "Surgery Alternative"
   },
   {
@@ -239,7 +245,7 @@ const TREATMENTS_DATA = [
     symptoms: ["Psoriasis (Kitibha)", "Eczema & Atopic Dermatitis", "Chronic Urticaria (Sheetapitta)", "Stubborn Adult Acne", "Severe Hair Fall & Alopecia"],
     overview: "Skin disorders are manifestations of impure blood (Dushta Rakta) and Pitta-Kapha aggravation. Unlike topical steroid creams that merely suppress symptoms, Ayurveda purifies the blood from within.",
     classicalRemedies: ["Khadirarishta", "Mahatiktaka Ghrita", "Manjishtadi Kwath", "Kaishore Guggulu", "Neem Patra Swarasa"],
-    panchakarma: ["Raktamokshana (Bloodletting / Jalaukavacharana)", "Virechana (Pitta detox)", "Nasya (Medicated nasal drops for hair fall)"],
+    panchakarma: ["Raktamokshana (Jalaukavacharana / Leech therapy)", "Virechana (Pitta detox)", "Nasya (Medicated nasal drops for hair fall)"],
     dietNote: "Zero intake of sour curd, pickles, fermented dough (Dhokla, Idli), jaggery with milk, and excessive salt.",
     badge: "Root Cause Cure"
   },
@@ -281,7 +287,7 @@ const TREATMENTS_DATA = [
   }
 ];
 
-// Render Treatments Grid
+// Render Treatments Grid with smooth card design
 function renderTreatments(filter) {
   const container = document.getElementById('treatmentsGrid');
   if (!container) return;
@@ -289,18 +295,18 @@ function renderTreatments(filter) {
   const filtered = filter === 'all' ? TREATMENTS_DATA : TREATMENTS_DATA.filter(t => t.category === filter);
 
   container.innerHTML = filtered.map(t => `
-    <div class="bg-white rounded-2xl p-6 sm:p-7 shadow-ayur border border-stone-100 flex flex-col justify-between hover:border-emerald-700/40 hover:shadow-xl transition-all duration-300 group">
+    <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-ayur-sm border border-stone-200/80 flex flex-col justify-between card-hover group">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+          <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">
             ${t.badge}
           </span>
-          <span class="text-[11px] font-serif-ayur italic text-amber-800">
+          <span class="text-xs font-serif-ayur italic text-amber-800">
             ${t.sanskritName}
           </span>
         </div>
 
-        <h3 class="text-xl font-bold text-stone-900 group-hover:text-emerald-800 transition-colors mb-2">
+        <h3 class="text-xl font-bold text-stone-900 group-hover:text-emerald-800 transition-colors mb-2.5">
           ${t.title}
         </h3>
 
@@ -309,10 +315,10 @@ function renderTreatments(filter) {
         </p>
 
         <div class="space-y-1.5 mb-5">
-          <p class="text-[11px] uppercase tracking-wider font-semibold text-stone-400">Conditions Treated:</p>
+          <p class="text-[10px] uppercase tracking-wider font-bold text-stone-400">Clinical Focus Areas:</p>
           <div class="flex flex-wrap gap-1.5">
             ${t.symptoms.map(s => `
-              <span class="text-xs px-2.5 py-1 bg-stone-50 rounded-md text-stone-700 border border-stone-200">
+              <span class="text-xs px-2.5 py-1 bg-stone-50 rounded-lg text-stone-700 border border-stone-200/80">
                 ${s}
               </span>
             `).join('')}
@@ -321,11 +327,11 @@ function renderTreatments(filter) {
       </div>
 
       <div class="pt-4 border-t border-stone-100 flex items-center justify-between gap-3">
-        <button onclick="openTreatmentModal('${t.id}')" class="text-xs font-semibold text-emerald-800 hover:text-emerald-950 flex items-center gap-1">
-          <span>Detailed Protocol</span>
+        <button onclick="openTreatmentModal('${t.id}')" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1.5 transition-colors">
+          <span>Clinical Protocol</span>
           <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
         </button>
-        <button onclick="quickBookTreatment('${t.title.replace(/'/g, "\\'")}')" class="text-xs font-medium px-3.5 py-1.5 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900 shadow-sm transition-colors">
+        <button onclick="quickBookTreatment('${t.title.replace(/'/g, "\\'")}')" class="text-xs font-semibold px-4 py-2 rounded-xl bg-emerald-800 text-white hover:bg-emerald-900 shadow-sm transition-all">
           Book For This
         </button>
       </div>
@@ -347,70 +353,65 @@ function openTreatmentModal(treatmentId) {
   modalContent.innerHTML = `
     <div class="space-y-6">
       <div class="border-b border-stone-200 pb-4">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900">${treatment.badge}</span>
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xs font-bold px-3 py-0.5 rounded-full bg-emerald-100 text-emerald-900">${treatment.badge}</span>
           <span class="text-xs font-serif-ayur italic text-amber-800">${treatment.sanskritName}</span>
         </div>
         <h2 class="text-2xl font-bold text-stone-900">${treatment.title}</h2>
         <p class="text-stone-600 text-sm mt-2 leading-relaxed">${treatment.overview}</p>
       </div>
 
-      <!-- Symptoms List -->
       <div>
         <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2">Key Clinical Indications</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           ${treatment.symptoms.map(s => `
-            <div class="flex items-center gap-2 text-sm text-stone-700 bg-stone-50 p-2 rounded-lg border border-stone-100">
-              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+            <div class="flex items-center gap-2 text-sm text-stone-700 bg-stone-50 p-2.5 rounded-xl border border-stone-100">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
               <span>${s}</span>
             </div>
           `).join('')}
         </div>
       </div>
 
-      <!-- Ayurvedic Classical Formulations -->
-      <div class="bg-amber-50/70 p-4 rounded-xl border border-amber-200/60">
+      <div class="bg-amber-50/70 p-4 rounded-2xl border border-amber-200/60">
         <h4 class="text-xs font-bold uppercase tracking-wider text-amber-900 mb-2 flex items-center gap-1.5">
           <i data-lucide="leaf" class="w-4 h-4 text-amber-700"></i>
-          Classical Ayurvedic Medicines & Kwathas Used
+          Classical Ayurvedic Formulations & Kwathas
         </h4>
         <div class="flex flex-wrap gap-2">
           ${treatment.classicalRemedies.map(r => `
-            <span class="text-xs font-medium px-3 py-1 bg-white text-stone-800 rounded-lg border border-amber-200 shadow-2xs">
+            <span class="text-xs font-semibold px-3 py-1 bg-white text-stone-800 rounded-lg border border-amber-200 shadow-2xs">
               ${r}
             </span>
           `).join('')}
         </div>
-        <p class="text-[11px] text-amber-800/80 mt-2 italic">*Customized strictly based on patient's Rogi-Roga Pariksha, Agni bala, and body constitution.</p>
+        <p class="text-[11px] text-amber-800/80 mt-2 italic">*Prescribed strictly per patient's Rogi-Roga Pariksha, Agni bala, and Tridosha assessment.</p>
       </div>
 
-      <!-- Panchakarma Therapies -->
       <div>
         <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2 flex items-center gap-1.5">
           <i data-lucide="sparkles" class="w-4 h-4 text-emerald-700"></i>
-          Associated Panchakarma & External Therapies
+          Panchakarma & Specialized External Therapies
         </h4>
-        <div class="space-y-1.5">
+        <div class="space-y-2">
           ${treatment.panchakarma.map(p => `
             <div class="text-xs sm:text-sm text-stone-700 flex items-start gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-700 mt-2 flex-shrink-0"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-700 mt-1.5 flex-shrink-0"></span>
               <span>${p}</span>
             </div>
           `).join('')}
         </div>
       </div>
 
-      <!-- Pathya-Apathya Diet -->
-      <div class="bg-emerald-50/60 p-4 rounded-xl border border-emerald-200">
+      <div class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-200">
         <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-950 mb-1 flex items-center gap-1.5">
           <i data-lucide="utensils" class="w-4 h-4 text-emerald-800"></i>
-          Dietary Principles (Pathya - Apathya)
+          Dietary Rules (Pathya - Apathya)
         </h4>
         <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${treatment.dietNote}</p>
       </div>
 
-      <!-- Doctor's Clinical Note -->
-      <div class="p-4 bg-stone-100 rounded-xl flex items-start gap-3">
+      <div class="p-4 bg-stone-100 rounded-2xl flex items-start gap-3">
         <div class="w-10 h-10 rounded-full bg-emerald-800 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
           AP
         </div>
@@ -422,12 +423,11 @@ function openTreatmentModal(treatmentId) {
         </div>
       </div>
 
-      <!-- Action buttons -->
       <div class="pt-4 border-t border-stone-200 flex flex-col sm:flex-row gap-3">
-        <button onclick="closeTreatmentModal(); quickBookTreatment('${treatment.title.replace(/'/g, "\\'")}')" class="flex-1 py-3 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-semibold text-center text-sm shadow-md transition-all">
+        <button onclick="closeTreatmentModal(); quickBookTreatment('${treatment.title.replace(/'/g, "\\'")}')" class="flex-1 py-3 px-5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-semibold text-center text-sm shadow-md transition-all">
           Book Consultation For This Condition
         </button>
-        <button onclick="closeTreatmentModal()" class="py-3 px-4 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-medium text-sm transition-all">
+        <button onclick="closeTreatmentModal()" class="py-3 px-5 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-medium text-sm transition-all">
           Close
         </button>
       </div>
@@ -518,7 +518,7 @@ const PRAKRITI_QUESTIONS = [
     question: "6. What is your normal sleep pattern?",
     options: [
       { text: "Light, easily disturbed, frequent waking, tends toward insomnia", dosha: "vata" },
-      { text: "Moderate, sound 6-7 hours, can wake up energized or wake up feeling warm", dosha: "pitta" },
+      { text: "Moderate, sound 6-7 hours, can wake up energized or feeling warm", dosha: "pitta" },
       { text: "Deep, heavy, uninterrupted 8+ hours, difficulty getting out of bed in the morning", dosha: "kapha" }
     ]
   }
@@ -534,12 +534,12 @@ function renderPrakritiQuiz() {
   container.innerHTML = `
     <div class="space-y-6">
       <div class="space-y-2">
-        <div class="flex justify-between items-center text-xs font-semibold text-emerald-900">
+        <div class="flex justify-between items-center text-xs font-bold text-emerald-900">
           <span>Question ${currentPrakritiStep + 1} of ${total}</span>
           <span>${Math.round(((currentPrakritiStep + 1) / total) * 100)}% Completed</span>
         </div>
-        <div class="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
-          <div class="bg-gradient-to-r from-emerald-600 to-amber-600 h-full transition-all duration-300" style="width: ${((currentPrakritiStep + 1) / total) * 100}%"></div>
+        <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden p-0.5">
+          <div class="bg-gradient-to-r from-emerald-700 via-teal-600 to-amber-600 h-full rounded-full transition-all duration-300" style="width: ${((currentPrakritiStep + 1) / total) * 100}%"></div>
         </div>
       </div>
 
@@ -547,7 +547,7 @@ function renderPrakritiQuiz() {
         <h4 class="text-base sm:text-lg font-bold text-stone-900 mb-4">${current.question}</h4>
         <div class="space-y-3">
           ${current.options.map((opt, idx) => `
-            <button onclick="handlePrakritiSelect('${opt.dosha}')" class="w-full text-left p-4 rounded-xl border border-stone-200 bg-white hover:border-emerald-600 hover:bg-emerald-50/40 hover:shadow-sm transition-all flex items-start gap-3 group">
+            <button onclick="handlePrakritiSelect('${opt.dosha}')" class="w-full text-left p-4 rounded-2xl border border-stone-200 bg-white hover:border-emerald-700 hover:bg-emerald-50/50 hover:shadow-sm transition-all duration-200 flex items-start gap-3.5 group">
               <div class="w-6 h-6 rounded-full border border-stone-300 group-hover:border-emerald-700 flex items-center justify-center text-xs font-bold text-stone-600 group-hover:text-emerald-800 flex-shrink-0 mt-0.5">
                 ${String.fromCharCode(65 + idx)}
               </div>
@@ -559,7 +559,7 @@ function renderPrakritiQuiz() {
 
       ${currentPrakritiStep > 0 ? `
         <div class="pt-2">
-          <button onclick="prevPrakritiStep()" class="text-xs font-medium text-stone-500 hover:text-stone-800 flex items-center gap-1">
+          <button onclick="prevPrakritiStep()" class="text-xs font-semibold text-stone-500 hover:text-stone-800 flex items-center gap-1.5 transition-colors">
             <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Previous Question
           </button>
         </div>
@@ -646,14 +646,14 @@ function calculatePrakritiResult() {
   container.innerHTML = `
     <div class="space-y-6 animate-fadeIn">
       <div class="text-center pb-4 border-b border-stone-200">
-        <span class="text-xs uppercase font-bold tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+        <span class="text-xs uppercase font-bold tracking-widest text-emerald-800 bg-emerald-100 px-3.5 py-1 rounded-full">
           Your Prakriti Assessment Result
         </span>
         <h3 class="text-2xl font-bold text-stone-900 mt-2">${prof.title}</h3>
         <p class="text-xs sm:text-sm text-stone-600 mt-1 italic">${prof.subtitle}</p>
       </div>
 
-      <div class="space-y-3 bg-stone-50 p-4 rounded-xl border border-stone-200">
+      <div class="space-y-3 bg-stone-50 p-4 rounded-2xl border border-stone-200">
         <div class="text-xs font-bold text-stone-700 uppercase tracking-wider mb-1">Your Tridosha Proportion:</div>
         
         <div>
@@ -689,17 +689,17 @@ function calculatePrakritiResult() {
 
       <div class="text-xs sm:text-sm text-stone-700 space-y-3 leading-relaxed">
         <p>${prof.characteristics}</p>
-        <div class="bg-emerald-50 p-3.5 rounded-xl border border-emerald-200">
-          <strong class="text-emerald-900 block font-semibold mb-1">Recommended Diet & Daily Routine:</strong>
+        <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200">
+          <strong class="text-emerald-900 block font-bold mb-1">Recommended Diet & Daily Routine:</strong>
           <span>${prof.keyAdvice}</span>
         </div>
-        <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-200">
-          <strong class="text-amber-900 block font-semibold mb-1">Supportive Classical Herbs:</strong>
+        <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200">
+          <strong class="text-amber-900 block font-bold mb-1">Supportive Classical Herbs:</strong>
           <span>${prof.herbalRecom}</span>
         </div>
       </div>
 
-      <div class="p-4 bg-gradient-to-r from-emerald-900 to-teal-900 text-white rounded-xl shadow-md space-y-3">
+      <div class="p-5 bg-gradient-to-r from-emerald-950 to-teal-950 text-white rounded-2xl shadow-md space-y-3">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center flex-shrink-0">
             <i data-lucide="stethoscope" class="w-5 h-5 text-amber-300"></i>
@@ -709,7 +709,7 @@ function calculatePrakritiResult() {
             <p class="text-xs text-stone-200">While this quiz gives your Prakriti tendency, a live clinical consultation with Dr. Apkesha reveals your current Vikriti (dosha imbalance) and root ailments.</p>
           </div>
         </div>
-        <button onclick="bookWithPrakritiResult('${prof.title.replace(/'/g, "\\'")}', '${dominant}')" class="w-full py-2.5 px-4 rounded-lg bg-amber-500 hover:bg-amber-600 text-stone-900 font-bold text-xs uppercase tracking-wider transition-colors shadow">
+        <button onclick="bookWithPrakritiResult('${prof.title.replace(/'/g, "\\'")}', '${dominant}')" class="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-500 text-stone-900 font-bold text-xs uppercase tracking-wider transition-all shadow">
           Book Consultation with Dr. Apkesha for Detailed Pulse Diagnosis
         </button>
       </div>
@@ -848,45 +848,45 @@ function openBookingSuccessModal(appointment) {
 
   detailsContainer.innerHTML = `
     <div class="space-y-4 text-stone-700 text-xs sm:text-sm">
-      <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center justify-between">
+      <div class="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 flex items-center justify-between">
         <div>
-          <span class="text-[11px] uppercase tracking-wider text-emerald-800 font-bold block">Appointment ID</span>
+          <span class="text-[10px] uppercase tracking-wider text-emerald-800 font-bold block">Appointment ID</span>
           <span class="text-base font-bold text-stone-900">${appointment.id}</span>
         </div>
         <div class="text-right">
-          <span class="text-[11px] uppercase tracking-wider text-emerald-800 font-bold block">Consultation Fee</span>
+          <span class="text-[10px] uppercase tracking-wider text-emerald-800 font-bold block">Consultation Fee</span>
           <span class="text-base font-bold text-emerald-900">₹${appointment.fee}</span>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-3 text-xs">
-        <div class="bg-stone-50 p-2.5 rounded-lg border border-stone-200">
+      <div class="grid grid-cols-2 gap-2.5 text-xs">
+        <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
           <span class="text-stone-400 block text-[10px] font-semibold uppercase">Patient Name</span>
           <strong class="text-stone-800 font-medium">${appointment.patientName} (${appointment.patientAge}y, ${appointment.patientGender})</strong>
         </div>
-        <div class="bg-stone-50 p-2.5 rounded-lg border border-stone-200">
+        <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
           <span class="text-stone-400 block text-[10px] font-semibold uppercase">Consultation Mode</span>
           <strong class="text-stone-800 font-medium">${appointment.mode}</strong>
         </div>
-        <div class="bg-stone-50 p-2.5 rounded-lg border border-stone-200">
+        <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
           <span class="text-stone-400 block text-[10px] font-semibold uppercase">Date & Time</span>
           <strong class="text-stone-800 font-medium">${appointment.appointmentDate} at ${appointment.timeSlot}</strong>
         </div>
-        <div class="bg-stone-50 p-2.5 rounded-lg border border-stone-200">
+        <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
           <span class="text-stone-400 block text-[10px] font-semibold uppercase">Health Concern</span>
           <strong class="text-stone-800 font-medium capitalize">${appointment.healthConcern}</strong>
         </div>
       </div>
 
       ${appointment.mode.includes('In-Clinic') ? `
-        <div class="p-3 bg-stone-100 rounded-lg text-xs space-y-1">
+        <div class="p-3 bg-stone-100 rounded-xl text-xs space-y-1">
           <strong class="text-stone-900 flex items-center gap-1.5 font-semibold">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700"></i> Evening Clinic Location:
           </strong>
           <p class="text-stone-600 pl-5">${doctorData.clinicName}, ${doctorData.address}, ${doctorData.city}</p>
         </div>
       ` : `
-        <div class="p-3 bg-stone-100 rounded-lg text-xs space-y-1">
+        <div class="p-3 bg-stone-100 rounded-xl text-xs space-y-1">
           <strong class="text-stone-900 flex items-center gap-1.5 font-semibold">
             <i data-lucide="video" class="w-3.5 h-3.5 text-emerald-700"></i> Teleconsultation Instructions:
           </strong>
@@ -896,18 +896,18 @@ function openBookingSuccessModal(appointment) {
 
       <!-- Direct WhatsApp Confirmation Button -->
       <div class="pt-2">
-        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Send Details to Dr. Apkesha on WhatsApp</span>
+          <span>Send Details to Dr. Apkesha on WhatsApp (+91 83476 75394)</span>
         </a>
-        <p class="text-[11px] text-stone-500 text-center mt-1.5">Sends instant appointment summary to Dr. Apkesha's clinic WhatsApp.</p>
+        <p class="text-[11px] text-stone-500 text-center mt-1.5">Directly forwards your appointment summary to Dr. Apkesha's WhatsApp.</p>
       </div>
 
       <div class="flex gap-2 pt-2 border-t border-stone-200">
-        <button onclick="downloadAppointmentSlip('${appointment.id}')" class="flex-1 py-2 px-3 rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-medium flex items-center justify-center gap-1.5">
+        <button onclick="downloadAppointmentSlip('${appointment.id}')" class="flex-1 py-2.5 px-3 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
           <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Slip
         </button>
-        <button onclick="closeBookingSuccessModal()" class="py-2 px-4 rounded-lg bg-stone-800 text-white hover:bg-stone-900 text-xs font-medium">
+        <button onclick="closeBookingSuccessModal()" class="py-2.5 px-5 rounded-xl bg-stone-800 text-white hover:bg-stone-900 text-xs font-semibold transition-all">
           Done
         </button>
       </div>
@@ -986,10 +986,10 @@ function openMyBookingsModal() {
     `;
   } else {
     list.innerHTML = appointments.map(a => `
-      <div class="p-3.5 rounded-xl border border-stone-200 bg-stone-50/70 hover:bg-white hover:border-emerald-600 transition-all space-y-2">
+      <div class="p-3.5 rounded-2xl border border-stone-200 bg-stone-50/70 hover:bg-white hover:border-emerald-600 transition-all space-y-2">
         <div class="flex items-center justify-between">
           <span class="text-xs font-bold text-stone-900">${a.patientName}</span>
-          <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">${a.id}</span>
+          <span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">${a.id}</span>
         </div>
         <div class="text-xs text-stone-600 flex flex-wrap gap-x-3 gap-y-1">
           <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 text-emerald-700"></i> ${a.appointmentDate} (${a.timeSlot})</span>
@@ -1095,7 +1095,7 @@ function showToast(message, isError = false) {
     </div>
   `;
 
-  toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl shadow-2xl text-white transition-all duration-300 ${
+  toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl shadow-2xl text-white transition-all duration-300 ${
     isError ? 'bg-red-900 border border-red-700' : 'bg-emerald-950 border border-emerald-700'
   }`;
 

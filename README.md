@@ -1,7 +1,9 @@
 # Dhanvantari Ayurveda Clinic & Panchakarma Center Website
 ### Dedicated Website for Dr. Apkesha Patel (AYUSH Medical Officer, Govt. of Gujarat - PHC)
 
-This is a modern, responsive, and production-ready web application designed specifically for **Dr. Apkesha Patel**, an Ayurvedic Physician currently serving as an **AYUSH Medical Officer in a Government Primary Health Center (PHC) in Gujarat**, offering evening clinical consultations and online teleconsultations.
+- **Phone / WhatsApp**: [+91 83476 75394](tel:+918347675394)
+- **Email**: [apexapatel316@gmail.com](mailto:apexapatel316@gmail.com)
+- **Consultation Modes**: In-Clinic Evening OPD (Gandhinagar, Gujarat) & Online Video Consultations worldwide.
 
 ---
 
@@ -11,13 +13,13 @@ This is a modern, responsive, and production-ready web application designed spec
    - Prominently showcases her **4–5 years of continuous clinical experience as an active AYUSH Medical Officer** under the Health & Family Welfare Department, Government of Gujarat.
    - Highlights 15,000+ patient diagnoses and treatments across diverse grassroots communities.
    - Verified registration badge (Gujarat Board of Ayurvedic & Unani Systems of Medicine).
-   - Clear scheduling structure: Morning duties dedicated to Government PHC public service, with private Evening In-Clinic OPD and scheduled afternoon/evening Teleconsultations.
+   - Clear scheduling structure: Morning duties dedicated to Government PHC public service, with private Evening In-Clinic OPD (5:00 PM - 8:30 PM & Sunday 9:30 AM - 1:00 PM) and scheduled afternoon/evening Teleconsultations.
 
 2. **Interactive Appointment Booking Engine**:
    - **Dual Consultation Modes**: In-Clinic Evening OPD (Gandhinagar, Gujarat) or Online Video Teleconsultation (Google Meet/WhatsApp Video across India & globally).
    - Dynamic time slots respecting her daily government schedule.
    - Patient intake form: Name, Age, Gender, WhatsApp number, City, Primary Health Concern, and Medical History notes.
-   - **Direct WhatsApp Confirmation**: Generates a pre-filled WhatsApp message with all patient booking details so the patient can notify Dr. Apkesha with a single click.
+   - **Direct WhatsApp Confirmation**: Generates a pre-filled WhatsApp message with all patient booking details addressed directly to Dr. Apkesha at `+91 83476 75394`.
    - Downloadable Appointment Slip (.txt summary).
    - "My Bookings" tracker modal saved locally in the browser.
 
@@ -74,15 +76,3 @@ Then open your web browser and navigate to:
 
 ### Option 2: Directly in Browser
 Double-click `index.html` to open it in Chrome, Edge, Safari, or Firefox.
-
----
-
-## 📁 Project Structure
-
-```
-├── index.html        # Complete semantic HTML5 structure, Tailwind CSS, Lucide icons
-├── styles.css        # Custom Ayurvedic color themes, typography, and animations
-├── app.js            # Booking engine, Prakriti dosha quiz, treatments filter, modals
-├── server.py         # Lightweight Python web server with CORS headers
-└── README.md         # Documentation & guide
-```
