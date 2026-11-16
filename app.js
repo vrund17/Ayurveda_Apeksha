@@ -1,8 +1,7 @@
 // ============================================================
-// AYURVEDA MEDICAL CLINIC - APP JAVASCRIPT
-// Dedicated to Dr. Apkesha Patel
-// Serving AYUSH Medical Officer (Govt. of Gujarat - PHC)
-// Contact: +918347675394 | Email: apexapatel316@gmail.com
+// DHANVANTARI AYURVEDA CLINIC - ENHANCED JAVASCRIPT ENGINE
+// Dedicated to Dr. Apkesha Patel (AYUSH Medical Officer, Govt. of Gujarat)
+// Contact: +91 83476 75394 | Email: apexapatel316@gmail.com
 // ============================================================
 
 const DEFAULT_DOCTOR_DATA = {
@@ -29,6 +28,7 @@ let doctorData = { ...DEFAULT_DOCTOR_DATA };
 let currentPrakritiStep = 0;
 let prakritiAnswers = {};
 let appointments = [];
+let currentLang = 'en'; // 'en' or 'gu'
 
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initLucideIcons();
   setupEventListeners();
   renderTreatments('all');
+  renderDinacharyaSchedule(6); // Default 6:00 AM wake up
 });
 
-// Load Doctor Data from LocalStorage with auto-migration to new contact details
+// Load Doctor Data from LocalStorage
 function loadDoctorData() {
   const saved = localStorage.getItem('ayur_doctor_data');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
-      // Migrate to new phone / email / name
       parsed.name = DEFAULT_DOCTOR_DATA.name;
       parsed.phone = DEFAULT_DOCTOR_DATA.phone;
       parsed.whatsapp = DEFAULT_DOCTOR_DATA.whatsapp;
@@ -62,27 +62,24 @@ function loadDoctorData() {
   }
 }
 
-// Save Doctor Data to LocalStorage
 function saveDoctorData() {
   localStorage.setItem('ayur_doctor_data', JSON.stringify(doctorData));
   renderDynamicDoctorData();
   showToast("Doctor details updated successfully!");
 }
 
-// Load Appointments
 function loadAppointments() {
   const saved = localStorage.getItem('ayur_appointments');
   if (saved) {
     try {
       appointments = JSON.parse(saved);
-      updateBookingsBadge();
     } catch (e) {
       console.error("Error loading appointments:", e);
     }
   }
+  updateBookingsBadge();
 }
 
-// Save Appointments
 function saveAppointments() {
   localStorage.setItem('ayur_appointments', JSON.stringify(appointments));
   updateBookingsBadge();
@@ -93,7 +90,6 @@ function updateBookingsBadge() {
   if (badge) {
     const total = 50 + appointments.length;
     badge.textContent = `${total}+`;
-    badge.classList.remove('hidden');
   }
 }
 
@@ -123,12 +119,10 @@ function renderDynamicDoctorData() {
     });
   });
 
-  // Initials
   document.querySelectorAll('.doc-initials').forEach(el => {
     el.textContent = "AP";
   });
 
-  // Update WhatsApp links with formatted URL
   const waUrl = `https://wa.me/${doctorData.whatsapp}?text=${encodeURIComponent("Namaste Dr. Apkesha Patel, I would like to enquire about Ayurvedic consultation.")}`;
   
   const floatWa = document.getElementById('floatingWhatsApp');
@@ -140,25 +134,21 @@ function renderDynamicDoctorData() {
   const contactWa = document.getElementById('contactWhatsAppBtn');
   if (contactWa) contactWa.href = waUrl;
 
-  // Phone links
   document.querySelectorAll('.doc-phone-link').forEach(el => {
     el.href = `tel:+918347675394`;
   });
 
-  // Email links
   document.querySelectorAll('.doc-email-link').forEach(el => {
     el.href = `mailto:${doctorData.email}`;
   });
 }
 
-// Initialize Lucide Icons
 function initLucideIcons() {
   if (window.lucide) {
     window.lucide.createIcons();
   }
 }
 
-// Date input initialization (Min date = tomorrow)
 function initDateInput() {
   const dateInput = document.getElementById('appointmentDate');
   if (dateInput) {
@@ -171,19 +161,16 @@ function initDateInput() {
   }
 }
 
-// Update available slots based on Mode
 function updateAvailableSlots() {
   const mode = document.querySelector('input[name="consultationMode"]:checked')?.value || 'clinic';
   const slotsContainer = document.getElementById('timeSlotsContainer');
   if (!slotsContainer) return;
 
-  // Evening In-Clinic OPD Slots (Govt PHC morning service respected)
   const inClinicSlots = [
     "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM",
     "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM"
   ];
 
-  // Afternoon & post-OPD teleconsultation slots
   const onlineSlots = [
     "02:00 PM", "02:45 PM", "03:30 PM", "04:15 PM",
     "08:30 PM", "09:00 PM"
@@ -211,7 +198,55 @@ function updateAvailableSlots() {
 }
 
 // ============================================================
-// TREATMENTS DATABASE & FILTER
+// BILINGUAL LANGUAGE SWITCHER (English / ગુજરાતી)
+// ============================================================
+const BILINGUAL_STRINGS = {
+  heroTag: {
+    en: "Serving AYUSH Medical Officer • Govt. Primary Health Center (PHC), Gujarat",
+    gu: "સરકારી આયુષ મેડિકલ ઓફિસર • પ્રાથમિક આરોગ્ય કેન્દ્ર (PHC), ગુજરાત સરકાર"
+  },
+  heroHeading: {
+    en: "Authentic Ayurvedic Healing with Active Public Health Mastery",
+    gu: "પ્રાથમિક આરોગ્ય સેવાના અનુભવ સાથે શાસ્ત્રોક્ત આયુર્વેદિક ઉપચાર"
+  },
+  heroSub: {
+    en: "Personalized, root-cause healing for chronic digestive issues, joint pain, skin disorders, and women’s hormonal health. Backed by 4 to 5 years of active, frontline clinical experience serving as an AYUSH Medical Officer at a Government Primary Health Center in Gujarat.",
+    gu: "ગુજરાતના પ્રાથમિક આરોગ્ય કેન્દ્ર (PHC)માં ૪-૫ વર્ષના સરકારી સેવાના બહોળા અનુભવ અને ૧૫,૦૦૦+ દર્દીઓના સંતોષકારક ઈલાજ સાથે સાંધાના દુખાવા, પેટના રોગો, ચામડીની તકલીફો અને સ્ત્રી રોગોનો મૂળમાંથી કાયમી ઉકેલ."
+  },
+  bookBtn: {
+    en: "Book Consultation",
+    gu: "એપોઇન્ટમેન્ટ બુક કરો"
+  },
+  doshaBtn: {
+    en: "Take Free Dosha Quiz",
+    gu: "પ્રકૃતિ (દોષ) ટેસ્ટ આપો"
+  }
+};
+
+function toggleLanguage() {
+  currentLang = currentLang === 'en' ? 'gu' : 'en';
+  const langBtn = document.getElementById('langToggleBtn');
+  if (langBtn) {
+    langBtn.innerHTML = currentLang === 'en' 
+      ? `<span class="font-bold">ગુજરાતી</span>` 
+      : `<span class="font-bold">English</span>`;
+  }
+
+  // Update dynamic translatable fields
+  const heroTagEl = document.getElementById('transHeroTag');
+  if (heroTagEl) heroTagEl.textContent = BILINGUAL_STRINGS.heroTag[currentLang];
+
+  const heroHeadingEl = document.getElementById('transHeroHeading');
+  if (heroHeadingEl) heroHeadingEl.textContent = BILINGUAL_STRINGS.heroHeading[currentLang];
+
+  const heroSubEl = document.getElementById('transHeroSub');
+  if (heroSubEl) heroSubEl.textContent = BILINGUAL_STRINGS.heroSub[currentLang];
+
+  showToast(currentLang === 'gu' ? "ગુજરાતી ભાષા પસંદ કરેલ છે" : "Language switched to English");
+}
+
+// ============================================================
+// TREATMENTS DATABASE & REAL-TIME SEARCH FILTER
 // ============================================================
 const TREATMENTS_DATA = [
   {
@@ -288,21 +323,48 @@ const TREATMENTS_DATA = [
   }
 ];
 
-// Render Treatments Grid with smooth card design
-function renderTreatments(filter) {
+let activeCategoryFilter = 'all';
+
+function renderTreatments(filter = 'all', searchQuery = '') {
   const container = document.getElementById('treatmentsGrid');
   if (!container) return;
 
-  const filtered = filter === 'all' ? TREATMENTS_DATA : TREATMENTS_DATA.filter(t => t.category === filter);
+  activeCategoryFilter = filter;
+  let filtered = filter === 'all' ? TREATMENTS_DATA : TREATMENTS_DATA.filter(t => t.category === filter);
+
+  if (searchQuery.trim() !== '') {
+    const q = searchQuery.toLowerCase();
+    filtered = filtered.filter(t => 
+      t.title.toLowerCase().includes(q) ||
+      t.sanskritName.toLowerCase().includes(q) ||
+      t.overview.toLowerCase().includes(q) ||
+      t.symptoms.some(s => s.toLowerCase().includes(q))
+    );
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full py-12 text-center text-stone-500 bg-white rounded-3xl border border-stone-200 p-8">
+        <i data-lucide="search-x" class="w-12 h-12 mx-auto text-stone-300 mb-3"></i>
+        <h4 class="font-bold text-base text-stone-800">No exact matches found for "${searchQuery}"</h4>
+        <p class="text-xs text-stone-500 mt-1 max-w-md mx-auto">Ayurveda addresses hundreds of systemic conditions. You can directly consult Dr. Apkesha via WhatsApp for your symptoms.</p>
+        <button onclick="document.getElementById('treatmentSearchInput').value=''; renderTreatments('all');" class="mt-4 px-4 py-2 rounded-xl bg-emerald-800 text-white text-xs font-bold">
+          View All Treatments
+        </button>
+      </div>
+    `;
+    initLucideIcons();
+    return;
+  }
 
   container.innerHTML = filtered.map(t => `
-    <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-ayur-sm border border-stone-200/80 flex flex-col justify-between card-hover group">
+    <div class="glass-card-luxury rounded-3xl p-6 sm:p-7 shadow-luxury-sm border border-stone-200/90 flex flex-col justify-between card-hover-lift group">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">
+          <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-950 border border-emerald-300">
             ${t.badge}
           </span>
-          <span class="text-xs font-serif-ayur italic text-amber-800">
+          <span class="text-xs font-serif-ayur italic text-amber-800 font-medium">
             ${t.sanskritName}
           </span>
         </div>
@@ -319,7 +381,7 @@ function renderTreatments(filter) {
           <p class="text-[10px] uppercase tracking-wider font-bold text-stone-400">Clinical Focus Areas:</p>
           <div class="flex flex-wrap gap-1.5">
             ${t.symptoms.map(s => `
-              <span class="text-xs px-2.5 py-1 bg-stone-50 rounded-lg text-stone-700 border border-stone-200/80">
+              <span class="text-xs px-2.5 py-1 bg-stone-50 rounded-lg text-stone-700 border border-stone-200">
                 ${s}
               </span>
             `).join('')}
@@ -340,6 +402,11 @@ function renderTreatments(filter) {
   `).join('');
 
   initLucideIcons();
+}
+
+function handleTreatmentSearch(e) {
+  const query = e.target.value;
+  renderTreatments(activeCategoryFilter, query);
 }
 
 // Open Treatment Modal
@@ -455,9 +522,7 @@ function quickBookTreatment(treatmentTitle) {
         break;
       }
     }
-    if (!matched) {
-      select.value = "other";
-    }
+    if (!matched) select.value = "other";
   }
 
   const notes = document.getElementById('patientNotes');
@@ -469,6 +534,197 @@ function quickBookTreatment(treatmentTitle) {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
+}
+
+// ============================================================
+// FEATURE 1: INTERACTIVE AYURVEDIC SYMPTOM CHECKER & TRIAGE
+// ============================================================
+const SYMPTOM_DATABASE = [
+  { id: "s1", label: "Frequent Heartburn, Burning in Chest & Acid Reflux", dosha: "Pitta", organ: "Annavaha Srotas (Stomach)", remedy: "Avipattikar Churna & Kamadudha Rasa", target: "gut-health" },
+  { id: "s2", label: "Joint Stiffness in Morning, Knee Cracking & Dull Pain", dosha: "Vata", organ: "Asthi-Sandhi (Joints)", remedy: "Yograj Guggulu & Janu Basti", target: "joint-spine" },
+  { id: "s3", label: "Severe Hair Fall, Premature Greying or Scalp Dandruff", dosha: "Pitta-Vata", organ: "Asthi Dhatu / Bhrajaka Pitta", remedy: "Nasya with Anu Taila & Bhringraj Rasayana", target: "skin-hair" },
+  { id: "s4", label: "Irregular Menstrual Cycles, Cystic Acne & Weight Gain", dosha: "Kapha-Vata", organ: "Artavavaha Srotas", remedy: "Kanchanar Guggulu & Pushyanug Churna", target: "womens-health" },
+  { id: "s5", label: "Chronic Constipation, Dry Hard Stools & Bloating", dosha: "Apana Vata", organ: "Pakwashaya (Colon)", remedy: "Haritaki & Panchasakar Churna with warm water", target: "gut-health" },
+  { id: "s6", label: "Red Scaly Skin Patches, Itching & Flaking (Psoriasis/Eczema)", dosha: "Rakta-Pitta", organ: "Raktavaha Srotas & Rasa Dhatu", remedy: "Mahatiktaka Ghrita & Khadirarishta", target: "skin-hair" },
+  { id: "s7", label: "High Blood Sugar, Excessive Thirst & Night Urination", dosha: "Kaphaja Prameha", organ: "Medovaha Srotas", remedy: "Nisha-Amalaki & Chandraprabha Vati", target: "lifestyle-metabolic" },
+  { id: "s8", label: "Morning Sneezing, Sinus Congestion & Wheezing", dosha: "Kapha-Vata", organ: "Pranavaha Srotas (Airways)", remedy: "Sitopaladi Churna & Haridra Khanda", target: "respiratory-immunity" }
+];
+
+let selectedSymptoms = new Set();
+
+function renderSymptomChecker() {
+  const container = document.getElementById('symptomChipsContainer');
+  if (!container) return;
+
+  container.innerHTML = SYMPTOM_DATABASE.map(item => `
+    <button type="button" onclick="toggleSymptom('${item.id}')" id="symptomBtn-${item.id}" class="text-left px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white hover:border-emerald-700 text-xs sm:text-sm font-medium text-stone-800 transition-all flex items-center justify-between gap-2 shadow-2xs">
+      <span>${item.label}</span>
+      <span class="w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center flex-shrink-0 text-[10px]"></span>
+    </button>
+  `).join('');
+}
+
+function toggleSymptom(id) {
+  const btn = document.getElementById(`symptomBtn-${id}`);
+  if (!btn) return;
+
+  if (selectedSymptoms.has(id)) {
+    selectedSymptoms.delete(id);
+    btn.classList.remove('bg-emerald-900', 'text-white', 'border-emerald-900');
+    btn.classList.add('bg-white', 'text-stone-800', 'border-stone-200');
+    btn.querySelector('span:last-child').innerHTML = '';
+  } else {
+    selectedSymptoms.add(id);
+    btn.classList.add('bg-emerald-900', 'text-white', 'border-emerald-900');
+    btn.classList.remove('bg-white', 'text-stone-800', 'border-stone-200');
+    btn.querySelector('span:last-child').innerHTML = '✓';
+  }
+
+  evaluateSymptomAnalysis();
+}
+
+function evaluateSymptomAnalysis() {
+  const resultContainer = document.getElementById('symptomTriageResult');
+  if (!resultContainer) return;
+
+  if (selectedSymptoms.size === 0) {
+    resultContainer.innerHTML = `
+      <div class="text-center py-6 text-stone-400">
+        <i data-lucide="stethoscope" class="w-8 h-8 mx-auto text-stone-300 mb-2"></i>
+        <p class="text-xs font-medium">Select one or more symptoms above to view instant Ayurvedic Root-Cause Analysis.</p>
+      </div>
+    `;
+    initLucideIcons();
+    return;
+  }
+
+  const selectedData = SYMPTOM_DATABASE.filter(item => selectedSymptoms.has(item.id));
+  const doshas = [...new Set(selectedData.map(d => d.dosha))].join(' & ');
+  const remedies = selectedData.map(d => d.remedy).slice(0, 3).join(', ');
+
+  resultContainer.innerHTML = `
+    <div class="bg-gradient-to-br from-emerald-950 via-[#0f382a] to-emerald-900 text-white p-5 rounded-2xl shadow-luxury-md space-y-4 animate-fadeIn">
+      <div class="flex items-center justify-between pb-3 border-b border-white/20">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-300">Ayurvedic Triage Assessment</span>
+          <h4 class="text-base font-bold text-white mt-0.5">Primary Aggravated Dosha: ${doshas}</h4>
+        </div>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-800/80 border border-emerald-600 text-emerald-200">
+          ${selectedSymptoms.size} Symptoms Identified
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+          <span class="text-emerald-300 block font-bold text-[10px] uppercase">Pathological Channel (Srotas)</span>
+          <p class="text-stone-200 mt-0.5">${selectedData.map(d => d.organ).join(', ')}</p>
+        </div>
+        <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+          <span class="text-amber-300 block font-bold text-[10px] uppercase">Classical Supportive Formulations</span>
+          <p class="text-stone-200 mt-0.5">${remedies}</p>
+        </div>
+      </div>
+
+      <div class="pt-1 flex flex-col sm:flex-row gap-2">
+        <button onclick="bookWithSymptomTriage('${doshas}')" class="flex-1 py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-500 text-stone-900 font-bold text-xs uppercase tracking-wider transition-all shadow">
+          Book Pulse Diagnosis with Dr. Apkesha for these Symptoms
+        </button>
+      </div>
+    </div>
+  `;
+  initLucideIcons();
+}
+
+function bookWithSymptomTriage(doshas) {
+  const selectedLabels = SYMPTOM_DATABASE.filter(item => selectedSymptoms.has(item.id)).map(i => i.label);
+  const notes = document.getElementById('patientNotes');
+  if (notes) {
+    notes.value = `Symptom Triage (${doshas} imbalance): ${selectedLabels.join('; ')}. Seeking personalized herbal Chikitsa.`;
+  }
+  const section = document.getElementById('book-appointment');
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ============================================================
+// FEATURE 2: MEDICINE COURIER DELIVERY TIMELINE ESTIMATOR
+// ============================================================
+function estimateDeliveryTimeline() {
+  const input = document.getElementById('deliveryPincodeInput');
+  const resultEl = document.getElementById('deliveryEstimateResult');
+  if (!input || !resultEl) return;
+
+  const val = input.value.trim().toLowerCase();
+  if (val.length < 3) {
+    resultEl.innerHTML = `<span class="text-red-500 text-xs font-semibold">Please enter a valid Pincode or City name.</span>`;
+    return;
+  }
+
+  // Calculate estimated days based on location
+  let days = "2-3 Days";
+  let locationLabel = "Express Dispatch across Gujarat";
+  
+  if (val.includes("ahmedabad") || val.includes("gandhinagar") || val.startsWith("380") || val.startsWith("382")) {
+    days = "Same Day / Next Day Delivery";
+    locationLabel = "Local Courier from Sector 7 Gandhinagar Clinic";
+  } else if (val.startsWith("38") || val.startsWith("39") || val.includes("surat") || val.includes("vadodara") || val.includes("rajkot")) {
+    days = "1 - 2 Business Days";
+    locationLabel = "Gujarat Intra-State Express Dispatch";
+  } else if (val.includes("london") || val.includes("uk") || val.includes("dubai") || val.includes("usa") || val.includes("canada")) {
+    days = "5 - 7 Days via DHL Express";
+    locationLabel = "International Registered Medicine Export with Phytosanitary Cleared Pack";
+  } else {
+    days = "3 - 4 Business Days";
+    locationLabel = "Pan-India SpeedPost / BlueDart Express";
+  }
+
+  resultEl.innerHTML = `
+    <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs space-y-1 animate-fadeIn">
+      <div class="flex items-center justify-between text-emerald-950 font-bold">
+        <span class="flex items-center gap-1.5"><i data-lucide="truck" class="w-4 h-4 text-emerald-700"></i> Delivery Estimate:</span>
+        <span class="text-sm text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-full font-bold">${days}</span>
+      </div>
+      <p class="text-stone-600 text-[11px]">${locationLabel}. Sourced fresh from GMP-certified pharmacy.</p>
+    </div>
+  `;
+  initLucideIcons();
+}
+
+// ============================================================
+// FEATURE 3: DAILY DINACHARYA (AYURVEDIC ROUTINE) GENERATOR
+// ============================================================
+function renderDinacharyaSchedule(wakeHour = 6) {
+  const container = document.getElementById('dinacharyaContainer');
+  if (!container) return;
+
+  const schedule = [
+    { time: `${wakeHour}:00 AM`, title: "Brahma Muhurta & Ushapan", desc: "Wake up before sunrise. Drink 1-2 glasses of lukewarm copper/earthen water. Evacuation of natural urges." },
+    { time: `${wakeHour + 1}:00 AM`, title: "Dantadhavana & Abhyanga", desc: "Herbal tooth cleaning with Neem/Babul. 10-min self-massage with warm Sesame oil (Winter) or Coconut oil (Summer)." },
+    { time: `${wakeHour + 2}:00 AM`, title: "Vyayama & Pranayama", desc: "30 mins of moderate Yoga/Surya Namaskar (up to half capacity). 10 mins Anulom-Vilom and Nadi Shodhana." },
+    { time: `12:30 PM – 1:30 PM`, title: "Pradhana Bhojana (Peak Agni Lunch)", desc: "Main meal when the sun is at its highest and digestive fire is strongest. Include warm fresh meals with cow ghee." },
+    { time: `04:30 PM – 5:00 PM`, title: "Herbal Refreshment", desc: "Warm CCF (Cumin, Coriander, Fennel) herbal tea. Avoid heavy fried tea-time snacks." },
+    { time: `07:30 PM – 8:30 PM`, title: "Laghvaahar (Light Dinner)", desc: "Warm Khichdi, vegetable soup, or light Chapati. Finish dinner at least 2 hours before sleeping." },
+    { time: `10:00 PM`, title: "Nidra (Restorative Sleep)", desc: "Padabhyanga (Foot massage with ghee/sesame oil). Disconnect from blue screens for deep melatonin synthesis." }
+  ];
+
+  container.innerHTML = schedule.map((item, idx) => `
+    <div class="flex items-start gap-3.5 p-3.5 rounded-2xl border border-stone-200/80 bg-white hover:border-emerald-600 transition-all card-hover-lift">
+      <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-900 font-bold flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+        ${idx + 1}
+      </div>
+      <div class="space-y-0.5">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-emerald-800">${item.time}</span>
+          <span class="text-xs font-bold text-stone-900">• ${item.title}</span>
+        </div>
+        <p class="text-xs text-stone-600 leading-relaxed">${item.desc}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function handleWakeTimeChange(e) {
+  const val = parseInt(e.target.value, 10);
+  renderDinacharyaSchedule(val);
 }
 
 // ============================================================
@@ -700,7 +956,7 @@ function calculatePrakritiResult() {
         </div>
       </div>
 
-      <div class="p-5 bg-gradient-to-r from-emerald-950 to-teal-950 text-white rounded-2xl shadow-md space-y-3">
+      <div class="p-5 bg-gradient-to-r from-emerald-950 via-[#0f382a] to-emerald-900 text-white rounded-2xl shadow-luxury-md space-y-3">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center flex-shrink-0">
             <i data-lucide="stethoscope" class="w-5 h-5 text-amber-300"></i>
@@ -755,17 +1011,28 @@ function setupEventListeners() {
   document.querySelectorAll('.treatment-tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.treatment-tab-btn').forEach(b => {
-        b.classList.remove('bg-emerald-800', 'text-white', 'border-emerald-800');
+        b.classList.remove('cat-pill-active');
         b.classList.add('bg-white', 'text-stone-700', 'border-stone-200');
       });
-      btn.classList.add('bg-emerald-800', 'text-white', 'border-emerald-800');
+      btn.classList.add('cat-pill-active');
       btn.classList.remove('bg-white', 'text-stone-700', 'border-stone-200');
       const cat = btn.getAttribute('data-category');
       renderTreatments(cat);
     });
   });
 
+  const searchInput = document.getElementById('treatmentSearchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', handleTreatmentSearch);
+  }
+
+  const wakeTimeInput = document.getElementById('wakeTimeSelect');
+  if (wakeTimeInput) {
+    wakeTimeInput.addEventListener('change', handleWakeTimeChange);
+  }
+
   renderPrakritiQuiz();
+  renderSymptomChecker();
 
   const settingsForm = document.getElementById('doctorSettingsForm');
   if (settingsForm) {
@@ -905,6 +1172,9 @@ function openBookingSuccessModal(appointment) {
       </div>
 
       <div class="flex gap-2 pt-2 border-t border-stone-200">
+        <button onclick="downloadCalendarEvent('${appointment.id}')" class="flex-1 py-2.5 px-3 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+          <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i> Add to Calendar (.ics)
+        </button>
         <button onclick="downloadAppointmentSlip('${appointment.id}')" class="flex-1 py-2.5 px-3 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
           <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Slip
         </button>
@@ -922,6 +1192,37 @@ function openBookingSuccessModal(appointment) {
 function closeBookingSuccessModal() {
   const modal = document.getElementById('bookingSuccessModal');
   if (modal) modal.classList.add('hidden');
+}
+
+// Download .ics Calendar event
+function downloadCalendarEvent(id) {
+  const appt = appointments.find(a => a.id === id);
+  if (!appt) return;
+
+  const dtClean = appt.appointmentDate.replace(/-/g, '');
+  const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Dhanvantari Ayurveda//Dr Apkesha Patel//EN
+BEGIN:VEVENT
+UID:${appt.id}@dhanvantariayurveda.com
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTSTART;VALUE=DATE:${dtClean}
+SUMMARY:Ayurvedic Consultation with Dr. Apkesha Patel (${appt.mode})
+DESCRIPTION:Appointment ID: ${appt.id}\\nPatient: ${appt.patientName}\\nChief Concern: ${appt.healthConcern}\\nFee: Rs. ${appt.fee}\\nClinic Phone: +91 83476 75394
+LOCATION:${appt.mode.includes('In-Clinic') ? 'Gandhinagar Clinic, Gujarat' : 'Online Video Call'}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+  const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `Appointment_${appt.id}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 function downloadAppointmentSlip(id) {
@@ -1000,9 +1301,14 @@ function openMyBookingsModal() {
         </div>
         <div class="flex items-center justify-between pt-1 border-t border-stone-200/60 text-[11px]">
           <span class="text-stone-500">Concern: <strong class="text-stone-700 capitalize">${a.healthConcern}</strong></span>
-          <button onclick="downloadAppointmentSlip('${a.id}')" class="text-emerald-800 hover:text-emerald-950 font-semibold flex items-center gap-1">
-            <i data-lucide="download" class="w-3 h-3"></i> Slip
-          </button>
+          <div class="flex gap-2">
+            <button onclick="downloadCalendarEvent('${a.id}')" class="text-stone-600 hover:text-stone-900 font-semibold flex items-center gap-1">
+              <i data-lucide="calendar" class="w-3 h-3"></i> Cal
+            </button>
+            <button onclick="downloadAppointmentSlip('${a.id}')" class="text-emerald-800 hover:text-emerald-950 font-semibold flex items-center gap-1">
+              <i data-lucide="download" class="w-3 h-3"></i> Slip
+            </button>
+          </div>
         </div>
       </div>
     `).join('');

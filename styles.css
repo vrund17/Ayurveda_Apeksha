@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap');
 
 :root {
-  --color-ayur-primary: #0f2e23;
-  --color-ayur-deep: #133e2f;
-  --color-ayur-forest: #1b4332;
-  --color-ayur-leaf: #2d6a4f;
-  --color-ayur-accent: #40916c;
-  --color-ayur-light: #f0f7f3;
+  --color-ayur-primary: #0a251b;
+  --color-ayur-deep: #0f382a;
+  --color-ayur-forest: #164e3a;
+  --color-ayur-leaf: #246a50;
+  --color-ayur-emerald: #10b981;
+  --color-ayur-accent: #34d399;
   --color-ayur-gold: #c59b27;
-  --color-ayur-gold-dark: #9a781b;
   --color-ayur-gold-light: #fef7e0;
+  --color-ayur-gold-glow: rgba(197, 155, 39, 0.35);
   --color-ayur-cream: #faf9f5;
-  --color-ayur-warmbg: #f4efe6;
-  --color-ayur-copper: #b45309;
-  --color-ayur-text: #1a202c;
-  --color-ayur-muted: #52525b;
+  --color-ayur-warmbg: #f5efe4;
+  --color-ayur-text: #18221e;
+  --color-ayur-muted: #576560;
 }
 
 html {
@@ -27,130 +26,132 @@ body {
   background-color: var(--color-ayur-cream);
   color: var(--color-ayur-text);
   overflow-x: hidden;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
 }
 
 .font-serif-ayur {
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
 .font-vedic {
   font-family: 'Rozha One', serif;
 }
 
-/* Custom Smooth Scrollbar */
+/* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1ede4;
+  background: #f4efe6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2d6a4f;
+  background: #164e3a;
   border-radius: 9999px;
-  border: 2px solid #f1ede4;
+  border: 2px solid #f4efe6;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1b4332;
+  background: #0a251b;
 }
 
-/* Subtle Herbal Mesh Pattern */
-.bg-herbal-pattern {
+/* Ambient Herbal Mesh & Aura Background */
+.bg-luxury-mesh {
   background-color: #faf9f5;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(45, 106, 79, 0.04) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(197, 155, 39, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(27, 67, 50, 0.04) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(197, 155, 39, 0.03) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(22, 78, 58, 0.05) 0px, transparent 45%),
+    radial-gradient(at 100% 0%, rgba(197, 155, 39, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(245, 239, 228, 0.4) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(15, 56, 42, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(197, 155, 39, 0.04) 0px, transparent 40%);
 }
 
-/* Glassmorphic Panels */
-.glass-header {
-  background: rgba(255, 255, 255, 0.92);
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  border-bottom: 1px solid rgba(15, 56, 42, 0.08);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(27, 67, 50, 0.08);
+.glass-card-luxury {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 56, 42, 0.07);
 }
 
-.glass-card:hover {
-  border-color: rgba(45, 106, 79, 0.28);
+.glass-card-dark {
+  background: linear-gradient(145deg, #0a251b 0%, #0f382a 60%, #164e3a 100%);
+  border: 1px solid rgba(197, 155, 39, 0.3);
 }
 
-/* Refined Soft Shadows */
-.shadow-ayur-sm {
-  box-shadow: 0 2px 8px -1px rgba(15, 46, 35, 0.06), 0 1px 3px -1px rgba(15, 46, 35, 0.04);
+/* Shadows */
+.shadow-luxury-sm {
+  box-shadow: 0 2px 10px -2px rgba(10, 37, 27, 0.05), 0 1px 4px -1px rgba(10, 37, 27, 0.03);
 }
 
-.shadow-ayur-md {
-  box-shadow: 0 12px 28px -6px rgba(15, 46, 35, 0.08), 0 4px 10px -2px rgba(15, 46, 35, 0.04);
+.shadow-luxury-md {
+  box-shadow: 0 14px 30px -8px rgba(10, 37, 27, 0.08), 0 4px 12px -2px rgba(10, 37, 27, 0.04);
 }
 
-.shadow-ayur-lg {
-  box-shadow: 0 20px 40px -10px rgba(15, 46, 35, 0.12), 0 8px 16px -4px rgba(15, 46, 35, 0.05);
+.shadow-luxury-lg {
+  box-shadow: 0 24px 50px -12px rgba(10, 37, 27, 0.12), 0 8px 20px -4px rgba(10, 37, 27, 0.06);
 }
 
-.shadow-ayur-gold {
-  box-shadow: 0 12px 25px -4px rgba(197, 155, 39, 0.28);
+.shadow-gold-subtle {
+  box-shadow: 0 12px 28px -5px rgba(197, 155, 39, 0.32);
 }
 
-/* Micro-interactions & animations */
-.card-hover {
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+/* Smooth Card Hover Interactions */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(15, 46, 35, 0.12), 0 4px 10px -2px rgba(15, 46, 35, 0.04);
+.card-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(10, 37, 27, 0.12), 0 6px 16px -2px rgba(10, 37, 27, 0.05);
+  border-color: rgba(22, 78, 58, 0.25);
 }
 
-/* Soft Pulsing CTA */
-@keyframes softPulse {
+/* Pulsing CTA Effect */
+@keyframes luxuryPulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 4px 14px 0 rgba(27, 67, 50, 0.35);
+    box-shadow: 0 4px 15px 0 rgba(22, 78, 58, 0.35);
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 8px 24px 4px rgba(27, 67, 50, 0.45);
+    box-shadow: 0 8px 26px 4px rgba(22, 78, 58, 0.45);
   }
 }
 
-.pulse-button {
-  animation: softPulse 2.8s infinite ease-in-out;
+.pulse-luxury {
+  animation: luxuryPulse 3s infinite ease-in-out;
 }
 
-/* Floating WhatsApp Button with pulse ripple */
-.whatsapp-float {
+/* Floating WhatsApp Button */
+.whatsapp-float-luxury {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 99;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.whatsapp-float:hover {
+.whatsapp-float-luxury:hover {
   transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
 }
 
-/* Smooth Accordion */
-.faq-answer {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-/* Fade in for dynamic content */
-@keyframes fadeIn {
+/* Dynamic Animation Fades */
+@keyframes fadeInSlide {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -159,10 +160,18 @@ body {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Gradient decorative border */
-.border-gold-subtle {
-  border-image: linear-gradient(to right, rgba(197, 155, 39, 0.4), rgba(254, 247, 224, 0.8), rgba(197, 155, 39, 0.4)) 1;
+/* Gold Gradient Borders */
+.border-gold-accent {
+  border-image: linear-gradient(135deg, #c59b27, #fef7e0, #c59b27) 1;
+}
+
+/* Active Category Pill */
+.cat-pill-active {
+  background: linear-gradient(135deg, #0a251b 0%, #164e3a 100%) !important;
+  color: #ffffff !important;
+  border-color: #0a251b !important;
+  box-shadow: 0 4px 12px rgba(10, 37, 27, 0.25);
 }
