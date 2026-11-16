@@ -725,12 +725,19 @@ const FAQS_DATA = [
 let doctorData = { ...DEFAULT_DOCTOR_DATA };
 let currentLang = 'en'; // 'en', 'gu', or 'hi'
 let appointments = [];
+const pageCache = new Map();
+let isNavigating = false;
 
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   loadDoctorData();
   loadAppointments();
+  initCurrentPage();
+  initSeamlessNavigation();
+});
+
+function initCurrentPage() {
   renderDynamicDoctorData();
   renderServices();
   renderFaqs();
@@ -739,7 +746,243 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   applyLanguage(currentLang);
   initClinicalTools();
-});
+  updateNavActiveState();
+}
+
+// ============================================================
+// SEAMLESS INSTANT SPA-ROUTER & PAGE PREFETCHING
+// ============================================================
+function initSeamlessNavigation() {
+  // Pre-cache current page HTML
+  const currentPath = getNormalizedPath(window.location.href);
+  pageCache.set(currentPath, document.documentElement.outerHTML);
+
+  // Intercept all internal link clicks
+  document.addEventListener('click', handleLinkClick);
+
+  // Prefetch internal pages on mouse hover or touch start
+  document.addEventListener('mouseover', handleLinkPrefetch);
+  document.addEventListener('touchstart', handleLinkPrefetch, { passive: true });
+
+  // Handle browser back and forward navigation
+  window.addEventListener('popstate', (e) => {
+    const targetUrl = window.location.href;
+    const hash = window.location.hash;
+    performPageSwap(targetUrl, hash, false);
+  });
+}
+
+function getNormalizedPath(urlStr) {
+  try {
+    const u = new URL(urlStr, window.location.href);
+    return u.origin + u.pathname;
+  } catch (e) {
+    return urlStr;
+  }
+}
+
+function isInternalLink(a) {
+  if (!a || !a.href) return false;
+  if (a.target === '_blank' || a.hasAttribute('download')) return false;
+  if (a.getAttribute('rel')?.includes('external')) return false;
+  const href = a.getAttribute('href') || '';
+  if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return false;
+  if (href.includes('wa.me')) return false;
+  
+  try {
+    const linkUrl = new URL(a.href, window.location.href);
+    return linkUrl.origin === window.location.origin;
+  } catch (e) {
+    return false;
+  }
+}
+
+function handleLinkClick(e) {
+  const link = e.target.closest('a');
+  if (!link || !isInternalLink(link)) return;
+
+  const currentUrl = new URL(window.location.href);
+  const targetUrl = new URL(link.href, window.location.href);
+
+  // Case 1: Anchor link on the same page (e.g. #book-appointment)
+  if (targetUrl.pathname === currentUrl.pathname && targetUrl.hash) {
+    e.preventDefault();
+    const targetEl = document.querySelector(targetUrl.hash);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth' });
+      history.pushState(null, '', targetUrl.hash);
+    }
+    const drawer = document.getElementById('mobileMenuDrawer');
+    if (drawer && !drawer.classList.contains('hidden')) {
+      drawer.classList.add('hidden');
+    }
+    return;
+  }
+
+  // Case 2: Link to current page without hash
+  if (targetUrl.pathname === currentUrl.pathname && !targetUrl.hash) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const drawer = document.getElementById('mobileMenuDrawer');
+    if (drawer && !drawer.classList.contains('hidden')) {
+      drawer.classList.add('hidden');
+    }
+    return;
+  }
+
+  // If running via file:// protocol without a server, let native browser handle it safely
+  if (window.location.protocol === 'file:') {
+    return;
+  }
+
+  // Case 3: Navigating to another page smoothly
+  e.preventDefault();
+  performPageSwap(link.href, targetUrl.hash, true);
+}
+
+function handleLinkPrefetch(e) {
+  const link = e.target.closest('a');
+  if (!link || !isInternalLink(link) || window.location.protocol === 'file:') return;
+
+  const targetUrl = new URL(link.href, window.location.href);
+  if (targetUrl.pathname === window.location.pathname) return;
+
+  const normPath = getNormalizedPath(link.href);
+  if (!pageCache.has(normPath)) {
+    fetch(link.href, { credentials: 'same-origin' })
+      .then(res => res.ok ? res.text() : null)
+      .then(html => {
+        if (html) pageCache.set(normPath, html);
+      })
+      .catch(() => {});
+  }
+}
+
+async function performPageSwap(urlStr, hash = '', pushState = true) {
+  if (isNavigating) return;
+  isNavigating = true;
+
+  const progressBar = document.getElementById('pageProgressBar');
+  const pageContainer = document.getElementById('pageContent');
+
+  if (progressBar) {
+    progressBar.classList.add('active');
+    progressBar.style.width = '35%';
+  }
+
+  if (pageContainer) {
+    pageContainer.classList.add('page-leaving');
+  }
+
+  // Close mobile drawer if open
+  const drawer = document.getElementById('mobileMenuDrawer');
+  if (drawer && !drawer.classList.contains('hidden')) {
+    drawer.classList.add('hidden');
+  }
+
+  const normPath = getNormalizedPath(urlStr);
+
+  try {
+    let htmlText = pageCache.get(normPath);
+    if (!htmlText) {
+      if (progressBar) progressBar.style.width = '65%';
+      const res = await fetch(urlStr, { credentials: 'same-origin' });
+      if (!res.ok) throw new Error('Page fetch failed with status ' + res.status);
+      htmlText = await res.text();
+      pageCache.set(normPath, htmlText);
+    }
+
+    if (progressBar) progressBar.style.width = '85%';
+
+    // Short micro-delay to let exit animation play smoothly
+    await new Promise(r => setTimeout(r, 120));
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+
+    const newPageContent = doc.getElementById('pageContent') || doc.querySelector('main');
+    if (!newPageContent) {
+      window.location.href = urlStr;
+      return;
+    }
+
+    // Update Document Title
+    if (doc.title) {
+      document.title = doc.title;
+    }
+
+    // Update Page Content
+    if (pageContainer) {
+      pageContainer.innerHTML = newPageContent.innerHTML;
+      pageContainer.className = 'page-transition-content min-h-[60vh] page-entering';
+    }
+
+    // Update Browser History
+    if (pushState) {
+      history.pushState({ path: urlStr }, '', urlStr);
+    }
+
+    // Scroll to anchor or top
+    if (hash) {
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    // Update active nav link highlighting
+    updateNavActiveState(urlStr);
+
+    // Re-initialize dynamic data, services, forms, icons, and translations
+    initCurrentPage();
+
+    // Trigger enter animation
+    requestAnimationFrame(() => {
+      if (pageContainer) {
+        pageContainer.classList.remove('page-entering');
+        pageContainer.classList.remove('page-leaving');
+      }
+    });
+
+    if (progressBar) {
+      progressBar.style.width = '100%';
+      setTimeout(() => {
+        progressBar.classList.remove('active');
+        progressBar.style.width = '0%';
+      }, 250);
+    }
+  } catch (err) {
+    console.warn('Seamless navigation fallback to native reload:', err);
+    window.location.href = urlStr;
+  } finally {
+    isNavigating = false;
+  }
+}
+
+function updateNavActiveState(targetUrlStr) {
+  let targetPath = '';
+  try {
+    targetPath = new URL(targetUrlStr || window.location.href, window.location.href).pathname.split('/').pop() || 'index.html';
+  } catch(e) {
+    targetPath = 'index.html';
+  }
+  if (!targetPath || targetPath === '') targetPath = 'index.html';
+
+  document.querySelectorAll('nav a, #mobileMenuDrawer a').forEach(a => {
+    const aHref = a.getAttribute('href') || '';
+    const aPath = aHref.split('#')[0].split('/').pop() || 'index.html';
+
+    if (aPath === targetPath) {
+      a.classList.add('active');
+    } else {
+      a.classList.remove('active');
+    }
+  });
+}
 
 // ============================================================
 // MULTILINGUAL INITIALIZATION & SWITCHING
@@ -1047,7 +1290,8 @@ function updateTimeSlotsUI() {
 
 function setupEventListeners() {
   // Consultation mode radio change
-  document.querySelectorAll('input[name="consultationMode"]').forEach(radio => {
+  document.querySelectorAll('input[name="consultationMode"]:not([data-bound="true"])').forEach(radio => {
+    radio.setAttribute('data-bound', 'true');
     radio.addEventListener('change', () => {
       updateTimeSlotsUI();
       updateBookingFeeLabel();
@@ -1056,13 +1300,15 @@ function setupEventListeners() {
 
   // Appointment Form submission
   const form = document.getElementById('appointmentForm');
-  if (form) {
+  if (form && !form.dataset.bound) {
+    form.dataset.bound = 'true';
     form.addEventListener('submit', handleAppointmentSubmit);
   }
 
   // Contact Form submission (on contact.html)
   const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
+  if (contactForm && !contactForm.dataset.bound) {
+    contactForm.dataset.bound = 'true';
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('contactName')?.value.trim();

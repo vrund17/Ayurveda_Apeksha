@@ -36,7 +36,9 @@
 </head>
 <body class="bg-luxury-mesh text-charcoal antialiased selection:bg-forest selection:text-ivory">
 
-  <!-- TOP BAR -->
+  <!-- Luxury Top Progress Bar -->
+  <div id="pageProgressBar"></div>
+
   <!-- ================= TOP CREDIBILITY & CONTACT BAR ================= -->
   <div class="bg-[#0f2e24] text-[#e2ede8] text-xs py-2 px-4 border-b border-[#174C3C]/50 relative z-50">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
@@ -177,6 +179,9 @@
     </div>
   </header>
 
+  <!-- ================= DYNAMIC MAIN PAGE CONTENT (SMOOTH TRANSITIONS) ================= -->
+  <main id="pageContent" class="page-transition-content min-h-[60vh]">
+
   <!-- PAGE HERO -->
   <section class="py-14 sm:py-20 bg-luxury-mesh border-b border-beige">
     <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
@@ -279,6 +284,8 @@
 
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="bg-[#103429] text-stone-300 text-xs py-14 border-t border-[#174C3C]/60">

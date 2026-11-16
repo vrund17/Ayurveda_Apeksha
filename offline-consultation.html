@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>In-Person Consultation (Lunawada Clinic) | Dr. Apkesha Patel (BAMS)</title>
-  <meta name="description" content="Visit Dr. Apkesha Patel (BAMS) for authentic in-person Ayurvedic pulse diagnosis (Nadi Pariksha) and treatment in Lunawada, Mahisagar, Gujarat 389230. Evening OPD by prior appointment.">
+  <meta name="description"
+    content="Visit Dr. Apkesha Patel (BAMS) for authentic in-person Ayurvedic pulse diagnosis (Nadi Pariksha) and treatment in Lunawada, Mahisagar, Gujarat 389230. Evening OPD by prior appointment.">
   <link rel="canonical" href="https://vrund17.github.io/Ayurveda_Apeksha/offline-consultation.html">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,16 +36,20 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-luxury-mesh text-charcoal antialiased selection:bg-forest selection:text-ivory">
 
-  <!-- TOP BAR -->
+  <!-- Luxury Top Progress Bar -->
+  <div id="pageProgressBar"></div>
+
   <!-- ================= TOP CREDIBILITY & CONTACT BAR ================= -->
   <div class="bg-[#0f2e24] text-[#e2ede8] text-xs py-2 px-4 border-b border-[#174C3C]/50 relative z-50">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-      
+
       <!-- Credential Pill & Experience -->
       <div class="flex items-center gap-2.5 text-center md:text-left flex-wrap justify-center md:justify-start">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] border border-emerald-500/30 whitespace-nowrap shadow-2xs">
+        <span
+          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] border border-emerald-500/30 whitespace-nowrap shadow-2xs">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Verified BAMS</span>
         </span>
@@ -53,34 +59,45 @@
       </div>
 
       <!-- Contact, Language Switcher & Requests -->
-      <div class="flex items-center gap-3 sm:gap-4 text-stone-200 text-[11px] sm:text-xs flex-wrap justify-center flex-shrink-0">
+      <div
+        class="flex items-center gap-3 sm:gap-4 text-stone-200 text-[11px] sm:text-xs flex-wrap justify-center flex-shrink-0">
         <!-- Direct Phone -->
-        <a href="tel:+918347675394" class="doc-phone-link hover:text-white flex items-center gap-1.5 transition-colors font-semibold whitespace-nowrap">
+        <a href="tel:+918347675394"
+          class="doc-phone-link hover:text-white flex items-center gap-1.5 transition-colors font-semibold whitespace-nowrap">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span class="doc-phone">+91 83476 75394</span>
         </a>
 
         <!-- Direct Email -->
-        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:text-white hidden xl:flex items-center gap-1.5 transition-colors whitespace-nowrap">
+        <a href="mailto:apexapatel316@gmail.com"
+          class="doc-email-link hover:text-white hidden xl:flex items-center gap-1.5 transition-colors whitespace-nowrap">
           <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span class="doc-email">apexapatel316@gmail.com</span>
         </a>
 
         <!-- Trilingual Switcher (English | ગુજરાતી | हिन्दी) -->
-        <div class="inline-flex items-center rounded-full bg-white/10 p-0.5 border border-white/20 text-[11px] shadow-inner">
-          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-bold bg-white text-[#174C3C] shadow-xs whitespace-nowrap" title="English">
+        <div
+          class="inline-flex items-center rounded-full bg-white/10 p-0.5 border border-white/20 text-[11px] shadow-inner">
+          <button onclick="setLanguage('en')" data-lang="en"
+            class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-bold bg-white text-[#174C3C] shadow-xs whitespace-nowrap"
+            title="English">
             EN
           </button>
-          <button onclick="setLanguage('gu')" data-lang="gu" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap" title="ગુજરાતી">
+          <button onclick="setLanguage('gu')" data-lang="gu"
+            class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap"
+            title="ગુજરાતી">
             ગુજરાતી
           </button>
-          <button onclick="setLanguage('hi')" data-lang="hi" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap" title="हिन्दी">
+          <button onclick="setLanguage('hi')" data-lang="hi"
+            class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap"
+            title="हिन्दी">
             हिन्दी
           </button>
         </div>
 
         <!-- My Requests Counter (50+) -->
-        <button onclick="openMyBookingsModal()" class="hover:text-amber-200 flex items-center gap-1 transition-colors text-[11px] whitespace-nowrap font-medium">
+        <button onclick="openMyBookingsModal()"
+          class="hover:text-amber-200 flex items-center gap-1 transition-colors text-[11px] whitespace-nowrap font-medium">
           <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span data-i18n="myBookingsLabel">My Requests</span>
           <span class="font-bold text-amber-300 my-bookings-count">(50+)</span>
@@ -93,16 +110,20 @@
   <!-- ================= STICKY MAIN HEADER ================= -->
   <header class="sticky top-0 z-40 glass-nav shadow-[0_2px_15px_-3px_rgba(23,76,60,0.06)] border-b border-[#EDE5D5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      
+
       <!-- Brand Logo & Doctor Details -->
       <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold/40 flex-shrink-0">
+        <div
+          class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold/40 flex-shrink-0">
           <i data-lucide="leaf" class="w-6 h-6 text-gold"></i>
         </div>
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
-            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-charcoal doc-name whitespace-nowrap">Dr. Apkesha Patel</span>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-soft text-forest border border-sage tracking-wider whitespace-nowrap">BAMS</span>
+            <span
+              class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-charcoal doc-name whitespace-nowrap">Dr.
+              Apkesha Patel</span>
+            <span
+              class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-soft text-forest border border-sage tracking-wider whitespace-nowrap">BAMS</span>
           </div>
           <span class="text-[11px] text-stone-500 font-medium tracking-wide whitespace-nowrap mt-0.5">
             Ex-AYUSH Medical Officer (Govt. PHC, Gujarat)
@@ -116,18 +137,22 @@
         <a href="about.html" data-i18n="navAbout" class="nav-link whitespace-nowrap">About</a>
         <a href="services.html" data-i18n="navServices" class="nav-link whitespace-nowrap">Services</a>
         <a href="online-consultation.html" data-i18n="navOnline" class="nav-link whitespace-nowrap">Online OPD</a>
-        <a href="offline-consultation.html" data-i18n="navOffline" class="nav-link active whitespace-nowrap">Clinic Visit</a>
+        <a href="offline-consultation.html" data-i18n="navOffline" class="nav-link active whitespace-nowrap">Clinic
+          Visit</a>
         <a href="faq.html" data-i18n="navFaq" class="nav-link whitespace-nowrap">FAQ</a>
         <a href="contact.html" data-i18n="navContact" class="nav-link whitespace-nowrap">Contact</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
-        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-2 px-3.5 rounded-xl border border-stone-300/80 bg-white hover:bg-emerald-50/50 hover:border-emerald-600/40 text-forest transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shadow-2xs" title="Direct WhatsApp Enquiry">
+        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer"
+          class="doc-whatsapp-link py-2 px-3.5 rounded-xl border border-stone-300/80 bg-white hover:bg-emerald-50/50 hover:border-emerald-600/40 text-forest transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shadow-2xs"
+          title="Direct WhatsApp Enquiry">
           <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366] flex-shrink-0"></i>
           <span data-i18n="btnWhatsApp" class="whitespace-nowrap">WhatsApp</span>
         </a>
-        <a href="book-appointment.html" class="py-2.5 px-4.5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-[13px] shadow-sm hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
+        <a href="book-appointment.html"
+          class="py-2.5 px-4.5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-[13px] shadow-sm hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
           <i data-lucide="calendar" class="w-4 h-4 text-gold flex-shrink-0"></i>
           <span data-i18n="btnBookNow" class="whitespace-nowrap">Book Consultation</span>
         </a>
@@ -135,10 +160,12 @@
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 lg:hidden">
-        <a href="https://wa.me/918347675394" target="_blank" class="p-2 rounded-lg text-forest bg-sage-soft border border-sage" title="WhatsApp">
+        <a href="https://wa.me/918347675394" target="_blank"
+          class="p-2 rounded-lg text-forest bg-sage-soft border border-sage" title="WhatsApp">
           <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
         </a>
-        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-charcoal hover:bg-stone-100 transition-colors" aria-label="Toggle Navigation Menu">
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-charcoal hover:bg-stone-100 transition-colors"
+          aria-label="Toggle Navigation Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
@@ -146,48 +173,68 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-ivory border-b border-stone-200 px-5 py-4 space-y-3 animate-fadeIn">
-      <a href="index.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navHome">Home</a>
-      <a href="about.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navAbout">About</a>
-      <a href="services.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navServices">Services</a>
-      <a href="online-consultation.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navOnline">Online OPD</a>
-      <a href="offline-consultation.html" class="block text-sm font-bold text-forest py-1" data-i18n="navOffline">Clinic Visit</a>
-      <a href="book-appointment.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="btnBookNow">Book Consultation</a>
-      <a href="faq.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navFaq">FAQ</a>
-      <a href="contact.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navContact">Contact</a>
-      
+    <div id="mobileMenuDrawer"
+      class="hidden lg:hidden bg-ivory border-b border-stone-200 px-5 py-4 space-y-3 animate-fadeIn">
+      <a href="index.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navHome">Home</a>
+      <a href="about.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navAbout">About</a>
+      <a href="services.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navServices">Services</a>
+      <a href="online-consultation.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navOnline">Online OPD</a>
+      <a href="offline-consultation.html" class="block text-sm font-bold text-forest py-1" data-i18n="navOffline">Clinic
+        Visit</a>
+      <a href="book-appointment.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="btnBookNow">Book Consultation</a>
+      <a href="faq.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navFaq">FAQ</a>
+      <a href="contact.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest"
+        data-i18n="navContact">Contact</a>
+
       <div class="pt-3 border-t border-stone-200 flex flex-col gap-2.5">
         <div class="flex items-center gap-2 py-1">
           <span class="text-xs font-semibold text-stone-500">Language:</span>
-          <button onclick="setLanguage('en'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">English</button>
-          <button onclick="setLanguage('gu'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">ગુજરાતી</button>
-          <button onclick="setLanguage('hi'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">हिन्दी</button>
+          <button onclick="setLanguage('en'); toggleMobileMenu();"
+            class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">English</button>
+          <button onclick="setLanguage('gu'); toggleMobileMenu();"
+            class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">ગુજરાતી</button>
+          <button onclick="setLanguage('hi'); toggleMobileMenu();"
+            class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">हिन्दी</button>
         </div>
 
         <a href="tel:+918347675394" class="doc-phone-link flex items-center gap-2 text-xs font-bold text-forest py-1">
           <i data-lucide="phone" class="w-4 h-4 text-gold"></i> Call: +91 83476 75394
         </a>
-        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link flex items-center gap-2 text-xs font-medium text-stone-600 py-1">
+        <a href="mailto:apexapatel316@gmail.com"
+          class="doc-email-link flex items-center gap-2 text-xs font-medium text-stone-600 py-1">
           <i data-lucide="mail" class="w-4 h-4 text-forest"></i> apexapatel316@gmail.com
         </a>
-        <button onclick="openMyBookingsModal(); toggleMobileMenu();" class="text-xs text-left text-stone-700 flex items-center gap-1.5 py-1 font-semibold">
-          <i data-lucide="calendar" class="w-3.5 h-3.5 text-forest"></i> My Requests (<span class="my-bookings-count font-bold text-forest">50+</span>)
+        <button onclick="openMyBookingsModal(); toggleMobileMenu();"
+          class="text-xs text-left text-stone-700 flex items-center gap-1.5 py-1 font-semibold">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-forest"></i> My Requests (<span
+            class="my-bookings-count font-bold text-forest">50+</span>)
         </button>
       </div>
     </div>
   </header>
 
+  <!-- ================= DYNAMIC MAIN PAGE CONTENT (SMOOTH TRANSITIONS) ================= -->
+  <main id="pageContent" class="page-transition-content min-h-[60vh]">
+
   <!-- PAGE HERO -->
   <section class="py-14 sm:py-20 bg-luxury-mesh border-b border-beige">
     <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
-      <span class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage">
+      <span
+        class="text-xs font-bold uppercase tracking-widest text-forest bg-sage-soft px-3.5 py-1 rounded-full border border-sage">
         In-Person Clinical Practice
       </span>
       <h1 data-i18n="offlineTitle" class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">
         In-Person Consultation (Lunawada Clinic)
       </h1>
       <p class="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed">
-        Direct clinical examination and traditional Ayurvedic pulse diagnosis (Nadi Pariksha) in Lunawada, Mahisagar, Gujarat.
+        Direct clinical examination and traditional Ayurvedic pulse diagnosis (Nadi Pariksha) in Lunawada, Mahisagar,
+        Gujarat.
       </p>
     </div>
   </section>
@@ -195,9 +242,9 @@
   <!-- CLINIC DETAILS & NADI PARIKSHA -->
   <section class="py-16 sm:py-24 bg-white border-b border-beige">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         <!-- Left: Clinic Information Card -->
         <div class="lg:col-span-6 bg-ivory rounded-3xl p-6 sm:p-9 border border-beige shadow-luxury-md space-y-6">
           <div class="space-y-1 pb-4 border-b border-stone-200">
@@ -208,56 +255,68 @@
 
           <div class="space-y-4 text-xs sm:text-sm text-stone-700">
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
               </div>
               <div>
                 <strong class="text-charcoal block font-semibold">Address</strong>
                 <p class="text-stone-600 doc-address">Lunawada, Mahisagar, Gujarat 389230</p>
-                <p class="text-stone-400 text-[11px] mt-0.5">Centrally located in Lunawada, easily accessible from Godhra, Modasa, and Vadodara.</p>
+                <p class="text-stone-400 text-[11px] mt-0.5">Centrally located in Lunawada, easily accessible from
+                  Godhra, Modasa, and Vadodara.</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="clock" class="w-4 h-4"></i>
               </div>
               <div>
                 <strong class="text-charcoal block font-semibold">In-Clinic Consultation Hours</strong>
-                <p class="text-stone-600 doc-opd-timings font-medium">Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00 PM (By Prior Appointment)</p>
-                <p class="text-stone-400 text-[11px] mt-0.5">*Morning hours are dedicated to community healthcare service</p>
+                <p class="text-stone-600 doc-opd-timings font-medium">Mon – Sat: 5:00 PM – 8:30 PM & Sun: 9:30 AM – 1:00
+                  PM (By Prior Appointment)</p>
+                <p class="text-stone-400 text-[11px] mt-0.5">*Morning hours are dedicated to community healthcare
+                  service</p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="phone" class="w-4 h-4"></i>
               </div>
               <div>
                 <strong class="text-charcoal block font-semibold">Appointments & Reception Desk</strong>
                 <p class="mt-0.5">
-                  <a href="tel:+918347675394" class="doc-phone-link hover:underline font-bold text-forest text-sm doc-phone">+91 83476 75394</a>
+                  <a href="tel:+918347675394"
+                    class="doc-phone-link hover:underline font-bold text-forest text-sm doc-phone">+91 83476 75394</a>
                 </p>
               </div>
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div
+                class="w-9 h-9 rounded-xl bg-forest/10 text-forest flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="credit-card" class="w-4 h-4"></i>
               </div>
               <div>
                 <strong class="text-charcoal block font-semibold">Consultation Fee</strong>
                 <p class="text-forest font-bold text-base doc-inclinic-fee">₹500</p>
-                <p class="text-stone-400 text-[11px]">Includes comprehensive Nadi Pariksha, physical assessment & personalized diet plan.</p>
+                <p class="text-stone-400 text-[11px]">Includes comprehensive Nadi Pariksha, physical assessment &
+                  personalized diet plan.</p>
               </div>
             </div>
           </div>
 
           <div class="pt-4 border-t border-stone-200 flex flex-col sm:flex-row gap-3">
-            <a href="book-appointment.html" class="flex-1 py-3 px-4 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-center text-xs sm:text-sm shadow-md transition-all">
+            <a href="book-appointment.html"
+              class="flex-1 py-3 px-4 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-center text-xs sm:text-sm shadow-md transition-all">
               Request In-Person Visit
             </a>
-            <a href="https://maps.google.com/?q=Lunawada+Mahisagar+Gujarat+389230" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-xl border border-stone-300 bg-white text-forest hover:bg-stone-50 font-bold text-center text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-2xs">
+            <a href="https://maps.google.com/?q=Lunawada+Mahisagar+Gujarat+389230" target="_blank"
+              rel="noopener noreferrer"
+              class="py-3 px-4 rounded-xl border border-stone-300 bg-white text-forest hover:bg-stone-50 font-bold text-center text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-2xs">
               <i data-lucide="navigation" class="w-4 h-4"></i>
               <span>Google Maps</span>
             </a>
@@ -273,7 +332,9 @@
             </div>
 
             <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-              When you consult in-person at our Lunawada clinic, Dr. Apkesha performs classical <strong>Nadi Pariksha (Ayurvedic Pulse Diagnosis)</strong> at the radial artery. Through rhythmic pulse movements, she detects:
+              When you consult in-person at our Lunawada clinic, Dr. Apkesha performs classical <strong>Nadi Pariksha
+                (Ayurvedic Pulse Diagnosis)</strong> at the radial artery. Through rhythmic pulse movements, she
+              detects:
             </p>
 
             <ul class="space-y-2.5 text-xs text-stone-700">
@@ -294,7 +355,8 @@
             <div class="p-4 rounded-2xl bg-white border border-stone-200 text-xs text-stone-600 space-y-1">
               <strong class="text-charcoal block font-semibold">How to Prepare for In-Person Nadi Pariksha:</strong>
               <p class="leading-relaxed text-[11px]">
-                For the most accurate pulse reading, it is recommended to maintain a light stomach (allow at least 2.5 hours after a meal) and bring any recent lab reports or current medications with you.
+                For the most accurate pulse reading, it is recommended to maintain a light stomach (allow at least 2.5
+                hours after a meal) and bring any recent lab reports or current medications with you.
               </p>
             </div>
           </div>
@@ -305,15 +367,19 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="bg-[#103429] text-stone-300 text-xs py-14 border-t border-[#174C3C]/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="space-y-3 md:col-span-2">
           <span class="text-white font-serif text-2xl font-bold doc-name">Dr. Apkesha Patel</span>
-          <p class="text-xs text-stone-300 max-w-md">BAMS Ayurvedic Physician with 4–5 years healthcare experience. Former AYUSH Medical Officer at Govt. PHC, Gujarat.</p>
+          <p class="text-xs text-stone-300 max-w-md">BAMS Ayurvedic Physician with 4–5 years healthcare experience.
+            Former AYUSH Medical Officer at Govt. PHC, Gujarat.</p>
           <p class="text-xs text-stone-300">📍 Location: Lunawada, Mahisagar, Gujarat 389230</p>
-          <p class="text-xs text-stone-300">📞 Phone: <a href="tel:+918347675394" class="text-emerald-300 font-bold">+91 83476 75394</a></p>
+          <p class="text-xs text-stone-300">📞 Phone: <a href="tel:+918347675394" class="text-emerald-300 font-bold">+91
+              83476 75394</a></p>
         </div>
         <div class="space-y-2">
           <h5 class="text-white font-bold uppercase tracking-wider text-xs">Pages</h5>
@@ -346,19 +412,24 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="whatsapp-float-luxury bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center hover:bg-[#20ba59]">
+  <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer"
+    class="whatsapp-float-luxury bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center hover:bg-[#20ba59]">
     <i data-lucide="message-circle" class="w-7 h-7"></i>
   </a>
 
-  <div id="myBookingsModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-beige relative animate-fadeIn space-y-4">
+  <div id="myBookingsModal"
+    class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div
+      class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-beige relative animate-fadeIn space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-stone-200">
         <h3 class="font-serif text-xl font-bold text-charcoal">My Appointment Requests</h3>
-        <button onclick="closeMyBookingsModal()" class="text-stone-400 hover:text-stone-800 p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
+        <button onclick="closeMyBookingsModal()" class="text-stone-400 hover:text-stone-800 p-1"><i data-lucide="x"
+            class="w-5 h-5"></i></button>
       </div>
       <div id="myBookingsList" class="space-y-3 max-h-96 overflow-y-auto"></div>
       <div class="pt-2 border-t border-stone-200 text-center">
-        <button onclick="closeMyBookingsModal()" class="w-full py-2.5 px-4 rounded-xl bg-ivory hover:bg-beige text-charcoal text-xs font-semibold">Close</button>
+        <button onclick="closeMyBookingsModal()"
+          class="w-full py-2.5 px-4 rounded-xl bg-ivory hover:bg-beige text-charcoal text-xs font-semibold">Close</button>
       </div>
     </div>
   </div>
@@ -367,4 +438,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
