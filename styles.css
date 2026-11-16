@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap');
+
+:root {
+  --color-ayur-green: #1b4332;
+  --color-ayur-forest: #2d6a4f;
+  --color-ayur-leaf: #40916c;
+  --color-ayur-lightgreen: #e8f5e9;
+  --color-ayur-gold: #c59b27;
+  --color-ayur-gold-dark: #9a781b;
+  --color-ayur-gold-light: #fef7e0;
+  --color-ayur-cream: #fbf9f4;
+  --color-ayur-warmbg: #f4efe6;
+  --color-ayur-copper: #b45309;
+  --color-ayur-text: #1f2937;
+  --color-ayur-muted: #57534e;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-ayur-cream);
+  color: var(--color-ayur-text);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-serif-ayur {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-vedic {
+  font-family: 'Rozha One', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d6a4f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1b4332;
+}
+
+/* Subtle Herbal Pattern */
+.bg-herbal-pattern {
+  background-color: #fbf9f4;
+  background-image: radial-gradient(#2d6a4f 0.5px, transparent 0.5px), radial-gradient(#c59b27 0.5px, #fbf9f4 0.5px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  background-opacity: 0.05;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.glass-panel-dark {
+  background: rgba(27, 67, 50, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+/* Vedic Glow & Shadows */
+.shadow-ayur {
+  box-shadow: 0 10px 30px -5px rgba(27, 67, 50, 0.08), 0 4px 6px -2px rgba(27, 67, 50, 0.03);
+}
+
+.shadow-ayur-gold {
+  box-shadow: 0 10px 25px -5px rgba(197, 155, 39, 0.25);
+}
+
+/* Decorative border */
+.border-gold-gradient {
+  border-image: linear-gradient(to right, #c59b27, #fef7e0, #c59b27) 1;
+}
+
+/* Badges */
+.badge-phc {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  color: #fff;
+  border: 1px solid #c59b27;
+}
+
+/* Pulsing effect for booking CTA */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(45, 106, 79, 0);
+  }
+}
+
+.pulse-button {
+  animation: softPulse 2.5s infinite;
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Tab active state */
+.tab-active {
+  background-color: #1b4332 !important;
+  color: #ffffff !important;
+  border-color: #1b4332 !important;
+}
+
+/* Modal animation */
+.modal-overlay {
+  transition: opacity 0.25s ease;
+}
+
+.modal-content {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
