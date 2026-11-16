@@ -186,6 +186,36 @@ html[lang="hi"] body,
   box-shadow: 0 2px 8px rgba(23, 76, 60, 0.2);
 }
 
+/* Sleek Desktop Navigation Link */
+.nav-link {
+  white-space: nowrap;
+  position: relative;
+  padding: 6px 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #26332D;
+  transition: color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #174C3C;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #174C3C;
+  border-radius: 9999px;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
 /* Category Filter Active Pill */
 .cat-pill-active {
   background-color: var(--color-primary-forest) !important;

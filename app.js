@@ -33,11 +33,10 @@ const I18N = {
   en: {
     langName: "English",
     topNotice: "Ex-AYUSH Medical Officer • Govt. Primary Health Centre (PHC), Gujarat • 4–5 Years Healthcare Experience",
-    navAbout: "Meet Doctor",
-    navServices: "Consultation Services",
-    navWhy: "Why Consult",
-    navModes: "Online & In-Person",
-    navHow: "How It Works",
+    navAbout: "About Doctor",
+    navServices: "Services",
+    navOnline: "Online OPD",
+    navOffline: "Clinic Visit",
     navFaq: "FAQ",
     navContact: "Contact",
     btnBookNow: "Book Consultation",
@@ -192,12 +191,11 @@ const I18N = {
   gu: {
     langName: "ગુજરાતી",
     topNotice: "પૂર્વ આયુષ મેડિકલ ઓફિસર • સરકારી પ્રાથમિક આરોગ્ય કેન્દ્ર (PHC), ગુજરાત • ૪–૫ વર્ષનો આરોગ્ય સેવા અનુભવ",
-    navAbout: "ડૉક્ટર પરિચય",
-    navServices: "પરામર્શ સેવાઓ",
-    navWhy: "શા માટે પસંદ કરશો",
-    navModes: "ઓનલાઇન અને રૂબરૂ",
-    navHow: "કાર્યપદ્ધતિ",
-    navFaq: "પ્રશ્નોત્તરી (FAQ)",
+    navAbout: "પરિચય",
+    navServices: "સેવાઓ",
+    navOnline: "ઓનલાઇન OPD",
+    navOffline: "રૂબરૂ ક્લિનિક",
+    navFaq: "પ્રશ્નોત્તરી",
     navContact: "સંપર્ક",
     btnBookNow: "પરામર્શ બુક કરો",
     btnWhatsApp: "વોટ્સએપ",
@@ -351,12 +349,11 @@ const I18N = {
   hi: {
     langName: "हिन्दी",
     topNotice: "पूर्व आयुष मेडिकल ऑफिसर • सरकारी प्राथमिक स्वास्थ्य केंद्र (PHC), गुजरात • ४–५ वर्ष का स्वास्थ्य सेवा अनुभव",
-    navAbout: "डॉक्टर परिचय",
-    navServices: "परामर्श सेवाएं",
-    navWhy: "हमें क्यों चुनें",
-    navModes: "ऑनलाइन व प्रत्यक्ष",
-    navHow: "प्रक्रिया",
-    navFaq: "प्रश्नोत्तरी (FAQ)",
+    navAbout: "परिचय",
+    navServices: "सेवाएं",
+    navOnline: "ऑनलाइन OPD",
+    navOffline: "प्रत्यक्ष क्लिनिक",
+    navFaq: "प्रश्नोत्तरी",
     navContact: "संपर्क",
     btnBookNow: "परामर्श बुक करें",
     btnWhatsApp: "व्हाट्सएप",
@@ -770,15 +767,13 @@ function applyLanguage(lang) {
   const t = I18N[lang] || I18N.en;
   document.documentElement.lang = lang;
 
-  // Update Language switcher buttons
+  // Update Language switcher buttons with high contrast
   document.querySelectorAll('.lang-btn').forEach(btn => {
     const targetLang = btn.getAttribute('data-lang');
     if (targetLang === lang) {
-      btn.classList.add('bg-[#174C3C]', 'text-white', 'shadow-xs');
-      btn.classList.remove('bg-transparent', 'text-stone-700', 'hover:bg-stone-200');
+      btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-bold bg-white text-[#174C3C] shadow-xs';
     } else {
-      btn.classList.remove('bg-[#174C3C]', 'text-white', 'shadow-xs');
-      btn.classList.add('bg-transparent', 'text-stone-700', 'hover:bg-stone-200');
+      btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent';
     }
   });
 

@@ -37,10 +37,13 @@
 <body class="bg-luxury-mesh text-charcoal antialiased selection:bg-forest selection:text-ivory">
 
   <!-- TOP CREDIBILITY BAR -->
-  <div class="bg-[#103429] text-[#e2ede8] text-xs py-2 px-4 border-b border-[#174C3C]/40">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
-      <div class="flex items-center gap-2 text-center sm:text-left">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] border border-emerald-500/30">
+  <!-- ================= TOP CREDIBILITY & CONTACT BAR ================= -->
+  <div class="bg-[#0f2e24] text-[#e2ede8] text-xs py-2 px-4 border-b border-[#174C3C]/50 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+      
+      <!-- Credential Pill & Experience -->
+      <div class="flex items-center gap-2.5 text-center md:text-left flex-wrap justify-center md:justify-start">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] border border-emerald-500/30 whitespace-nowrap shadow-2xs">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Verified BAMS</span>
         </span>
@@ -49,84 +52,128 @@
         </span>
       </div>
 
-      <div class="flex items-center gap-3.5 text-stone-300 text-[11px] sm:text-xs flex-wrap justify-center">
-        <a href="tel:+918347675394" class="doc-phone-link hover:text-white flex items-center gap-1.5 font-semibold">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-gold"></i>
+      <!-- Contact, Language Switcher & Requests -->
+      <div class="flex items-center gap-3 sm:gap-4 text-stone-200 text-[11px] sm:text-xs flex-wrap justify-center flex-shrink-0">
+        <!-- Direct Phone -->
+        <a href="tel:+918347675394" class="doc-phone-link hover:text-white flex items-center gap-1.5 transition-colors font-semibold whitespace-nowrap">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span class="doc-phone">+91 83476 75394</span>
         </a>
-        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:text-white hidden md:flex items-center gap-1.5">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-gold"></i>
+
+        <!-- Direct Email -->
+        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link hover:text-white hidden xl:flex items-center gap-1.5 transition-colors whitespace-nowrap">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span class="doc-email">apexapatel316@gmail.com</span>
         </a>
-        <div class="inline-flex items-center rounded-full bg-white/10 p-0.5 border border-white/15 text-[11px]">
-          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2 py-0.5 rounded-full font-semibold">EN</button>
-          <button onclick="setLanguage('gu')" data-lang="gu" class="lang-btn px-2 py-0.5 rounded-full font-semibold">ગુજરાતી</button>
-          <button onclick="setLanguage('hi')" data-lang="hi" class="lang-btn px-2 py-0.5 rounded-full font-semibold">हिन्दी</button>
+
+        <!-- Trilingual Switcher (English | ગુજરાતી | हिन्दी) -->
+        <div class="inline-flex items-center rounded-full bg-white/10 p-0.5 border border-white/20 text-[11px] shadow-inner">
+          <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-bold bg-white text-[#174C3C] shadow-xs whitespace-nowrap" title="English">
+            EN
+          </button>
+          <button onclick="setLanguage('gu')" data-lang="gu" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap" title="ગુજરાતી">
+            ગુજરાતી
+          </button>
+          <button onclick="setLanguage('hi')" data-lang="hi" class="lang-btn px-2.5 py-0.5 rounded-full transition-all text-xs font-medium text-stone-200 hover:text-white bg-transparent whitespace-nowrap" title="हिन्दी">
+            हिन्दी
+          </button>
         </div>
-        <button onclick="openMyBookingsModal()" class="hover:text-amber-300 flex items-center gap-1 text-[11px]">
-          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300"></i>
+
+        <!-- My Requests Counter (50+) -->
+        <button onclick="openMyBookingsModal()" class="hover:text-amber-200 flex items-center gap-1 transition-colors text-[11px] whitespace-nowrap font-medium">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
           <span data-i18n="myBookingsLabel">My Requests</span>
           <span class="font-bold text-amber-300 my-bookings-count">(50+)</span>
         </button>
       </div>
+
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 glass-nav shadow-luxury-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3.5 group">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] flex items-center justify-center text-amber-300 shadow-md border border-gold/40">
+  <!-- ================= STICKY MAIN HEADER ================= -->
+  <header class="sticky top-0 z-40 glass-nav shadow-[0_2px_15px_-3px_rgba(23,76,60,0.06)] border-b border-[#EDE5D5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo & Doctor Details -->
+      <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#103429] via-[#174C3C] to-[#20624e] flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform duration-300 border border-gold/40 flex-shrink-0">
           <i data-lucide="leaf" class="w-6 h-6 text-gold"></i>
         </div>
-        <div>
+        <div class="flex flex-col">
           <div class="flex items-center gap-2">
-            <span class="font-serif text-2xl font-bold tracking-tight text-charcoal doc-name">Dr. Apkesha Patel</span>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-soft text-forest border border-sage">BAMS</span>
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-charcoal doc-name whitespace-nowrap">Dr. Apkesha Patel</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sage-soft text-forest border border-sage tracking-wider whitespace-nowrap">BAMS</span>
           </div>
-          <p class="text-xs text-stone-500 font-medium flex items-center gap-1.5 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-forest"></span>
-            <span>Ex-AYUSH Medical Officer (Govt. PHC, Gujarat)</span>
-          </p>
+          <span class="text-[11px] text-stone-500 font-medium tracking-wide whitespace-nowrap mt-0.5">
+            Ex-AYUSH Medical Officer (Govt. PHC, Gujarat)
+          </span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-semibold text-charcoal">
-        <a href="index.html" data-i18n="navHome" class="hover:text-forest transition-colors">Home</a>
-        <a href="about.html" data-i18n="navAbout" class="hover:text-forest transition-colors">Meet Doctor</a>
-        <a href="services.html" data-i18n="navServices" class="text-forest font-bold border-b-2 border-forest pb-0.5">Services</a>
-        <a href="online-consultation.html" data-i18n="navOnline" class="hover:text-forest transition-colors">Online Consultation</a>
-        <a href="offline-consultation.html" data-i18n="navOffline" class="hover:text-forest transition-colors">In-Person Clinic</a>
-        <a href="faq.html" data-i18n="navFaq" class="hover:text-forest transition-colors">FAQ</a>
-        <a href="contact.html" data-i18n="navContact" class="hover:text-forest transition-colors">Contact</a>
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs sm:text-[13.5px] font-semibold text-charcoal">
+        <a href="index.html" data-i18n="navHome" class="nav-link whitespace-nowrap">Home</a>
+        <a href="about.html" data-i18n="navAbout" class="nav-link whitespace-nowrap">About</a>
+        <a href="services.html" data-i18n="navServices" class="nav-link active whitespace-nowrap">Services</a>
+        <a href="online-consultation.html" data-i18n="navOnline" class="nav-link whitespace-nowrap">Online OPD</a>
+        <a href="offline-consultation.html" data-i18n="navOffline" class="nav-link whitespace-nowrap">Clinic Visit</a>
+        <a href="faq.html" data-i18n="navFaq" class="nav-link whitespace-nowrap">FAQ</a>
+        <a href="contact.html" data-i18n="navContact" class="nav-link whitespace-nowrap">Contact</a>
       </nav>
 
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-2.5 px-4 rounded-xl border border-stone-300 text-forest hover:bg-forest/5 flex items-center gap-2 text-xs font-bold shadow-2xs">
-          <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
-          <span data-i18n="btnWhatsApp">WhatsApp</span>
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
+        <a href="https://wa.me/918347675394" target="_blank" rel="noopener noreferrer" class="doc-whatsapp-link py-2 px-3.5 rounded-xl border border-stone-300/80 bg-white hover:bg-emerald-50/50 hover:border-emerald-600/40 text-forest transition-all flex items-center gap-1.5 text-xs font-bold whitespace-nowrap shadow-2xs" title="Direct WhatsApp Enquiry">
+          <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366] flex-shrink-0"></i>
+          <span data-i18n="btnWhatsApp" class="whitespace-nowrap">WhatsApp</span>
         </a>
-        <a href="book-appointment.html" class="py-2.5 px-5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-sm shadow-md flex items-center gap-2">
-          <i data-lucide="calendar" class="w-4 h-4 text-gold"></i>
-          <span data-i18n="btnBookNow">Book Consultation</span>
+        <a href="book-appointment.html" class="py-2.5 px-4.5 rounded-xl bg-forest hover:bg-forest-dark text-ivory font-bold text-xs sm:text-[13px] shadow-sm hover:shadow-md transition-all flex items-center gap-2 whitespace-nowrap">
+          <i data-lucide="calendar" class="w-4 h-4 text-gold flex-shrink-0"></i>
+          <span data-i18n="btnBookNow" class="whitespace-nowrap">Book Consultation</span>
         </a>
       </div>
 
+      <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-charcoal hover:bg-stone-100"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        <a href="https://wa.me/918347675394" target="_blank" class="p-2 rounded-lg text-forest bg-sage-soft border border-sage" title="WhatsApp">
+          <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
+        </a>
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-charcoal hover:bg-stone-100 transition-colors" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
+
     </div>
 
     <!-- Mobile Drawer -->
     <div id="mobileMenuDrawer" class="hidden lg:hidden bg-ivory border-b border-stone-200 px-5 py-4 space-y-3 animate-fadeIn">
-      <a href="index.html" class="block text-sm font-semibold text-charcoal py-1">Home</a>
-      <a href="about.html" class="block text-sm font-semibold text-charcoal py-1">Meet Doctor</a>
-      <a href="services.html" class="block text-sm font-bold text-forest py-1">Services</a>
-      <a href="online-consultation.html" class="block text-sm font-semibold text-charcoal py-1">Online Consultation</a>
-      <a href="offline-consultation.html" class="block text-sm font-semibold text-charcoal py-1">In-Person Clinic</a>
-      <a href="book-appointment.html" class="block text-sm font-semibold text-charcoal py-1">Book Consultation</a>
-      <a href="faq.html" class="block text-sm font-semibold text-charcoal py-1">FAQ</a>
-      <a href="contact.html" class="block text-sm font-semibold text-charcoal py-1">Contact</a>
+      <a href="index.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navHome">Home</a>
+      <a href="about.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navAbout">About</a>
+      <a href="services.html" class="block text-sm font-bold text-forest py-1" data-i18n="navServices">Services</a>
+      <a href="online-consultation.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navOnline">Online OPD</a>
+      <a href="offline-consultation.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navOffline">Clinic Visit</a>
+      <a href="book-appointment.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="btnBookNow">Book Consultation</a>
+      <a href="faq.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navFaq">FAQ</a>
+      <a href="contact.html" class="block text-sm font-semibold text-charcoal py-1 hover:text-forest" data-i18n="navContact">Contact</a>
+      
+      <div class="pt-3 border-t border-stone-200 flex flex-col gap-2.5">
+        <div class="flex items-center gap-2 py-1">
+          <span class="text-xs font-semibold text-stone-500">Language:</span>
+          <button onclick="setLanguage('en'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">English</button>
+          <button onclick="setLanguage('gu'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">ગુજરાતી</button>
+          <button onclick="setLanguage('hi'); toggleMobileMenu();" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white border border-stone-300">हिन्दी</button>
+        </div>
+
+        <a href="tel:+918347675394" class="doc-phone-link flex items-center gap-2 text-xs font-bold text-forest py-1">
+          <i data-lucide="phone" class="w-4 h-4 text-gold"></i> Call: +91 83476 75394
+        </a>
+        <a href="mailto:apexapatel316@gmail.com" class="doc-email-link flex items-center gap-2 text-xs font-medium text-stone-600 py-1">
+          <i data-lucide="mail" class="w-4 h-4 text-forest"></i> apexapatel316@gmail.com
+        </a>
+        <button onclick="openMyBookingsModal(); toggleMobileMenu();" class="text-xs text-left text-stone-700 flex items-center gap-1.5 py-1 font-semibold">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-forest"></i> My Requests (<span class="my-bookings-count font-bold text-forest">50+</span>)
+        </button>
+      </div>
     </div>
   </header>
 
