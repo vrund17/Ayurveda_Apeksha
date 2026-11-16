@@ -43,6 +43,11 @@ const I18N = {
     btnBookNow: "Book Consultation",
     btnWhatsApp: "WhatsApp",
     myBookingsLabel: "My Requests",
+    navHome: "Home",
+    navOnline: "Online Consultation",
+    navOffline: "In-Person Clinic",
+    navPrivacy: "Privacy Policy",
+    navDisclaimer: "Medical Disclaimer",
     
     // Hero
     heroBadge: "4–5 Years of Professional Healthcare Experience",
@@ -197,6 +202,11 @@ const I18N = {
     btnBookNow: "પરામર્શ બુક કરો",
     btnWhatsApp: "વોટ્સએપ",
     myBookingsLabel: "મારી વિનંતીઓ",
+    navHome: "હોમ",
+    navOnline: "ઓનલાઇન પરામર્શ",
+    navOffline: "રૂબરૂ ક્લિનિક",
+    navPrivacy: "પ્રાઇવસી પોલિસી",
+    navDisclaimer: "તબીબી ડિસ્ક્લેમર",
 
     // Hero
     heroBadge: "૪–૫ વર્ષનો પ્રોફેશનલ આરોગ્ય સેવા અનુભવ",
@@ -351,6 +361,11 @@ const I18N = {
     btnBookNow: "परामर्श बुक करें",
     btnWhatsApp: "व्हाट्सएप",
     myBookingsLabel: "मेरी नियुक्तियां",
+    navHome: "होम",
+    navOnline: "ऑनलाइन परामर्श",
+    navOffline: "प्रत्यक्ष क्लिनिक",
+    navPrivacy: "गोपनीयता नीति",
+    navDisclaimer: "चिकित्सीय अस्वीकरण",
 
     // Hero
     heroBadge: "४–५ वर्षों का पेशेवर स्वास्थ्य सेवा अनुभव",
@@ -1048,6 +1063,21 @@ function setupEventListeners() {
   const form = document.getElementById('appointmentForm');
   if (form) {
     form.addEventListener('submit', handleAppointmentSubmit);
+  }
+
+  // Contact Form submission (on contact.html)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName')?.value.trim();
+      const phone = document.getElementById('contactPhone')?.value.trim();
+      const msg = document.getElementById('contactMessage')?.value.trim();
+      const waText = encodeURIComponent(`Hello Dr. Apkesha Patel, my name is ${name} (Phone: ${phone}). Enquiry: ${msg}`);
+      window.open(`https://wa.me/${doctorData.whatsapp}?text=${waText}`, '_blank');
+      showToast(currentLang === 'gu' ? 'તમારો સંદેશ તૈયાર છે, વોટ્સએપ પર મોકલી રહ્યા છીએ...' : (currentLang === 'hi' ? 'आपका संदेश तैयार है, व्हाट्सएप पर भेजा जा रहा है...' : 'Your message is ready, forwarding to WhatsApp...'));
+      contactForm.reset();
+    });
   }
 
   // Initial fee label update

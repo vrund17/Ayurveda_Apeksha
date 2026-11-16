@@ -102,6 +102,26 @@ Features:
 
 ---
 
+## 📄 Dedicated Multi-Page Architecture (10 Pages)
+
+In addition to the comprehensive homepage, the project features 10 dedicated, SEO-optimized pages:
+
+1. **[index.html](file:///c:/Users/Devstree/Documents/demo/index.html)**: Interactive Homepage (Sections A to I, Hero, Clinical tools).
+2. **[about.html](file:///c:/Users/Devstree/Documents/demo/about.html)**: Dedicated Doctor Profile Page (BAMS, 4-5 yrs Govt PHC, Philosophy).
+3. **[services.html](file:///c:/Users/Devstree/Documents/demo/services.html)**: Consultation Services (6 verified Ayurvedic clinical categories).
+4. **[online-consultation.html](file:///c:/Users/Devstree/Documents/demo/online-consultation.html)**: Remote Video Consultation Process & Pricing (₹600).
+5. **[offline-consultation.html](file:///c:/Users/Devstree/Documents/demo/offline-consultation.html)**: Lunawada, Mahisagar In-Person Clinic & Nadi Pariksha (₹500).
+6. **[book-appointment.html](file:///c:/Users/Devstree/Documents/demo/book-appointment.html)**: Dedicated Appointment Request System & Time Slots.
+7. **[contact.html](file:///c:/Users/Devstree/Documents/demo/contact.html)**: Contact Channels, Phone +91 83476 75394, Email, and Google Maps.
+8. **[faq.html](file:///c:/Users/Devstree/Documents/demo/faq.html)**: Frequently Asked Questions (Trilingual EN, GU, HI).
+9. **[privacy-policy.html](file:///c:/Users/Devstree/Documents/demo/privacy-policy.html)**: Patient Privacy, Confidentiality & Data Protection.
+10. **[medical-disclaimer.html](file:///c:/Users/Devstree/Documents/demo/medical-disclaimer.html)**: Medical Disclaimer, Emergency Notice (108), Compliance.
+
+- **[sitemap.xml](file:///c:/Users/Devstree/Documents/demo/sitemap.xml)**: Standard XML sitemap for Google search indexing.
+- **[robots.txt](file:///c:/Users/Devstree/Documents/demo/robots.txt)**: Crawler directives pointing to sitemap.
+
+---
+
 ## 💻 Local Development & Deployment
 
 ### Running Locally:

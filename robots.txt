@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vrund17.github.io/Ayurveda_Apeksha/sitemap.xml
